@@ -1,0 +1,512 @@
+{
+  "interactionStatistic": [
+      {
+          "interactionService": {
+              "url": "<img style='border: 0; width: 1px; height: 1px;' alt='' src='https://statse.webtrendslive.com/dcs2221tai1ckz5huxw0mfq86_1m2w/njs.gif?dcsuri=medicines/paracetamol-for-adults&wt.cg_n=Syndication&wt.cg_s=Medicines&synduserid=a35e2740-b84d-11e9-8e02-f5191ebd3281&syndreviewdate=06-08-2019T19:36'/> <img style='border: 0; width: 1px; height: 1px;' alt='' src='https://nhsdigital.d3.sc.omtrdc.net/b/ss/nhsuk-prod/1/JS-2.9.0-L8UK/654321?c27=a35e2740-b84d-11e9-8e02-f5191ebd3281&c28=medicines/paracetamol-for-adults&c29=Medicines&c75=web&events=event23'/>",
+              "@type": "Website",
+              "name": "Webtrends tracking pixel"
+          },
+          "@type": "InteractionCounter"
+      }
+  ],
+  "@context": "http://schema.org",
+  "@type": "MedicalWebPage",
+  "copyrightHolder": {
+      "name": "Crown Copyright",
+      "@type": "Organization"
+  },
+  "license": "https://developer.api.nhs.uk/terms",
+  "author": {
+      "url": "https://www.nhs.uk",
+      "logo": "https://www.nhs.uk/nhscwebservices/documents/logo1.jpg",
+      "email": "nhswebsite.servicedesk@nhs.net",
+      "@type": "Organization",
+      "name": "NHS website"
+  },
+  "name": "Paracetamol for adults",
+  "description": "NHS medicines information on paracetamol for adults - what it's used for, side effects, dosage and who can take it.",
+  "url": "https://www.nhs.uk/medicines/paracetamol-for-adults/",
+  "alternateName": [],
+  "breadcrumb": {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+          {
+              "@type": "ListItem",
+              "position": 0,
+              "item": {
+                  "@id": "https://www.nhs.uk/medicines/",
+                  "name": "Medicines A to Z",
+                  "genre": "medicine"
+              }
+          },
+          {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                  "@id": "https://www.nhs.uk/medicines/paracetamol-for-adults/",
+                  "name": "Paracetamol for adults",
+                  "genre": "medicine"
+              }
+          }
+      ]
+  },
+  "lastReviewed": [
+      "2019-05-23T00:00:00+00:00",
+      "2022-05-23T00:00:00+00:00"
+  ],
+  "genre": "medicine",
+  "dateModified": "2019-07-24T11:08:23.345284+00:00",
+  "mainEntityOfPage": [
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 0,
+          "@type": "WebPageElement",
+          "text": "About paracetamol for adults",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Paracetamol is a common painkiller used to treat aches and pain. It can also be used to reduce a high temperature.</p>\n\n<p>It's available combined with other painkillers and anti-sickness medicines. It's also an ingredient in a wide range of cold and flu remedies.</p>\n\n<p>For under-16s, read our information on <a href=\"/medicines/paracetamol-for-children/\">paracetamol for children</a>.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 1,
+          "@type": "WebPageElement",
+          "text": "Key facts",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<ul>\n<li>Paracetamol takes up to an hour to work.</li>\n<li>The usual dose of paracetamol is one or two 500mg tablets at a time.</li>\n<li>Do not take paracetamol with other medicines containing paracetamol.</li>\n<li>Paracetamol is safe to take in pregnancy and while breastfeeding, at recommended doses.</li>\n<li>Brand names include Disprol, Hedex, Medinol and Panadol.</li>\n</ul>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 2,
+          "@type": "WebPageElement",
+          "text": "Who can and can't take paracetamol",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Most people can take paracetamol safely, including pregnant and breastfeeding women.</p>\n\n<p>However, some people need to take extra care with paracetamol.</p>\n\n<p><strong>Check with your doctor or pharmacist if you:</strong></p>\n\n<ul>\n<li>have had an allergic reaction to paracetamol or any other medicines in the past</li>\n<li>have liver or kidney problems</li>\n<li>regularly drink more than the maximum recommended amount of alcohol (14 units a week)</li>\n<li>take medicine for <a href=\"/Conditions/Epilepsy/\">epilepsy</a></li>\n<li>take medicine for <a href=\"/conditions/Tuberculosis/\">tuberculosis (TB)</a></li>\n<li>take the blood-thinner warfarin and you may need to take paracetamol on a regular basis</li>\n</ul>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 3,
+          "@type": "WebPageElement",
+          "text": "How and when to take it",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Paracetamol can be taken with or without food.</p>\n\n<p>The usual dose for adults is one or two 500mg tablets up to 4 times in 24 hours.</p>\n\n<p>Always leave at least 4 hours between doses.</p>\n\n<p>Overdosing on paracetamol can cause serious side effects. Do not be tempted to increase the dose or to take a double dose if your pain is very bad.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 1,
+                  "@type": "WebPageElement",
+                  "name": "Callout",
+                  "identifier": "4",
+                  "text": "<h3>Important</h3>\n\n<p>Adults can take a maximum of 4 doses (up to eight 500mg tablets in total) in 24 hours. Wait at least 4 hours between doses.</p>\n"
+              },
+              {
+                  "position": 2,
+                  "identifier": "1",
+                  "text": "<h3>Different types of paracetamol</h3>\n\n<p>Paracetamol is widely available as tablets and capsules.</p>\n\n<p>For people who find it difficult to swallow tablets or capsules, paracetamol is also available as a syrup or as soluble tablets that dissolve in water to make a drink.</p>\n\n<h3>What if I take too much?</h3>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 3,
+                  "@type": "WebPageElement",
+                  "name": "Callout",
+                  "identifier": "4",
+                  "text": "<h3>Important</h3>\n\n<p>Taking 1 or 2 extra tablets by accident is unlikely to be harmful, as long as you do not take more than 8 tablets in 24 hours.</p>\n\n<p>Wait at least 24 hours before taking any more paracetamol.</p>\n"
+              },
+              {
+                  "position": 4,
+                  "@type": "WebPageElement",
+                  "name": "Urgent",
+                  "identifier": "6",
+                  "text": "<h3>Get help from 111 now if you take:</h3>\n\n<ul>\n<li>more than 2 extra tablets of paracetamol</li>\n<li>more than 8 tablets of paracetamol in 24 hours</li>\n</ul>\n\n<p>Taking too much paracetamol can be dangerous and you may need treatment.</p>\n\n<h4>Online</h4>\n\n<p>Go to <a href=\"https://111.nhs.uk/\">111.nhs.uk</a> </p>\n\n<h4>Telephone</h4>\n\n<p><a href=\"/using-the-nhs/nhs-services/urgent-and-emergency-care/nhs-111/\">Call 111</a></p>\n"
+              },
+              {
+                  "position": 5,
+                  "identifier": "1",
+                  "text": "<p>If you need to go to your <a href=\"https://www.nhs.uk/service-search/Accident-and-emergency-services/LocationSearch/428\">nearest A&amp;E</a>, take the paracetamol packet or leaflet inside it plus any remaining medicine with you.</p>\n\n<h3>What if I forget to take it?</h3>\n\n<p>If you take paracetamol regularly and miss a dose, take it as soon as you remember. However, skip the missed dose if it's nearly time for your next dose.</p>\n\n<p>Never take double doses of paracetamol. Do not take an extra dose to make up for a missed one.</p>\n\n<p>If you forget doses often, it may help to set an alarm to remind you. You could also ask your pharmacist for advice on other ways to help you remember to take your medicine.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 4,
+          "@type": "WebPageElement",
+          "text": "Taking paracetamol with other painkillers",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>It's safe to take paracetamol with other types of painkiller that don't contain paracetamol, such as <a href=\"/medicines/ibuprofen-for-adults/\">ibuprofen</a>, <a href=\"/medicines/aspirin-for-pain-relief/\">aspirin</a> and codeine.</p>\n\n<p>Do not take paracetamol alongside other medicines that contain paracetamol. If you take 2 different medicines that contain paracetamol, there's a risk of overdose.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 1,
+                  "@type": "WebPageElement",
+                  "name": "Callout",
+                  "identifier": "4",
+                  "text": "<h3>Important</h3>\n\n<p>Before taking any other medicines, check the label to see whether they contain paracetamol.</p>\n"
+              },
+              {
+                  "position": 2,
+                  "identifier": "1",
+                  "text": "<p>Paracetamol is an ingredient in many remedies you can buy from pharmacies and supermarkets, including:</p>\n\n<ul>\n<li>migraine remedies</li>\n<li>cough and cold products, such as Lemsip and Night Nurse</li>\n</ul>\n\n<p>Some prescription medicines contain paracetamol combined with other painkillers, such as:</p>\n\n<ul>\n<li><a href=\"/medicines/co-codamol-for-adults/\">co-codamol</a> (paracetamol and codeine)</li>\n<li><a href=\"/medicines/co-dydramol\">co-dydramol</a> (paracetamol and dihydrocodeine)</li>\n<li>Tramacet (paracetamol and tramadol)</li>\n</ul>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 3,
+                  "@type": "WebPageElement",
+                  "name": "Information",
+                  "identifier": "3",
+                  "text": "<p>Recommended reading</p>\n\n<p><a href=\"/common-health-questions/medicines/can-i-take-paracetamol-and-ibuprofen-together/\">Can I take paracetamol and ibuprofen together?</a></p>\n"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 5,
+          "@type": "WebPageElement",
+          "text": "Side effects",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Paracetamol very rarely causes side effects if you take it at the right dosage.</p>\n\n<p>If you're worried about a side effect or notice anything unusual, talk to your pharmacist or doctor.</p>\n\n<h3>Serious allergic reaction</h3>\n\n<p>In rare cases, it's possible to have a serious allergic reaction (<a href=\"/conditions/anaphylaxis/\">anaphylaxis</a>) to paracetamol.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 1,
+                  "@type": "WebPageElement",
+                  "name": "Urgent",
+                  "identifier": "6",
+                  "text": "<h3>Call 999 or go to A&E if:</h3>\n\n<ul>\n<li>you get a skin rash that may include itchy, red, swollen, blistered or peeling skin </li>\n<li>you're wheezing </li>\n<li>you get tightness in the chest or throat </li>\n<li>you have trouble breathing or talking </li>\n<li>your mouth, face, lips, tongue or throat start swelling</li>\n</ul>\n\n<p>You could be having a serious allergic reaction and may need immediate treatment in hospital.</p>\n"
+              },
+              {
+                  "position": 2,
+                  "identifier": "1",
+                  "text": "<p>These are not all the side effects of paracetamol. For a full list, see the leaflet inside your medicines packet.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 3,
+                  "@type": "WebPageElement",
+                  "name": "Information",
+                  "identifier": "3",
+                  "text": "<p>You can report any suspected side effect to the <a href=\"https://yellowcard.mhra.gov.uk/\">UK safety scheme</a>.</p>\n"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 6,
+          "@type": "WebPageElement",
+          "text": "Pregnancy and breastfeeding",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Paracetamol is the first choice of painkiller if you're pregnant or breastfeeding.</p>\n\n<p>It's been taken by many pregnant and breastfeeding women with no harmful effects in the mother or baby.</p>\n\n<p>For more information about how paracetamol can affect you and your baby during pregnancy, <a href=\"http://www.medicinesinpregnancy.org/Medicine--pregnancy/Paracetamol/\">read this leaflet on the Best Use of Medicines in Pregnancy (BUMPS) website</a>.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 1,
+                  "@type": "WebPageElement",
+                  "name": "Callout",
+                  "identifier": "4",
+                  "text": "<h3>Important</h3>\n\n<p>If you take paracetamol in pregnancy or while breastfeeding, take the lowest dose of paracetamol that works for you for the shortest possible time.</p>\n"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 7,
+          "@type": "WebPageElement",
+          "text": "Cautions with other medicines",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>It's safe to take paracetamol with most prescription medicines, including antibiotics.</p>\n\n<p>Paracetamol isn't suitable for some people. Talk to your doctor if you take:</p>\n\n<ul>\n<li>the blood-thinner warfarin – paracetamol can increase the risk of bleeding if you take it regularly</li>\n<li>medicine to treat <a href=\"/Conditions/Epilepsy/\">epilepsy</a></li>\n<li>medicine to treat <a href=\"/conditions/Tuberculosis/\">tuberculosis (TB)</a></li>\n</ul>\n\n<h3>Mixing paracetamol with herbal remedies and supplements</h3>\n\n<p>Check with your doctor or pharmacist if you're taking St John's wort (a herbal remedy taken for <a href=\"/conditions/depression/\">depression</a>) as you may need to reduce your paracetamol dose.</p>\n\n<p>Otherwise, paracetamol isn't generally affected by also taking herbal remedies or supplements.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 1,
+                  "@type": "WebPageElement",
+                  "name": "Callout",
+                  "identifier": "4",
+                  "text": "<h3>Important</h3>\n\n<p>For safety, tell your doctor or pharmacist if you're taking any other medicines, including herbal remedies, vitamins or supplements.</p>\n"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 8,
+          "@type": "WebPageElement",
+          "text": "Common questions",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Paracetamol seems to work by blocking chemical messengers in the brain that tell us we have pain.</p>\n\n<p>Paracetamol also reduces fever by affecting the chemical messengers in an area of the brain that regulates body temperature.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "How does paracetamol work?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 1,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Paracetamol takes up to an hour to work. It keeps on working for about 5 hours.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "When will I feel better?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 2,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>The type of medicine you need to treat your pain depends on <a href=\"/live-well/healthy-body/which-painkiller-to-use/\">what type of pain you have</a>.</p>\n\n<p>Paracetamol and <a href=\"/medicines/ibuprofen-for-adults/\">ibuprofen</a> work in different ways. So paracetamol is better than ibuprofen for some types of pain.</p>\n\n<p>Paracetamol is usually best for most types of pain, including <a href=\"/conditions/headache/\">headaches</a> and <a href=\"/conditions/stomach-ache-abdominal-pain/\">stomach ache</a>.  </p>\n\n<p>Ibuprofen may be better for <a href=\"/conditions/period-pain/\">period pain</a> or <a href=\"/conditions/toothache/\">toothache</a>. Some people find ibuprofen better than paracetamol for <a href=\"/Conditions/Back-pain/\">back pain</a>.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Is paracetamol better than ibuprofen?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 3,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>If paracetamol doesn't work, there are <a href=\"/live-well/healthy-body/which-painkiller-to-use/\">other types of painkiller</a> you can try, including:</p>\n\n<ul>\n<li><a href=\"/medicines/ibuprofen-for-adults\">ibuprofen</a></li>\n<li><a href=\"/medicines/codeine/\">codeine</a></li>\n<li><a href=\"/medicines/aspirin-for-pain-relief/\">aspirin</a></li>\n</ul>\n\n<p>Ibuprofen and ibuprofen-like painkillers are sometimes available as creams or gels that you rub on to the part of your body that's painful.</p>\n\n<p>Some painkillers are only available on prescription.</p>\n\n<p>Talk to your doctor or pharmacist about other treatment options that might be more suitable for you, such as <a href=\"/livewell/fitness/\">exercise</a> or <a href=\"/conditions/physiotherapy/\">physiotherapy</a>.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "What if paracetamol doesn't work?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 4,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>It's safe to take paracetamol regularly for many years as long as you don't take more than the recommended dosage.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Can I take paracetamol for a long time?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 5,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>There's no firm evidence to suggest that taking paracetamol will reduce fertility in either men or women.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Will it affect my fertility?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 6,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Paracetamol doesn't affect any type of contraception including the <a href=\"/Conditions/contraception/combined-contraceptive-pill/\">contraceptive pill</a> or <a href=\"/conditions/contraception/emergency-contraception/\">emergency contraception</a>.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Will it affect my contraception?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 7,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Drinking a small amount of alcohol while taking paracetamol is usually safe. Try to keep to the recommended guidelines of no\nmore than 14 units of alcohol a week. A standard glass of wine (175ml)  is 2 units. A pint of lager or beer is usually 2 to 3 units of alcohol.</p>\n\n<p>It may not be safe for you to drink alcohol with paracetamol if you have certain health conditions, such as liver problems. </p>\n\n<p>Check the leaflet in your medicine packet to find out whether it's safe to drink alcohol when taking paracetamol.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Can I drink alcohol with it?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 8,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>You can eat and drink normally while taking paracetamol.</p>\n\n<p>You can safely take paracetamol (but not ibuprofen) on an empty stomach.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Is there any food or drink I need to avoid?",
+                  "identifier": "12"
+              }
+          ]
+      }
+  ],
+  "relatedLink": [
+      {
+          "name": "Back pain",
+          "url": "/conditions/back-pain/",
+          "description": "Link to Related Condition",
+          "linkRelationship": "Related Condition",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Headaches",
+          "url": "/conditions/headache/",
+          "description": "Link to Related Condition",
+          "linkRelationship": "Related Condition",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Migraine",
+          "url": "/conditions/migraine/",
+          "description": "Link to Related Condition",
+          "linkRelationship": "Related Condition",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Stomach ache",
+          "url": "/conditions/stomach-ache/",
+          "description": "Link to Related Condition",
+          "linkRelationship": "Related Condition",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Paracetamol: forum",
+          "url": "https://healthunlocked.com/paracetamol",
+          "description": "Link to Useful Resource",
+          "linkRelationship": "Useful Resource",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Which painkiller?",
+          "url": "https://nhs.uk/live-well/healthy-body/which-painkiller-to-use/",
+          "description": "Link to Useful Resource",
+          "linkRelationship": "Useful Resource",
+          "@type": "Link Role"
+      },
+      {
+          "name": "10 ways to reduce pain",
+          "url": "https://nhs.uk/live-well/healthy-body/10-ways-to-ease-pain/",
+          "description": "Link to Useful Resource",
+          "linkRelationship": "Useful Resource",
+          "@type": "Link Role"
+      }
+  ]
+}

@@ -1,0 +1,502 @@
+{
+  "interactionStatistic": [
+      {
+          "interactionService": {
+              "url": "<img style='border: 0; width: 1px; height: 1px;' alt='' src='https://statse.webtrendslive.com/dcs2221tai1ckz5huxw0mfq86_1m2w/njs.gif?dcsuri=medicines/?page=2&wt.cg_n=Syndication&wt.cg_s=Medicines&synduserid=a35e2740-b84d-11e9-8e02-f5191ebd3281&syndreviewdate=06-08-2019T19:30'/> <img style='border: 0; width: 1px; height: 1px;' alt='' src='https://nhsdigital.d3.sc.omtrdc.net/b/ss/nhsuk-prod/1/JS-2.9.0-L8UK/654321?c27=a35e2740-b84d-11e9-8e02-f5191ebd3281&c28=medicines/?page=2&c29=Medicines&c75=web&events=event23'/>",
+              "@type": "Website",
+              "name": "Webtrends tracking pixel"
+          },
+          "@type": "InteractionCounter"
+      }
+  ],
+  "@context": "http://schema.org",
+  "@type": "SearchResultsPage",
+  "copyrightHolder": {
+      "name": "Crown Copyright",
+      "@type": "Organization"
+  },
+  "license": "https://developer.api.nhs.uk/terms",
+  "author": {
+      "url": "https://www.nhs.uk",
+      "logo": "https://www.nhs.uk/nhscwebservices/documents/logo1.jpg",
+      "email": "nhswebsite.servicedesk@nhs.net",
+      "@type": "Organization",
+      "name": "NHS website"
+  },
+  "name": "Medicines A to Z",
+  "description": "Find out how your medicine works, how and when to take it, possible side effects and answers to your common questions.",
+  "url": "https://www.nhs.uk/medicines/",
+  "breadcrumb": {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+          {
+              "@type": "ListItem",
+              "position": 0,
+              "item": {
+                  "@id": "https://www.nhs.uk/medicines/",
+                  "name": "Medicines A to Z",
+                  "genre": "medicine"
+              }
+          }
+      ]
+  },
+  "significantLink": [
+      {
+          "@type": "LinkRole",
+          "name": "Clarithromycin",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/clarithromycin/",
+          "description": "NHS medicines information on clarithromycin - what it’s used for, side effects, dosage and who can take it",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-12-06T16:08:00+00:00",
+                  "2021-12-06T14:22:00+00:00"
+              ],
+              "dateModified": "2018-12-18T15:13:35.647949+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Clopidogrel",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/clopidogrel/",
+          "description": "NHS medicines information on clopidogrel - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-08-17T00:00:00+00:00",
+                  "2021-08-17T00:00:00+00:00"
+              ],
+              "dateModified": "2018-09-12T13:33:16.501405+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Co-codamol for adults",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/co-codamol-for-adults/",
+          "description": "NHS medicines information on co-codamol for adults  (16 years and over) - what it’s used for, side effects, dosage and who can take it",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2017-08-25T14:06:00+00:00",
+                  "2020-08-25T14:06:00+00:00"
+              ],
+              "dateModified": "2018-12-19T16:57:17.373119+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Co-codamol for children",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/co-codamol-for-children/",
+          "description": "NHS medicines information on co-codamol for children (12-15 years) - what it’s used for, side effects, dosage and who can take it",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2017-08-25T08:50:00+00:00",
+                  "2020-08-25T08:50:00+00:00"
+              ],
+              "dateModified": "2018-12-19T10:30:54.121988+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Co-codaprin (aspirin and codeine)",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/co-codaprin-aspirin-and-codeine/",
+          "description": "NHS medicines information on co-codaprin - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-08-17T00:00:00+00:00",
+                  "2021-08-17T00:00:00+00:00"
+              ],
+              "dateModified": "2019-03-26T15:49:38.664683+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Co-dydramol",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/co-dydramol/",
+          "description": "NHS medicines information on co-dydramol - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2017-04-10T16:05:00+00:00",
+                  "2020-04-10T16:05:00+00:00"
+              ],
+              "dateModified": "2019-07-02T09:09:15.608028+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Codeine",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/codeine/",
+          "description": "NHS medicines information on codeine - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-11-27T12:40:00+00:00",
+                  "2021-11-27T12:40:00+00:00"
+              ],
+              "dateModified": "2018-11-30T15:21:30.924585+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Cyclizine",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/cyclizine/",
+          "description": "NHS medicines information on cyclizine - what it's used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2019-02-11T09:39:00+00:00",
+                  "2022-02-11T09:39:00+00:00"
+              ],
+              "dateModified": "2019-03-14T10:30:08.834996+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Dabigatran",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/dabigatran/",
+          "description": "NHS medicines information on dabigatran - what it's used for, side effects, dosage and who can take it",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2019-04-03T00:00:00+00:00",
+                  "2022-04-03T00:00:00+00:00"
+              ],
+              "dateModified": "2019-07-11T12:19:29.831785+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Dapagliflozin",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/dapagliflozin/",
+          "description": "NHS medicines information on dapagliflozin – what it's used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2019-02-15T00:00:00+00:00",
+                  "2022-02-15T00:00:00+00:00"
+              ],
+              "dateModified": "2019-02-25T13:09:02.926784+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Diazepam",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/diazepam/",
+          "description": "NHS medicines information on diazepam - what it's used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2019-02-25T15:47:00+00:00",
+                  "2022-02-25T15:47:00+00:00"
+              ],
+              "dateModified": "2019-03-11T14:05:56.964633+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Diclofenac",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/diclofenac/",
+          "description": "NHS medicines information on diclofenac – what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-05-22T00:00:00+00:00",
+                  "2021-05-22T00:00:00+00:00"
+              ],
+              "dateModified": "2018-10-03T20:21:18.028141+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Diphenhydramine",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/diphenhydramine/",
+          "description": "NHS medicines information on diphenhydramine – including Histgergan, Nytol Original,  Nytol One-A-Night and Sleepeaze.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-09-18T14:53:00+00:00",
+                  "2021-09-18T14:53:00+00:00"
+              ],
+              "dateModified": "2019-06-20T09:48:29.160648+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Dipyridamole",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/dipyridamole/",
+          "description": "NHS medicines information on dipyridamole - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-03-29T13:34:00+00:00",
+                  "2021-03-29T13:34:00+00:00"
+              ],
+              "dateModified": "2018-10-03T20:21:18.389544+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Docusate",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/docusate/",
+          "description": "NHS medicines information on docusate - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-01-29T15:18:00+00:00",
+                  "2021-01-29T15:18:00+00:00"
+              ],
+              "dateModified": "2018-12-19T10:36:32.786987+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Dosulepin",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/dosulepin/",
+          "description": "NHS medicines information on dosulepin - how it works, side effects, dosage and who can take it",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-12-13T14:39:00+00:00",
+                  "2021-12-13T14:39:00+00:00"
+              ],
+              "dateModified": "2019-01-08T09:50:15.768581+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Doxazosin",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/doxazosin/",
+          "description": "NHS medicines information on doxazosin - what it's used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2019-02-25T14:36:00+00:00",
+                  "2022-02-25T14:36:00+00:00"
+              ],
+              "dateModified": "2019-05-23T11:34:07.207553+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Doxycycline",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/doxycycline/",
+          "description": "NHS medicines information on doxycycline - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-11-23T13:40:00+00:00",
+                  "2021-11-23T13:40:00+00:00"
+              ],
+              "dateModified": "2018-11-28T14:51:27.029709+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Duloxetine",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/duloxetine/",
+          "description": "Duloxetine is an antidepressant medicine. It's used to treat depression and anxiety.\r\n\r\nIt's also used to treat nerve pain, such as fibromyalgia, and can be used to treat stress urinary incontinence in women.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2019-01-30T13:30:00+00:00",
+                  "2022-01-30T13:30:00+00:00"
+              ],
+              "dateModified": "2019-02-25T12:02:52.301614+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Edoxaban",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/edoxaban/",
+          "description": "NHS medicines information on edoxaban - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2019-04-12T00:00:00+00:00",
+                  "2022-04-12T00:00:00+00:00"
+              ],
+              "dateModified": "2019-07-11T12:22:35.540219+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Enalapril",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/enalapril/",
+          "description": "NHS medicines information on enalapril - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-12-13T00:00:00+00:00",
+                  "2021-12-13T00:00:00+00:00"
+              ],
+              "dateModified": "2019-01-10T17:28:48.075310+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Erythromycin",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/erythromycin/",
+          "description": "NHS medicines information on erythromycin - what it's used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-11-26T10:44:00+00:00",
+                  "2021-11-26T10:44:00+00:00"
+              ],
+              "dateModified": "2018-11-27T14:14:06.467296+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Escitalopram",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/escitalopram/",
+          "description": "NHS medicines information on escitalopram - what it's used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-12-14T16:23:00+00:00",
+                  "2021-12-14T16:23:00+00:00"
+              ],
+              "dateModified": "2019-01-07T15:44:13.967475+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Esomeprazole",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/esomeprazole/",
+          "description": "NHS medicines information on esomeprazole - what it's used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-11-16T15:25:00+00:00",
+                  "2021-11-16T15:25:00+00:00"
+              ],
+              "dateModified": "2019-01-23T12:38:17.698557+00:00",
+              "@type": "MedicalWebPage"
+          }
+      },
+      {
+          "@type": "LinkRole",
+          "name": "Felodipine",
+          "articleStatus": "published",
+          "linkRelationship": "Result",
+          "url": "https://www.nhs.uk/medicines/felodipine/",
+          "description": "NHS medicines information on felodipine - what it’s used for, side effects, dosage and who can take it.",
+          "mainEntityOfPage": {
+              "genre": "medicine",
+              "lastReviewed": [
+                  "2018-12-13T00:00:00+00:00",
+                  "2021-12-13T00:00:00+00:00"
+              ],
+              "dateModified": "2019-01-02T14:48:43.859273+00:00",
+              "@type": "MedicalWebPage"
+          }
+      }
+  ],
+  "relatedLink": [
+      {
+          "@type": "LinkRole",
+          "url": "https://www.nhs.uk/medicines/?page=1",
+          "name": "First Page",
+          "description": "Link to First Page",
+          "linkRelationship": "Pagination"
+      },
+      {
+          "@type": "LinkRole",
+          "url": "https://www.nhs.uk/medicines/?page=6",
+          "name": "Last Page",
+          "description": "Link to Last Page",
+          "linkRelationship": "Pagination"
+      },
+      {
+          "@type": "LinkRole",
+          "url": "https://www.nhs.uk/medicines/?page=2",
+          "name": "Self",
+          "description": "Link to nhs.uk Page",
+          "linkRelationship": "Self"
+      },
+      {
+          "@type": "LinkRole",
+          "url": "https://www.nhs.uk/medicines/?page=3",
+          "name": "Next Page",
+          "description": "Link to Next Page",
+          "linkRelationship": "Pagination"
+      }
+  ],
+  "genre": "medicine"
+}

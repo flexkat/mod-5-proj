@@ -1,0 +1,605 @@
+{
+  "interactionStatistic": [
+      {
+          "interactionService": {
+              "url": "<img style='border: 0; width: 1px; height: 1px;' alt='' src='https://statse.webtrendslive.com/dcs2221tai1ckz5huxw0mfq86_1m2w/njs.gif?dcsuri=medicines/Amlodipine&wt.cg_n=Syndication&wt.cg_s=Medicines&synduserid=a35e2740-b84d-11e9-8e02-f5191ebd3281&syndreviewdate=06-08-2019T19:33'/> <img style='border: 0; width: 1px; height: 1px;' alt='' src='https://nhsdigital.d3.sc.omtrdc.net/b/ss/nhsuk-prod/1/JS-2.9.0-L8UK/654321?c27=a35e2740-b84d-11e9-8e02-f5191ebd3281&c28=medicines/Amlodipine&c29=Medicines&c75=web&events=event23'/>",
+              "@type": "Website",
+              "name": "Webtrends tracking pixel"
+          },
+          "@type": "InteractionCounter"
+      }
+  ],
+  "@context": "http://schema.org",
+  "@type": "MedicalWebPage",
+  "copyrightHolder": {
+      "name": "Crown Copyright",
+      "@type": "Organization"
+  },
+  "license": "https://developer.api.nhs.uk/terms",
+  "author": {
+      "url": "https://www.nhs.uk",
+      "logo": "https://www.nhs.uk/nhscwebservices/documents/logo1.jpg",
+      "email": "nhswebsite.servicedesk@nhs.net",
+      "@type": "Organization",
+      "name": "NHS website"
+  },
+  "name": "Amlodipine",
+  "description": "NHS medicines information on amlodipine - what it's used for, side effects, dosage and who can take it.",
+  "url": "https://www.nhs.uk/medicines/amlodipine/",
+  "alternateName": [],
+  "breadcrumb": {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+          {
+              "@type": "ListItem",
+              "position": 0,
+              "item": {
+                  "@id": "https://www.nhs.uk/medicines/",
+                  "name": "Medicines A to Z",
+                  "genre": "medicine"
+              }
+          },
+          {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                  "@id": "https://www.nhs.uk/medicines/amlodipine/",
+                  "name": "Amlodipine",
+                  "genre": "medicine"
+              }
+          }
+      ]
+  },
+  "lastReviewed": [
+      "2018-12-18T00:00:00+00:00",
+      "2021-12-18T00:00:00+00:00"
+  ],
+  "genre": "medicine",
+  "dateModified": "2019-01-07T14:29:07.778953+00:00",
+  "mainEntityOfPage": [
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 0,
+          "@type": "WebPageElement",
+          "text": "About amlodipine",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Amlodipine is a medicine used to treat <a href=\"/conditions/high-blood-pressure-hypertension/\">high blood pressure (hypertension)</a>. </p>\n\n<p>If you have high blood pressure, taking amlodipine helps prevent future <a href=\"/conditions/coronary-heart-disease/\">heart disease</a>, <a href=\"/conditions/heart-attack/\">heart attacks</a> and <a href=\"/conditions/stroke/\">strokes</a>.</p>\n\n<p>Amlodipine is also used to prevent chest pain caused by heart disease <a href=\"/conditions/angina/\">(angina)</a>.</p>\n\n<p>This medicine is only available on prescription. It comes as tablets or as a liquid to swallow.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 1,
+          "@type": "WebPageElement",
+          "text": "Key facts",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<ul>\n<li>Amlodipine lowers your blood pressure and makes it easier for your heart to pump blood around your body.</li>\n<li>It's usual to take amlodipine once a day. You can take it at any time of day, but try to make sure it's around the same time each day.</li>\n<li>The most common side effects include headache, flushing, feeling tired and swollen ankles. These usually improve after a few days.</li>\n<li>Amlodipine can be called amlodipine besilate, amlodipine maleate or amlodipine mesilate. This is because the medicine contains another chemical to make it easier for your body to take up and use it. It doesn't matter what your amlodipine is called. They all work as well as each other.</li>\n<li>Amlodipine is also called by the brand names Istin and Amlostin.</li>\n</ul>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 2,
+          "@type": "WebPageElement",
+          "text": "Who can and can't take amlodipine",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Amlodipine can be taken by adults and children aged 6 years and over.</p>\n\n<p>Amlodipine is not suitable for some people.</p>\n\n<p><strong>To make sure amlodipine is safe for you, tell your doctor if you:</strong></p>\n\n<ul>\n<li>have had an allergic reaction to amlodipine or any other medicines in the past</li>\n<li>are trying to get pregnant, are already pregnant or you're breastfeeding</li>\n<li>have liver or kidney disease</li>\n<li>have heart failure or you have recently had a heart attack</li>\n</ul>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 3,
+          "@type": "WebPageElement",
+          "text": "How and when to take it",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Take amlodipine exactly as your doctor has told you, and follow the directions on the label. If you're not sure, check with your doctor or pharmacist.</p>\n\n<p>It's usual to take amlodipine once a day. You can take amlodipine at any time of day, but try to make sure it's around the same time every day.</p>\n\n<h3>How much to take</h3>\n\n<p>Amlodipine comes as 5mg and 10mg tablets.</p>\n\n<p>Depending on why you're taking amlodipine, the usual starting dose is 5mg once a day.</p>\n\n<p>If the starting dose isn't working well enough (your blood pressure doesn't lower enough, or your angina isn't controlled), you may need to increase your dose to 10mg.</p>\n\n<p>To decide the correct dose for you in the longer term, your doctor will check your blood pressure to make sure it's not too high or too low. They'll also ask if you're getting any side effects from the medicine.</p>\n\n<p>Doses may be lower for children.</p>\n\n<h3>How to take it</h3>\n\n<p>You can take amlodipine with or without food.</p>\n\n<p>Swallow amlodipine tablets whole with a drink of water. If it's easier, you can dissolve the tablets in a glass of water, but you must drink it all straight away if you do this.</p>\n\n<p>Do not eat or drink lots of grapefruit or grapefruit juice while you're taking this medicine. Grapefruit can increase the concentration of amlodipine in your body and worsen side effects.</p>\n\n<p>If you're taking amlodipine as a liquid, it'll come with a plastic syringe or spoon to help you measure out the right dose. If you don't have one, ask your pharmacist for one. </p>\n\n<p>Do not use a kitchen teaspoon as it will not give the right amount of medicine. </p>\n\n<p>Do not mix the liquid with food or other drinks before taking it.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 1,
+                  "@type": "WebPageElement",
+                  "name": "Callout",
+                  "identifier": "4",
+                  "text": "<h3>Important</h3>\n\n<p>Take amlodipine even if you feel well, as you'll still be getting the benefits of the medicine.</p>\n"
+              },
+              {
+                  "position": 2,
+                  "identifier": "1",
+                  "text": "<h3>What if I forget to take it?</h3>\n\n<p>If you forget to take a dose of amlodipine, take it as soon as you remember that day and then carry on as normal.</p>\n\n<p>If you forget to take the dose for the whole day, skip the missed dose and carry on as normal the next day. </p>\n\n<p>Do not take a double dose to make up for a forgotten one.</p>\n\n<p>If you forget doses often, it may help to set an alarm to remind you. </p>\n\n<p>You could also ask your pharmacist for advice on other ways to help you remember to take your medicine.</p>\n\n<h3>What if I take too much?</h3>\n\n<ul>\n<li>If you take too much amlodipine by accident, contact your doctor or go to <a href=\"/Service-Search/Hospital/LocationSearch/7/Hospitals\">your nearest hospital</a> straight away.</li>\n<li>An overdose of amlodipine can cause dizziness and sleepiness.</li>\n<li>The amount of amlodipine that can lead to an overdose varies from person to person.</li>\n</ul>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 3,
+                  "@type": "WebPageElement",
+                  "name": "Urgent",
+                  "identifier": "6",
+                  "text": "<h3>Call your doctor or go to A&E straight away if you take too much amlodipine</h3>\n\n<p>If you need to go to an <a href=\"/service-search/Accident-and-emergency-services/LocationSearch/428\">A&amp;E</a>, do not drive yourself - get someone else to drive you or call for an ambulance. </p>\n\n<p>Take the amlodipine packet or leaflet inside it, plus any remaining medicine, with you.</p>\n"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 4,
+          "@type": "WebPageElement",
+          "text": "Side effects",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Like all medicines, amlodipine can cause side effects, although not everyone gets them. </p>\n\n<p>Side effects often improve as your body gets used to the medicine.</p>\n\n<h3>Common side effects</h3>\n\n<p>These common side effects happen in more than 1 in 100 people. They're usually mild and short-lived.</p>\n\n<p>Talk to your doctor or pharmacist if the side effects bother you or last for more than a few days:</p>\n\n<ul>\n<li>headaches</li>\n<li>feeling dizzy</li>\n<li>flushing</li>\n<li>a <a href=\"/conditions/heart-palpitations/\">pounding heartbeat</a></li>\n<li>swollen ankles</li>\n</ul>\n\n<h3>Serious side effects</h3>\n\n<p>Serious side effects after taking amlodipine are rare and happen in less than 1 in 10,000 people.</p>\n\n<p>Call a doctor straight away if you get:</p>\n\n<ul>\n<li>stomach problems - severe pain in your stomach, with or without bloody diarrhoea, feeling sick and being sick (nausea and vomiting) can be signs of <a href=\"/conditions/acute-pancreatitis/\">pancreatitis</a></li>\n<li>yellow skin or the whites of your eyes turn yellow - this can be a sign of liver problems</li>\n<li>chest pain that's new or worse - this needs to be checked out as chest pain is a possible symptom of a <a href=\"/conditions/heart-attack/symptoms/\">heart attack</a> </li>\n</ul>\n\n<h4>Serious allergic reaction</h4>\n\n<p>In rare cases, it's possible to have a  serious allergic reaction <a href=\"/conditions/Anaphylaxis/\">(anaphylaxis)</a> to amlodipine.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 1,
+                  "@type": "WebPageElement",
+                  "name": "Urgent",
+                  "identifier": "6",
+                  "text": "<h3>Contact a doctor straight away if:</h3>\n\n<ul>\n<li>you get a skin rash that may include itchy, red, swollen, blistered or peeling skin</li>\n<li>you're wheezing</li>\n<li>you get tightness in the chest or throat</li>\n<li>you have trouble breathing or talking</li>\n<li>your mouth, face, lips, tongue or throat start swelling</li>\n</ul>\n\n<p>These are warning signs of a serious allergic reaction. </p>\n\n<p>A serious allergic reaction is an emergency.</p>\n"
+              },
+              {
+                  "position": 2,
+                  "identifier": "1",
+                  "text": "<p>These aren't all the side effects of amlodipine. </p>\n\n<p>For a full list, see the leaflet inside your medicine packet.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 3,
+                  "@type": "WebPageElement",
+                  "name": "Information",
+                  "identifier": "3",
+                  "text": "<p>You can report any suspected side effect to the <a href=\"https://yellowcard.mhra.gov.uk/\">UK safety scheme</a>.</p>\n"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 5,
+          "@type": "WebPageElement",
+          "text": "How to cope with side effects",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p><strong>What to do about:</strong></p>\n\n<ul>\n<li><strong>headaches</strong> - make sure you rest and drink plenty of fluids. Do not drink too much alcohol. Ask your pharmacist to recommend a painkiller. Headaches should usually go away after the first week of taking amlodipine. Talk to your doctor if they last longer than a \nweek or are severe.</li>\n<li><strong>feeling dizzy</strong> - if amlodipine makes you feel dizzy, stop what you're doing and sit or lie down until you feel better</li>\n<li><strong>flushing</strong> - try cutting down on coffee, tea and alcohol. It might help to keep the room cool and use a fan. You could also spray your face with cool water or sip cold or iced drinks. The flushing should go away after a few days. If it doesn't go away or it's causing you problems, contact your doctor.</li>\n<li><strong>a pounding heartbeat</strong> - if this happens regularly after you take your medicine, try to take amlodipine at a time when you can sit down (or lie down) when the symptoms are at their worst. It may help to cut down on alcohol, smoking, caffeine and big meals as these may make the problem worse. If you're still having problems after a week, speak to your doctor as they may need to change you to a different type of medicine.</li>\n<li><strong>swollen ankles</strong> - raise your legs when you're sitting down</li>\n</ul>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 6,
+          "@type": "WebPageElement",
+          "text": "Pregnancy and breastfeeding",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>Amlodipine is not normally recommended in pregnancy or when breastfeeding.</p>\n\n<p>If you're trying to get pregnant or you're already pregnant, talk to your doctor about the benefits and possible harms of taking amlodipine. There may be other medicines that are safer for you.</p>\n\n<p>For more information about how amlodipine can affect you and your baby during pregnancy, <a href=\"http://www.medicinesinpregnancy.org/Medicine--pregnancy/Amlodipine/\">read this leaflet on the Best Use of Medicines in Pregnancy (BUMPS) website</a>.</p>\n\n<h3>Amlodipine and breastfeeding</h3>\n\n<p>Small amounts of amlodipine may get into breast milk, but it's not known if this is harmful to the baby. </p>\n\n<p>Talk to your doctor as other medicines might be better while you're breastfeeding.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 1,
+                  "@type": "WebPageElement",
+                  "name": "Primary care",
+                  "identifier": "5",
+                  "text": "<h3>Tell your doctor if you're:</h3>\n\n<ul>\n<li>trying to get pregnant</li>\n<li>pregnant</li>\n<li>breastfeeding</li>\n</ul>\n"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 7,
+          "@type": "WebPageElement",
+          "text": "Cautions with other medicines",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "identifier": "1",
+                  "text": "<p>If you take other medicines that lower blood pressure, such as <a href=\"https://beta.nhs.uk/medicines/ramipril/\">ramipril</a> or <a href=\"https://beta.nhs.uk/medicines/lisinopril/\">lisinopril</a>, at the same time as amlodipine, the combination can sometimes lower your blood pressure too much. </p>\n\n<p>This may make you feel dizzy or faint. If this keeps happening to you, tell your doctor as your dose may need to be changed.</p>\n\n<p>Some medicines can interfere with the way amlodipine works.</p>\n\n<p><strong>Tell your doctor if you're taking any of these medicines before starting amlodipine</strong>:</p>\n\n<ul>\n<li>the antibiotics <a href=\"https://beta.nhs.uk/medicines/clarithromycin/\">clarithromycin</a>, <a href=\"https://beta.nhs.uk/medicines/erythromycin/\">erythromycin</a> or rifampicin</li>\n<li>medicines for high blood pressure, including diltiazem and verapamil</li>\n<li>the antifungals itraconazole or ketoconazole</li>\n<li>medicines to treat HIV or HCV (hepatitis C virus)</li>\n<li>the anti-epilepsy medicines carbamazepine, phenytoin, phenobarbital (phenobarbitone) or primidone</li>\n<li>medicines to suppress your immune system, such as ciclosporin or tacrolimus</li>\n<li>more than 20mg a day of the cholesterol-lowering medicine <a href=\"https://beta.nhs.uk/medicines/simvastatin/\">simvastatin</a></li>\n</ul>\n\n<h3>Mixing amlodipine with herbal remedies or supplements</h3>\n\n<p>St John's wort, a herbal medicine taken for depression, is thought to interfere with the way amlodipine works. </p>\n\n<p>Talk to your doctor if you're thinking about taking St John's wort.</p>\n",
+                  "@type": "WebPageElement",
+                  "name": "markdown"
+              },
+              {
+                  "position": 1,
+                  "@type": "WebPageElement",
+                  "name": "Callout",
+                  "identifier": "4",
+                  "text": "<h3>Important</h3>\n\n<p>Tell your doctor or pharmacist if you're taking any other medicines, including herbal remedies, vitamins or supplements.</p>\n"
+              }
+          ]
+      },
+      {
+          "identifier": "0",
+          "name": "section heading",
+          "position": 8,
+          "@type": "WebPageElement",
+          "text": "Common questions",
+          "mainEntityOfPage": [
+              {
+                  "position": 0,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Amlodipine is a type of medicine called a calcium channel blocker.</p>\n\n<p>Like other calcium channel blockers, amlodipine works in high blood pressure by relaxing and widening blood vessels. </p>\n\n<p>This lowers your blood pressure and makes it easier for your heart to pump blood around your body.</p>\n\n<p>In angina, amlodipine works by improving the blood supply to your heart. </p>\n\n<p>Angina is chest pain that comes on when not enough blood gets to the muscles of the heart. </p>\n\n<p>It usually happens because the arteries to the heart become hardened and narrowed.</p>\n\n<p>Amlodipine widens the arteries so more oxygen gets to the heart and chest pain is prevented.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "How does amlodipine work?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 1,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Amlodipine starts to work on the day you start taking it, but it may take a couple of weeks for full effect.</p>\n\n<p>If you're taking amlodipine for high blood pressure, you may not have any symptoms. </p>\n\n<p>In these cases, you may not feel any different when you take amlodipine. </p>\n\n<p>This doesn't mean that the medicine isn't working - and it's important to keep taking it.</p>\n\n<p>If you're taking amlodipine for angina, it'll probably take a couple of weeks before you feel better. </p>\n\n<p>Until then, you'll still have bouts of chest pain, and you may even find the pain gets worse to start with. </p>\n\n<p>Make sure you have your medicine (spray or tablets) for treating angina attacks with you at all times, and use it if you need to.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "How long does amlodipine take to work?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 2,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Usually, treatment with amlodipine is long term, even for the rest of your life.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "How long will I take it for?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 3,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Amlodipine is generally safe to take for a long time. In fact, it works best when you take it for a long time.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Is amlodipine safe to take for a long time?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 4,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Talk to your doctor if you want to stop taking amlodipine.</p>\n\n<p>Stopping amlodipine may cause your blood pressure to rise, and this may increase your risk of heart attack and stroke.</p>\n\n<p>If you're bothered by side effects, your doctor may be able to prescribe you a different medicine.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "What will happen if I stop taking it?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 5,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Even if your blood pressure is successfully lowered by \namlodipine, it's best to carry on taking it. </p>\n\n<p>If you stop taking amlodipine, your blood pressure could rise back up again.</p>\n\n<p>If you need blood pressure-lowering medicines, you'll probably need to take them for the rest of your life.</p>\n\n<p>Remember, by keeping your blood pressure low, you're protecting yourself against having a heart attack or stroke in the future.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Can I come off amlodipine now my blood pressure is lower?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 6,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Yes, you can drink alcohol with amlodipine. </p>\n\n<p>But drinking alcohol can increase the blood pressure-lowering effect of amlodipine, which can make you feel sleepy, dizzy or bring on a headache. </p>\n\n<p>If this  happens to you, it's best to stop drinking alcohol while you're taking amlodipine.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Can I drink alcohol with it?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 7,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>There are several other calcium channel blockers that work in the same way as amlodipine. </p>\n\n<p>They include <a href=\"https://beta.nhs.uk/medicines/nifedipine/\">nifedipine</a>, <a href=\"https://beta.nhs.uk/medicines/felodipine/\">felodipine</a>, lacidipine and <a href=\"https://beta.nhs.uk/medicines/lercanidipine/\">lercanidipine</a>. </p>\n\n<p>There are other calcium channel blockers, such as diltiazem and verapamil, that have other effects on the heart.</p>\n\n<p>There are also lots of other types of medicines to lower your blood pressure or treat chest pain. </p>\n\n<p>They work in a different way from calcium channel blockers and include:</p>\n\n<ul>\n<li>ACE inhibitors - for example, <a href=\"https://beta.nhs.uk/medicines/ramipril/\">ramipril</a> and <a href=\"https://beta.nhs.uk/medicines/lisinopril/\">lisinopril</a></li>\n<li>angiotensin receptor blockers - for example, <a href=\"https://beta.nhs.uk/medicines/candesartan/\">candesartan</a></li>\n<li>beta blockers - for example, <a href=\"https://beta.nhs.uk/medicines/bisoprolol/\">bisoprolol</a></li>\n<li>tablets that make you pee more (diuretics) - for example, <a href=\"https://beta.nhs.uk/medicines/bendroflumethiazide/\">bendroflumethiazide</a></li>\n</ul>\n\n<p>If you can't take amlodipine or other calcium channel blockers because of side effects, you may be able to switch to another blood pressure-lowering medicine.</p>\n\n<p>Your doctor will advise which one is best for you depending upon your age, ethnicity and medical history.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Are there similar medicines to amlodipine?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 8,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>No, there's no evidence that amlodipine is addictive.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Is amlodipine addictive?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 9,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Amlodipine works as well as other calcium channel blockers for high blood pressure and angina. </p>\n\n<p>The side effects are also similar to other calcium channel blockers.</p>\n\n<p>There are some differences, though, between amlodipine and other calcium channel blockers:</p>\n\n<ul>\n<li>Diltiazem and verapamil have other effects on the heart. These calcium channel blockers are used for other heart problems and can also have other side effects.</li>\n<li>You only need to take amlodipine once a day, but some other calcium channel blockers need to be taken more often.</li>\n</ul>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "What are the differences between amlodipine and other calcium channel blockers?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 10,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Amlodipine will not affect your contraception.</p>\n\n<p>But some types of hormonal methods of contraception, like the <a href=\"/conditions/contraception/combined-contraceptive-pill/\">combined pill</a> and <a href=\"/conditions/contraception/contraceptive-patch/\">contraceptive patch</a>, are not usually recommended for women with high blood pressure.</p>\n\n<p>Talk to your doctor if you're taking combined hormonal contraceptives.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Will it affect my contraception?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 11,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>There's no firm evidence to suggest that taking amlodipine will reduce fertility in either men or women.</p>\n\n<p>There have been a few reports that calcium channel blockers may reduce the fertility of men who are trying to father a child by IVF. </p>\n\n<p>Nothing definite has been proven, but it's thought calcium channel blockers may temporarily alter sperm. </p>\n\n<p>Talk to your fertility specialist if you're worried.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Will it affect my fertility?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 12,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Do not eat or drink lots of grapefruit or grapefruit juice. </p>\n\n<p>This is because grapefruit can increase the concentration of amlodipine in your body and worsen side effects.</p>\n\n<p>Tell your doctor if you have any increased side effects, such as dizziness, flushing or a headache after eating grapefruit or drinking grapefruit juice.</p>\n\n<p>Otherwise, you can eat and drink normally while taking amlodipine.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Is there any food or drink I need to avoid?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 13,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>Amlodipine can make some people feel dizzy. </p>\n\n<p>If this happens to you, do not drive a car, ride a bike, or use tools or machinery until you feel better.</p>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Can I drive or ride a bike?",
+                  "identifier": "12"
+              },
+              {
+                  "position": 14,
+                  "@type": "Question",
+                  "name": "chq",
+                  "acceptedAnswer": {
+                      "@type": "Answer",
+                      "mainEntity": [
+                          {
+                              "position": 0,
+                              "identifier": "1",
+                              "text": "<p>You can boost the health of your heart by making some key lifestyle changes. </p>\n\n<p>These will also help if you have <a href=\"/conditions/high-blood-pressure-hypertension/\">high blood pressure</a> or <a href=\"/conditions/angina/\">angina</a>:</p>\n\n<ul>\n<li><a href=\"/live-well/quit-smoking/\">quit smoking</a> - smoking increases your heart rate and blood pressure. Quitting smoking brings down your blood pressure and relieves heart failure symptoms. Try to avoid secondhand smoke, too.</li>\n<li><a href=\"/live-well/alcohol-support/tips-on-cutting-down-alcohol\">cut down on alcohol</a> - drinking too much alcohol raises blood pressure over time. It makes heart failure worse, too. Try to keep to the recommended guidelines of no more than 14 units of alcohol a week. A standard glass of wine (175ml) is 2 units. A pint of lager or beer is usually 2 to 3 units of alcohol.</li>\n<li><a href=\"/live-well/exercise/\">exercise</a> - regular exercise lowers blood pressure by keeping your heart and blood vessels in good condition. It doesn't need to be too energetic - walking every day will help.</li>\n<li><a href=\"/live-well/eat-well/\">eat well</a> - aim to eat a diet that includes plenty of fruit and veg, wholegrains, fat-free or low-fat dairy products, and lean proteins. It's a good idea to <a href=\"/live-well/eat-well/tips-for-a-lower-salt-diet/\">cut down on salt</a>, too. Eating too much salt is the biggest cause of high blood pressure - the more salt you eat, the higher your blood pressure will be. Aim for no more than 6g of salt a day.</li>\n<li><a href=\"/conditions/stress-anxiety-depression/understanding-stress/\">deal with stress</a> - when you're anxious or upset, your heart beats faster, you breathe more heavily, and your blood pressure often goes up. \nThis can make heart failure worse, too. Find ways to reduce stress in your life. To give your heart a rest, try napping or putting your feet up when possible. Spend time with friends and family to be social and help keep stress at bay.</li>\n<li>vaccinations - if you have <a href=\"/conditions/heart-failure/\">heart failure</a>, it's recommended that you have a <a href=\"/conditions/vaccinations/flu-influenza-vaccine/\">flu jab</a> every year and a pneumonia vaccination (also called the <a href=\"/conditions/vaccinations/pneumococcal-vaccination/\">pneumococcal vaccine</a>) every 5 years. Ask your doctor about these  vaccinations. You can have them free on the NHS.</li>\n</ul>\n",
+                              "@type": "WebPageElement",
+                              "name": "markdown"
+                          }
+                      ]
+                  },
+                  "text": "Can lifestyle changes help?",
+                  "identifier": "12"
+              }
+          ]
+      }
+  ],
+  "relatedLink": [
+      {
+          "name": "Angina",
+          "url": "/conditions/angina/",
+          "description": "Link to Related Condition",
+          "linkRelationship": "Related Condition",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Heart attack",
+          "url": "/conditions/heart-attack/",
+          "description": "Link to Related Condition",
+          "linkRelationship": "Related Condition",
+          "@type": "Link Role"
+      },
+      {
+          "name": "High blood pressure (hypertension)",
+          "url": "/conditions/high-blood-pressure-hypertension/",
+          "description": "Link to Related Condition",
+          "linkRelationship": "Related Condition",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Raynaud's",
+          "url": "/conditions/raynauds/",
+          "description": "Link to Related Condition",
+          "linkRelationship": "Related Condition",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Stroke",
+          "url": "/conditions/stroke/",
+          "description": "Link to Related Condition",
+          "linkRelationship": "Related Condition",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Amlodipine: forum",
+          "url": "https://healthunlocked.com/amlodipine",
+          "description": "Link to Useful Resource",
+          "linkRelationship": "Useful Resource",
+          "@type": "Link Role"
+      },
+      {
+          "name": "Blood Pressure UK: charity",
+          "url": "http://www.bloodpressureuk.org/Home",
+          "description": "Link to Useful Resource",
+          "linkRelationship": "Useful Resource",
+          "@type": "Link Role"
+      },
+      {
+          "name": "British Heart Foundation: charity",
+          "url": "https://www.bhf.org.uk/",
+          "description": "Link to Useful Resource",
+          "linkRelationship": "Useful Resource",
+          "@type": "Link Role"
+      },
+      {
+          "name": "NHS Health Check",
+          "url": "https://www.nhs.uk/conditions/nhs-health-check/",
+          "description": "Link to Useful Resource",
+          "linkRelationship": "Useful Resource",
+          "@type": "Link Role"
+      }
+  ]
+}
