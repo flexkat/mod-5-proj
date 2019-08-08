@@ -10,29 +10,25 @@ import Setup from './containers/Setup'
 class App extends React.Component {
 
   state = {
-    medicines: [
-      {
-        id: 1,
-        name: "paracetamol",
-        user_id: 1
-      },
-      {
-        id: 2,
-        name: "omeprazole",
-      }
-    ],
-    searchTerm: ""
+    medicines: [],
+    usersMedicines: [],
+    searchTerm: "",
+    newDrug: {
+      name: '',
+      dose: '',
+      morning: false,
+      evening: false
+
+    }
   }
 
   componentDidMount() {
     this.setState({
-      medicines: API.medicines
+      medicines: API.medicines,
+      usersMedicines: API.usersMedicines
     })
   }
 
-  userMedicines = () => {
-    return this.state.medicines.filter(medicine => medicine.user_id === 1)
-  }
   setSearchTerm = (value) => {
     this.setState({
       searchTerm: value
@@ -41,21 +37,46 @@ class App extends React.Component {
 
   searchForMedicine = () => {
     if(this.state.searchTerm === "") return []
-    return this.state.medicines.filter(medicine => medicine.name.includes(this.state.searchTerm))
+    const searchTermToLower = this.state.searchTerm.toLowerCase();
+    return this.state.medicines.filter(medicine => medicine.name.toLowerCase().includes(searchTermToLower))
+  }
+
+  editNewMedForUser = (key, value) => {
+    this.setState({
+      newDrug: {
+        ...this.state.newDrug,
+        [key]: value
+      }
+    })
+  }
+
+  addNewMedToUserMed = (e) => {
+    e.preventDefault();
+    this.setState({
+      usersMedicines: [
+        ...this.state.usersMedicines,
+        this.state.newDrug
+      ],
+      newDrug: {
+        name: '',
+        dose: '',
+        morning: false,
+        evening: false
+      }
+    })
   }
 
 
   render() {
-    const medicines = this.searchForMedicine();
-    const userMeds = this.userMedicines();
+    // const medicines = this.searchForMedicine();
     return (
       <Router> 
         <div className="App">
           <Navbar />
           Pill Pal
-          <Route path="/" exact render={() => <Home medicines= {userMeds} />} />
+          <Route path="/" exact render={() => <Home medicines= {this.state.usersMedicines} />} />
           <Route path="/medicine-details" component={MedicineDetails} />
-          <Route path="/setup" render={() => <Setup searchTerm={this.state.searchTerm} medicines={medicines} handleChange={this.setSearchTerm}/>} />
+          <Route path="/setup" render={() => <Setup newDrug={this.state.newDrug} medicines={this.state.medicines} handleChange={this.editNewMedForUser} morning={this.state.newDrug.morning} evening={this.state.newDrug.evening} handleSubmit={this.addNewMedToUserMed}/>} />
         </div>
       </Router>
     );

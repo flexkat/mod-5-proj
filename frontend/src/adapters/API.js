@@ -1,8 +1,13 @@
-// import '../data/medicines?page=1.json'
+import Page1Meds from '../data/medicines1.json'
 
 
-// const medicines = Page1Meds.significantLink.map(link => link.name)
+const medicines = Page1Meds.significantLink.map(link => link)
 
-// export default {
-//   medicines
-// }
+const usersMedicines = Page1Meds.significantLink.filter(link => {
+  return (link.name === 'Adalimumab' || link.name === 'Bumetanide')
+})
+
+export default {
+  medicines,
+  usersMedicines
+}

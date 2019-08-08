@@ -6,7 +6,10 @@ class SearchBar extends React.Component {
     const handleChange = this.props.handleChange
 
     return(
-      <input placeholder="Search for a medicine" value={this.props.searchTerm} onChange={e=>handleChange(e.target.value)}></input>
+      <input 
+        placeholder="Search for a medicine" 
+        value={this.props.searchTerm} 
+        onChange={e=>handleChange(e.target.value)} />
     )
   }
 }
