@@ -5,7 +5,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>Home page
-        <DrugHomeContainer medicines={this.props.medicines}/>
+        <DrugHomeContainer {...this.props} medicines={this.props.medicines} handleClick={this.props.setDrugToDisplay}/>
       </div>
     )
   }

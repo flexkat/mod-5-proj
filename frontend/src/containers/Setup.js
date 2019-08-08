@@ -8,11 +8,11 @@ class Setup extends React.Component {
     return (
       <div>
         <h3>Setup page</h3>
-        <form onSubmit={this.props.handleSubmit}>
-          <select onChange={(e) => this.props.handleChange("name", e.target.value)} value={this.props.newDrug.name}>
+        <form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
+          <select onChange={(e) => this.props.handleChange("id", e.target.value)} value={this.props.newDrug.id}>
             <option value="">Select a medicine</option>
             {
-              this.props.medicines.map(med => <option value={med.name}>{med.name}</option>)
+              this.props.medicines.map(med => <option value={med.url}>{med.name}</option>)
             }
           </select>
           <br/>

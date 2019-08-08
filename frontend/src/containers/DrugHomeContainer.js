@@ -7,7 +7,7 @@ class DrugHomeContainer extends React.Component {
       <div>
         My medicines
         {
-          this.props.medicines.map(medicine => <DrugDisplay medicine={medicine}/>)
+          this.props.medicines.map(medicine => <DrugDisplay {...this.props} medicine={medicine} handleClick={this.props.handleClick}/>)
         }
         
       </div>

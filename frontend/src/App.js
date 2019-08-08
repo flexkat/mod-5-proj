@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import API from './adapters/API'
 import './App.css';
 import Navbar from './components/Navbar'
@@ -12,9 +13,8 @@ class App extends React.Component {
   state = {
     medicines: [],
     usersMedicines: [],
-    searchTerm: "",
     newDrug: {
-      name: '',
+      id: '',
       dose: '',
       morning: false,
       evening: false
@@ -50,20 +50,67 @@ class App extends React.Component {
     })
   }
 
-  addNewMedToUserMed = (e) => {
+  addNewMedToUserMed = (e, history) => {
     e.preventDefault();
+    const drugName = this.state.medicines.find(med => med.url === this.state.newDrug.id)
     this.setState({
       usersMedicines: [
         ...this.state.usersMedicines,
-        this.state.newDrug
+        {...this.state.newDrug, name: drugName.name}
       ],
       newDrug: {
-        name: '',
+        id: '',
         dose: '',
         morning: false,
         evening: false
       }
+    }, () => setTimeout(()=> this.redirectToHome(history), 500))
+  }
+
+  updateUserMed = (e, history) => {
+    e.preventDefault();
+    const updatedUserMeds = this.state.usersMedicines.map(med => {
+      if(med.id !== this.state.newDrug.id) return med
+      return this.state.newDrug
     })
+    this.setState({
+      usersMedicines: updatedUserMeds
+    }, () => setTimeout(()=> this.redirectToHome(history), 500))
+  }
+
+  setDrugToDisplay = (drug, history) => {
+    this.setState({
+      newDrug: { 
+        id: drug.id,
+        name: drug.name,
+        dose: drug.dose,
+        morning: drug.morning,
+        evening: drug.evening
+      }
+    }, () => setTimeout(()=> this.redirectToMedicineDetails(history), 500))
+  }
+
+  deleteMed = (history) => {
+    const remainingUserMeds = this.state.usersMedicines.filter(med => med.id !== this.state.newDrug.id)
+    this.setState({
+      usersMedicines: remainingUserMeds,
+      newDrug: {
+        id: '',
+        dose: '',
+        morning: false,
+        evening: false
+      }
+    }, () => setTimeout(()=> this.redirectToHome(history), 500))
+  }
+
+  redirectToHome = (history) => {
+    console.log("changing page....")
+    console.log(history)
+    history.push(`/`)
+  }
+
+  redirectToMedicineDetails = (history) => {
+    history.push('/medicine-details')
   }
 
 
@@ -74,9 +121,9 @@ class App extends React.Component {
         <div className="App">
           <Navbar />
           Pill Pal
-          <Route path="/" exact render={() => <Home medicines= {this.state.usersMedicines} />} />
-          <Route path="/medicine-details" component={MedicineDetails} />
-          <Route path="/setup" render={() => <Setup newDrug={this.state.newDrug} medicines={this.state.medicines} handleChange={this.editNewMedForUser} morning={this.state.newDrug.morning} evening={this.state.newDrug.evening} handleSubmit={this.addNewMedToUserMed}/>} />
+          <Route path="/" exact render={(props) => <Home {...props} medicines= {this.state.usersMedicines} setDrugToDisplay={this.setDrugToDisplay}/>} />
+          <Route path="/medicine-details" render={(props) => <MedicineDetails {...props} medicine = {this.state.newDrug} handleChange={this.editNewMedForUser} handleSubmit={this.updateUserMed} deleteMed={this.deleteMed}/>} />
+          <Route path="/setup" render={(props) => <Setup {...props} newDrug={this.state.newDrug} medicines={this.state.medicines} handleChange={this.editNewMedForUser} handleSubmit={this.addNewMedToUserMed}/>} />
         </div>
       </Router>
     );
