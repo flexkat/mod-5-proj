@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'semantic-ui-react'
 
 class MedicineDetails extends React.Component {
   render() {
@@ -25,8 +26,8 @@ class MedicineDetails extends React.Component {
             <label for="evening">Evening</label>
           </div>
           <br/>
-          <input type="submit" value='Update medicine'/>
-          <button value="Delete" onClick={() => this.props.deleteMed(this.props.history)}>Delete Medicine</button>
+          <Button value='Update medicine'>Update Medicine</Button>
+          <Button basic color='red' value="Delete" onClick={() => this.props.deleteMed(this.props.history)}>Delete Medicine</Button>
         </form>
       </div>
     )

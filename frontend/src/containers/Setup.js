@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchBar from '../components/SearchBar';
 // import { Dropdown } from 'semantic-ui-react';
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 class Setup extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class Setup extends React.Component {
     return (
       <div>
         <h3>Setup page</h3>
-        <form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
+        <Form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
           <select onChange={(e) => this.props.handleChange("id", e.target.value)} value={this.props.newDrug.id}>
             <option value="">Select a medicine</option>
             {
@@ -24,17 +25,14 @@ class Setup extends React.Component {
             <option value="40">40mg</option>
           </select>
           <p>Select when you take the medicine:</p>  
-          <div>
-            <input type="checkbox" id="morning" name="morning" checked={morning} onChange={(e) => this.props.handleChange("morning", !morning)}/>
-            <label for="morning">Morning</label>
-          </div>
-          <div>
-            <input type="checkbox" id="evening" name="evening" checked={evening} onChange={(e) => this.props.handleChange("evening", !evening)}/>
-            <label for="evening">Evening</label>
-          </div>
-          <br/>
-          <input type="submit" value='Add new medicine'/>
-        </form>
+          <Form.Field>
+            <Checkbox type="checkbox" id="morning" name="morning" checked={morning} onChange={(e) => this.props.handleChange("morning", !morning)} label="Morning"/>
+          </Form.Field>
+          <Form.Field>
+            <Checkbox type="checkbox" id="evening" name="evening" checked={evening} onChange={(e) => this.props.handleChange("evening", !evening)} label="Evening"/>
+          </Form.Field>
+          <Button type="submit">Add new medicine</Button>
+        </Form>
       </div>
     )
   }

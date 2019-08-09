@@ -87,7 +87,7 @@ class App extends React.Component {
         morning: drug.morning,
         evening: drug.evening
       }
-    }, () => setTimeout(()=> this.redirectToMedicineDetails(history), 500))
+    }, () => this.redirectToMedicineDetails(history))
   }
 
   deleteMed = (history) => {
