@@ -11,8 +11,12 @@ import Setup from './containers/Setup'
 class App extends React.Component {
 
   state = {
+    user: {
+      name: 'Jane'
+    },
     medicines: [],
     usersMedicines: [],
+    userMedicineDetails: [],
     newDrug: {
       id: '',
       dose: '',
@@ -25,7 +29,8 @@ class App extends React.Component {
   componentDidMount() {
     this.setState({
       medicines: API.medicines,
-      usersMedicines: API.usersMedicines
+      usersMedicines: API.usersMedicines,
+      userMedicineDetails: API.userMedicineDetails
     })
   }
 
@@ -121,8 +126,8 @@ class App extends React.Component {
         <div className="App">
           <Navbar />
           Pill Pal
-          <Route path="/" exact render={(props) => <Home {...props} medicines= {this.state.usersMedicines} setDrugToDisplay={this.setDrugToDisplay}/>} />
-          <Route path="/medicine-details" render={(props) => <MedicineDetails {...props} medicine = {this.state.newDrug} handleChange={this.editNewMedForUser} handleSubmit={this.updateUserMed} deleteMed={this.deleteMed}/>} />
+          <Route path="/" exact render={(props) => <Home {...props} medicines= {this.state.usersMedicines} setDrugToDisplay={this.setDrugToDisplay} user={this.state.user}/>} />
+          <Route path="/medicine-details" render={(props) => <MedicineDetails {...props} medicine = {this.state.newDrug} medicineDetails={this.state.userMedicineDetails} handleChange={this.editNewMedForUser} handleSubmit={this.updateUserMed} deleteMed={this.deleteMed}/>} />
           <Route path="/setup" render={(props) => <Setup {...props} newDrug={this.state.newDrug} medicines={this.state.medicines} handleChange={this.editNewMedForUser} handleSubmit={this.addNewMedToUserMed}/>} />
         </div>
       </Router>

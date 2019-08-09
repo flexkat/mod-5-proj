@@ -3,6 +3,17 @@ import { Icon, Segment, Radio, Button } from 'semantic-ui-react'
 
 
 class DrugDisplay extends React.Component {
+
+  state = {
+    clicked: false
+  }
+
+  handleClick = () => {
+    this.setState({
+      clicked: true  
+    })
+  }
+
   render() {
     return(
       <>
@@ -10,8 +21,8 @@ class DrugDisplay extends React.Component {
         <Icon name='pills' />{this.props.medicine.name}
       </Segment>
       <Button.Group>
-        <Button onClick={console.log}>Missed</Button>
-        <Button positive onClick={console.log}>Taken</Button>
+        <Button disabled={this.state.clicked} onClick={this.handleClick}>Missed</Button>
+        <Button disabled={this.state.clicked} positive onClick={this.handleClick}>Taken</Button>
       </Button.Group>
       </>
     )
