@@ -7,6 +7,10 @@ import Home from './containers/Home'
 import MedicineDetails from './containers/MedicineDetails'
 import Setup from './containers/Setup'
 import { getDrugId, getDate } from './utils/medicines';
+import { connect } from 'react-redux';
+import { saveFetchedMedicines } from './actions/medicinesActions';
+
+
 
 class App extends React.Component {
 
@@ -28,11 +32,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getUserMedicines()
-    API.getMedicines().then(medicines => 
-      this.setState({
-        medicines: medicines
-      })
-    )
+    API.getMedicines().then(medicines => this.props.saveFetchedMedicines(medicines))
   }
 
   getUserMedicines = () => {
@@ -142,6 +142,7 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.usersMedicines)
+    console.log(this.props)
     return (
       <Router> 
         <div className="App">
@@ -163,11 +164,19 @@ class App extends React.Component {
             handleSubmit={this.updateUserMed} 
             deleteMed={this.deleteMed}/>} 
           />
-          <Route path="/setup" render={(props) => <Setup {...props} resetNewDrugState={this.resetNewDrugState} newDrug={this.state.newDrug} medicines={this.state.medicines} handleChange={this.editNewMedForUser} handleSubmit={this.addNewMedToUserMed}/>} />
+          <Route path="/setup" render={(props) => <Setup {...props} resetNewDrugState={this.resetNewDrugState} newDrug={this.state.newDrug} medicines={this.props.medicines} handleChange={this.editNewMedForUser} handleSubmit={this.addNewMedToUserMed}/>} />
         </div>
       </Router>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  medicines: state.medicinesReducer.medicines
+ })
+
+ const mapDispatchToProps = dispatch => ({
+  saveFetchedMedicines: (medicines) => dispatch(saveFetchedMedicines(medicines))
+ })
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

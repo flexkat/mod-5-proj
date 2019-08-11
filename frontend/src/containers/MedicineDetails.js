@@ -10,8 +10,7 @@ class MedicineDetails extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.medicine && this.props.medicine.url) 
-    {
+    if (this.props.medicine && this.props.medicine.url) {
       const splitUrl = this.props.medicine.url.split("www")
       const joinedApiUrl = splitUrl[0] + "api" + splitUrl[1]
       API.getMedicineDetails(joinedApiUrl)
