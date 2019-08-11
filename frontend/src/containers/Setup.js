@@ -1,19 +1,23 @@
 import React from 'react'
-import SearchBar from '../components/SearchBar';
-// import { Dropdown } from 'semantic-ui-react';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 class Setup extends React.Component {
+  
+  componentDidMount() {
+    this.props.resetNewDrugState();
+  }
+
   render() {
     const {morning, evening} = this.props.newDrug
+
     return (
       <div>
         <h3>Setup page</h3>
         <Form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
-          <select onChange={(e) => this.props.handleChange("id", e.target.value)} value={this.props.newDrug.id}>
+          <select onChange={(e) => this.props.handleChange("url", e.target.value)} value={this.props.newDrug.id}>
             <option value="">Select a medicine</option>
             {
-              this.props.medicines.map(med => <option value={med.url}>{med.name}</option>)
+              this.props.medicines.map(med => <option key={med.url} value={med.url}>{med.name}</option>)
             }
           </select>
           <br/>

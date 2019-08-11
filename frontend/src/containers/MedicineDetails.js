@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import { Button, Form, Checkbox } from 'semantic-ui-react'
 
 class MedicineDetails extends React.Component {
@@ -23,10 +24,9 @@ class MedicineDetails extends React.Component {
     })
   }
   render() {
+    if(!this.props.medicineDetails) return <Redirect to="/" />
     const {morning, evening} = this.props.medicine
     
-    // const jsSideEffects = new DOMParser().parseFromString(sideEffects[0].text, 'text/html')
-    // console.log(jsSideEffects)
     return (
       <div>Medicine Details page
         <h3>{this.props.medicine.name}</h3>
@@ -50,8 +50,7 @@ class MedicineDetails extends React.Component {
             <Button value='Update medicine'>Update Medicine</Button>
             <Button basic color='red' value="Delete" onClick={() => this.props.deleteMed(this.props.history)}>Delete Medicine</Button>
           </form>) : null }
-        <p>Side effects:</p>
-        {this.sideEffects().map(obj => <>{obj.text}</>)}
+        {this.sideEffects().map(obj => <div key={obj.position} dangerouslySetInnerHTML={{ __html: obj.text}} />)}
       </div>
     )
   }

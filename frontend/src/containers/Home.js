@@ -7,7 +7,12 @@ class Home extends React.Component {
     return (
       <div>Home page
         <Header as='h2'>Welcome back {this.props.user.name}</Header>
-        <DrugHomeContainer {...this.props} medicines={this.props.medicines} handleClick={this.props.setDrugToDisplay}/>
+        <DrugHomeContainer 
+          {...this.props} 
+          medicines={this.props.medicines} 
+          handleClick={this.props.setDrugToDisplay}
+          setMedicineTaken={this.props.setMedicineTaken}
+          />
       </div>
     )
   }

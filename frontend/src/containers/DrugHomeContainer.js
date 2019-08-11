@@ -7,7 +7,12 @@ class DrugHomeContainer extends React.Component {
       <div>
         My medicines
         {
-          this.props.medicines.map(medicine => <DrugDisplay {...this.props} medicine={medicine} handleClick={this.props.handleClick}/>)
+          this.props.medicines.map(medicine => (
+          medicine.morning ? <DrugDisplay setMedicineTaken={this.props.setMedicineTaken} key={medicine.id} {...this.props} time="AM" medicine={medicine} handleClick={this.props.handleClick}/> : null))
+        }
+        {
+          this.props.medicines.map(medicine => (
+          medicine.evening ? <DrugDisplay setMedicineTaken={this.props.setMedicineTaken} key={medicine.id} {...this.props} time="PM" medicine={medicine} handleClick={this.props.handleClick}/> : null))
         }
         
       </div>
