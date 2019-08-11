@@ -29,7 +29,7 @@ class DrugDisplay extends React.Component {
             onClick={() => this.props.handleClick(this.props.medicine, this.props.history)}
             style={{cursor: 'pointer'}}
           >
-            <Icon name='pills' />{this.props.medicine.name} - {this.props.medicine.dose}
+            <Icon name='pills' />{this.props.medicine.name} - {this.props.medicine.dose}mg
           </Segment>
         </Grid.Column>
         <Grid.Column>
