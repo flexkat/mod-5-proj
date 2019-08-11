@@ -16,7 +16,6 @@ class App extends React.Component {
     },
     medicines: [],
     usersMedicines: [],
-    userMedicineDetails: null,
     newDrug: {
       id: '',
       dose: '',
@@ -27,11 +26,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      medicines: API.medicines,
-      usersMedicines: API.usersMedicines,
-      userMedicineDetails: API.userMedicineDetails
-    })
+    this.getUserMedicines()
+    API.getMedicines().then(medicines => 
+      this.setState({
+        medicines: medicines
+      })
+    )
+  }
+
+  getUserMedicines = () => {
+    return API.getUserMedicines()
+    .then(usersMedicines => 
+      this.setState({
+        usersMedicines: usersMedicines,
+      }))
   }
 
   editNewMedForUser = (key, value) => {
@@ -54,8 +62,6 @@ class App extends React.Component {
     })
   }
 
-
-  // needs persistence
   addNewMedToUserMed = (e, history) => {
     e.preventDefault();
     const drugName = this.state.medicines.find(med => med.url === this.state.newDrug.url)
@@ -65,15 +71,13 @@ class App extends React.Component {
       console.log(`${drugId} exists`)
       return
     }
-    
-    return this.setState({
-      usersMedicines: [
-        ...this.state.usersMedicines,
-        {...this.state.newDrug, name: drugName.name, id: drugId}
-      ]
-    }, () => {
-      this.resetNewDrugState();
-      setTimeout(()=> this.redirectToHome(history), 500)
+    API.postNewMedicine({...this.state.newDrug, name: drugName.name, composite_id: drugId, user_id: 1})
+    .then(() => {
+      this.getUserMedicines()
+      .then(() => {
+        this.resetNewDrugState();
+        setTimeout(()=> this.redirectToHome(history), 500)
+      })
     })
   }
 
@@ -106,11 +110,7 @@ class App extends React.Component {
   setDrugToDisplay = (drug, history) => {
     this.setState({
       newDrug: { 
-        id: drug.id,
-        name: drug.name,
-        dose: drug.dose,
-        morning: drug.morning,
-        evening: drug.evening
+        ...drug
       }
     }, () => this.redirectToMedicineDetails(history))
   }
@@ -153,7 +153,7 @@ class App extends React.Component {
           <Route path="/" exact render={(props) => 
             <Home 
               {...props} 
-              medicines= {this.state.usersMedicines} 
+              medicines={this.state.usersMedicines} 
               setDrugToDisplay={this.setDrugToDisplay} 
               user={this.state.user}
               setMedicineTaken={this.setMedicineTaken}
@@ -162,7 +162,6 @@ class App extends React.Component {
           <Route path="/medicine-details" render={(props) => <MedicineDetails 
             {...props} 
             medicine = {this.state.newDrug} 
-            medicineDetails={this.state.userMedicineDetails} 
             handleChange={this.editNewMedForUser} 
             handleSubmit={this.updateUserMed} 
             deleteMed={this.deleteMed}/>} 

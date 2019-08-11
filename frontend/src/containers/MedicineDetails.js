@@ -1,17 +1,29 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { Button, Form, Checkbox } from 'semantic-ui-react'
+import API from '../adapters/API'
 
 class MedicineDetails extends React.Component {
 
   state = {
-    showEditForm: false
+    showEditForm: false,
+    medicineData: null
+  }
+
+  componentDidMount() {
+    if (this.props.medicine && this.props.medicine.url) 
+    {
+      const splitUrl = this.props.medicine.url.split("www")
+      const joinedApiUrl = splitUrl[0] + "api" + splitUrl[1]
+      API.getMedicineDetails(joinedApiUrl)
+      .then(medicineData => this.setState({ medicineData }))
+    }
   }
 
   sideEffects = () => {
-    if (this.props.medicineDetails === undefined) return null
+    if (this.state.medicineData === null) return []
     else {
-      const mainEntry = this.props.medicineDetails.mainEntityOfPage
+      const mainEntry = this.state.medicineData.mainEntityOfPage
       const sideEffectsObject = mainEntry.find(obj => obj.text === "Side effects")
       const sideEffects = sideEffectsObject.mainEntityOfPage
       return sideEffects
@@ -24,7 +36,6 @@ class MedicineDetails extends React.Component {
     })
   }
   render() {
-    if(!this.props.medicineDetails) return <Redirect to="/" />
     const {morning, evening} = this.props.medicine
     
     return (

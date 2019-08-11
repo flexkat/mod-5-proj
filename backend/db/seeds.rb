@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+UserMedicine.destroy_all
+
+UserMedicine.create(
+  name: "Amlodipine",
+  user_id: 1,
+  dose: 20,
+  morning: true,
+  evening: false,
+  url: "https://www.nhs.uk/medicines/amlodipine/",
+  composite_id: "https://www.nhs.uk/medicines/amlodipine/-20-A"
+)

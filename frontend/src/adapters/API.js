@@ -1,29 +1,50 @@
-import { getDrugId } from '../utils/medicines';
-
 import Page1Meds from '../data/medicines1.json'
 import amlodipine from '../data/medicines-Amlodipine.json'
+const USER_MEDICINES_URL = "http://localhost:3000/user_medicines"
 
 
-const medicines = Page1Meds.significantLink.map(link => link)
+const getUserMedicines = () => {
+  return fetch(USER_MEDICINES_URL)
+  .then(res=>res.json())
+}
 
-const userMeds = Page1Meds.significantLink.filter(link => {
-  return (link.name === 'Amlodipine' || link.name === 'Bumetanide')
-})
+const fetchNHS = (url) => {
+  return fetch(url, {
+    headers: {
+        "subscription-key": "159945d574ec4a5a8dc5b2d522203695"
+      }
+    }
+  )
+  .then(res => res.json())
+}
 
-const usersMedicines = userMeds.map(med => {return {
-  id: getDrugId({ url: med.url, dose: 20, morning: true, evening: false }),
-  name: med.name,
-  dose: 20,
-  morning: true,
-  evening: false,
-  url: med.url
-}})
+const getMedicines = () => {
+  // return fetchNHS("https://api.nhs.uk/medicines?page=2")
+  // .then(data => data.significantLink)
+  return Promise.resolve(Page1Meds.significantLink)
+}
 
-const userMedicineDetails = amlodipine;
+const getMedicineDetails = (url) => {
+  // return fetchNHS(url) 
+  return Promise.resolve(amlodipine)
+}
+
+const postNewMedicine = (userMedicine) => {
+  return fetch(USER_MEDICINES_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userMedicine)
+  })
+  .then(res => res.json())
+}
 
 export default {
-  medicines,
-  usersMedicines,
-  userMedicineDetails
+  fetchNHS,
+  getUserMedicines,
+  getMedicines,
+  getMedicineDetails,
+  postNewMedicine
 }
 
