@@ -10,24 +10,16 @@ class UserMedicinesController < ApplicationController
   end
 
   def update
-    medicine = UserMedicine.find_by(composite_id: params[:composite_id])
+    medicine = UserMedicine.find_by(id: params[:id])
     medicine.update(user_medicine_params)
-    render json: UserMedicinesSerializer.new(medicine.to_serialized_json)
+    render json: {info: "Medicine updated"}
   end
 
   def destroy
-    medicine = UserMedicine.find_by(composite_id: params[:composite_id])
+    medicine = UserMedicine.find_by(id: params[:id])
     medicine.destroy
     render json: {info: 'User medicine deleted!'}
   end
-
-
-# def destroy
-#     order = Order.find_by(id: params[:id])
-#     id = order.id
-#     order.destroy
-#     render json: {info: 'Order Deleted!', orderId: id}
-# end
 
   private 
   def user_medicine_params 

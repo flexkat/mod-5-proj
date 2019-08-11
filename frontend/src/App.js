@@ -12,7 +12,8 @@ class App extends React.Component {
 
   state = {
     user: {
-      name: 'Jane'
+      name: 'Jane',
+      id: 1
     },
     medicines: [],
     usersMedicines: [],
@@ -72,39 +73,26 @@ class App extends React.Component {
       return
     }
     API.postNewMedicine({...this.state.newDrug, name: drugName.name, composite_id: drugId, user_id: 1})
+    .then(() => this.resetStateAndRedirect(history))
+  }
+
+  resetStateAndRedirect = (history) => {
+    this.getUserMedicines()
     .then(() => {
-      this.getUserMedicines()
-      .then(() => {
-        this.resetNewDrugState();
-        setTimeout(()=> this.redirectToHome(history), 500)
-      })
+      this.resetNewDrugState();
+      setTimeout(()=> this.redirectToHome(history), 500)
     })
   }
 
-  // needs persistence
   updateUserMed = (e, history) => {
     e.preventDefault();
-    const updatedUserMeds = this.state.usersMedicines.map(med => {
-      if(med.id !== this.state.newDrug.id) return med
-      return this.state.newDrug
-    })
-    this.setState({
-      usersMedicines: updatedUserMeds
-    }, () => setTimeout(()=> this.redirectToHome(history), 500))
+    API.patchNewMedicine(this.state.newDrug)
+    .then(() => this.resetStateAndRedirect(history))
   }
  
-  // needs persistence
   deleteMed = (history) => {
-    const remainingUserMeds = this.state.usersMedicines.filter(med => med.id !== this.state.newDrug.id)
-    this.setState({
-      usersMedicines: remainingUserMeds,
-      newDrug: {
-        id: '',
-        dose: '',
-        morning: false,
-        evening: false
-      }
-    }, () => setTimeout(()=> this.redirectToHome(history), 500))
+    API.deleteUserMedicine(this.state.newDrug)
+    .then(() => this.resetStateAndRedirect(history))
   }
 
   setDrugToDisplay = (drug, history) => {
@@ -144,7 +132,6 @@ class App extends React.Component {
   
 
   render() {
-    // const medicines = this.searchForMedicine();
     return (
       <Router> 
         <div className="App">

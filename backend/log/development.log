@@ -1006,3 +1006,395 @@ Processing by UserMedicinesController#index as */*
 Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:38:11 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (2.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:40:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (52.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 56ms (Views: 3.2ms | ActiveRecord: 52.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:40:28 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:40:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:41:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:42:12 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:43:16 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (69.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 73ms (Views: 3.6ms | ActiveRecord: 69.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:43:26 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:46:04 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (2.1ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/user_medicines/8" for ::1 at 2019-08-11 14:46:45 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (18.1ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 80ms (Views: 0.2ms | ActiveRecord: 53.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:46:46 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/user_medicines/10" for ::1 at 2019-08-11 14:47:16 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUserMedicine Load (1.5ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (11.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (4.9ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 30ms (Views: 0.5ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:47:16 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/user_medicines/9" for ::1 at 2019-08-11 14:47:36 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUserMedicine Load (1.2ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (5.2ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 22.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:47:36 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/user_medicines/6" for ::1 at 2019-08-11 14:47:41 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (0.4ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 13ms (Views: 1.3ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:47:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.1ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/user_medicines/7" for ::1 at 2019-08-11 14:47:49 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mUserMedicine Load (65.2ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (14.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (1.0ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 94ms (Views: 0.2ms | ActiveRecord: 90.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:47:50 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:50:10 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (35.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 66ms (Views: 14.5ms | ActiveRecord: 50.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:50:14 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (57.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 60ms (Views: 2.0ms | ActiveRecord: 57.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:54:22 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:55:33 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (49.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 52ms (Views: 2.0ms | ActiveRecord: 49.7ms)
+
+
+Started DELETE "/user_medicines/3" for ::1 at 2019-08-11 14:55:40 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (31.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (6.5ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 75ms (Views: 0.3ms | ActiveRecord: 69.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:55:40 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (24.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 27ms (Views: 1.7ms | ActiveRecord: 24.9ms)
+
+
+Started DELETE "/user_medicines/2" for ::1 at 2019-08-11 14:55:47 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUserMedicine Load (13.0ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (0.6ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:55:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (4.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 4.9ms)
+
+
+Started DELETE "/user_medicines/5" for ::1 at 2019-08-11 14:55:50 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUserMedicine Load (7.8ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (1.7ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:55:50 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (3.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 3.3ms)
+
+
+Started DELETE "/user_medicines/4" for ::1 at 2019-08-11 14:55:54 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUserMedicine Load (23.7ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (7.2ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 39.2ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:55:54 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 14:59:08 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (3.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 69ms (Views: 46.2ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 15:00:07 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 15:00:13 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/user_medicines/1" for ::1 at 2019-08-11 15:00:20 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"1", "name"=>"Amlodipine", "dose"=>"20", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/amlodipine/-20-A", "url"=>"https://www.nhs.uk/medicines/amlodipine/", "user_id"=>1, "created_at"=>"2019-08-11T11:16:12.858Z", "updated_at"=>"2019-08-11T11:16:12.858Z", "user_medicine"=>{"id"=>"1", "name"=>"Amlodipine", "dose"=>"20", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/amlodipine/-20-A", "url"=>"https://www.nhs.uk/medicines/amlodipine/", "user_id"=>1, "created_at"=>"2019-08-11T11:16:12.858Z", "updated_at"=>"2019-08-11T11:16:12.858Z"}}
+  [1m[36mUserMedicine Load (20.3ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (19.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (1.1ms)[0m  [1m[33mUPDATE "user_medicines" SET "evening" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["evening", true], ["updated_at", "2019-08-11 14:00:20.586585"], ["id", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 52ms (Views: 0.2ms | ActiveRecord: 44.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 15:00:20 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (4.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 15:00:26 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/user_medicines" for ::1 at 2019-08-11 15:00:41 +0100
+Processing by UserMedicinesController#create as */*
+  Parameters: {"url"=>"https://www.nhs.uk/medicines/bisacodyl/", "dose"=>"10", "morning"=>true, "evening"=>false, "name"=>"Bisacodyl", "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "user_id"=>1, "user_medicine"=>{"name"=>"Bisacodyl", "dose"=>"10", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "url"=>"https://www.nhs.uk/medicines/bisacodyl/", "user_id"=>1}}
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:8
+  [1m[36mUserMedicine Create (31.8ms)[0m  [1m[32mINSERT INTO "user_medicines" ("name", "dose", "morning", "evening", "composite_id", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Bisacodyl"], ["dose", "10"], ["morning", true], ["evening", false], ["composite_id", "https://www.nhs.uk/medicines/bisacodyl/-10-A"], ["url", "https://www.nhs.uk/medicines/bisacodyl/"], ["user_id", 1], ["created_at", "2019-08-11 14:00:41.515119"], ["updated_at", "2019-08-11 14:00:41.515119"]]
+  ↳ app/controllers/user_medicines_controller.rb:8
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:8
+Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 36.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 15:00:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 15:01:12 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/user_medicines/11" for ::1 at 2019-08-11 15:01:19 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"11", "name"=>"Bisacodyl", "dose"=>"30", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "url"=>"https://www.nhs.uk/medicines/bisacodyl/", "user_id"=>1, "created_at"=>"2019-08-11T14:00:41.515Z", "updated_at"=>"2019-08-11T14:00:41.515Z", "user_medicine"=>{"id"=>"11", "name"=>"Bisacodyl", "dose"=>"30", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "url"=>"https://www.nhs.uk/medicines/bisacodyl/", "user_id"=>1, "created_at"=>"2019-08-11T14:00:41.515Z", "updated_at"=>"2019-08-11T14:00:41.515Z"}}
+  [1m[36mUserMedicine Load (15.7ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (3.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (7.8ms)[0m  [1m[33mUPDATE "user_medicines" SET "dose" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["dose", "30"], ["updated_at", "2019-08-11 14:01:19.869062"], ["id", 11]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 29.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 15:01:19 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 15:05:32 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-11 15:05:55 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+

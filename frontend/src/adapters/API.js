@@ -40,11 +40,30 @@ const postNewMedicine = (userMedicine) => {
   .then(res => res.json())
 }
 
+const deleteUserMedicine = (userMedicine) => {
+  return fetch(`${USER_MEDICINES_URL}/${userMedicine.id}`, {
+    method: "DELETE"
+  })
+}
+
+const patchNewMedicine = (userMedicine) => {
+  return fetch(`${USER_MEDICINES_URL}/${userMedicine.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userMedicine)
+  })
+  .then(res => res.json())
+}
+
 export default {
   fetchNHS,
   getUserMedicines,
   getMedicines,
   getMedicineDetails,
-  postNewMedicine
+  postNewMedicine,
+  deleteUserMedicine,
+  patchNewMedicine
 }
 
