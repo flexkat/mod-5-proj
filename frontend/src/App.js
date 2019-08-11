@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './containers/Home'
 import MedicineDetails from './containers/MedicineDetails'
 import Setup from './containers/Setup'
-import { getDrugId } from './utils/medicines';
+import { getDrugId, getDate } from './utils/medicines';
 
 class App extends React.Component {
 
@@ -112,15 +112,24 @@ class App extends React.Component {
   }
 
 
-  setMedicineTaken = (taken, medicine) => {
+  setMedicineTaken = (taken, medicine, time) => {
     const updatedUserMedicines = this.state.usersMedicines.map(med => {
       if(med.id !== medicine.id) return med;
-
+      const currentDrugHistory = med.history ? med.history[getDate()] : {};
       return {
         ...med,
         history: {
           ...med.history,
-          [new Date().toUTCString()]: taken
+          [getDate()]: {
+            status: {
+              ...currentDrugHistory.status,
+              [time]: taken
+            },
+            clicked: {
+              ...currentDrugHistory.clicked,
+              [time]: true
+            }
+          }
         }
       }
     })

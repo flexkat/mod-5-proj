@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon, Segment, Button, Grid } from 'semantic-ui-react'
+import { getDate } from '../utils/medicines';
 
 
 class DrugDisplay extends React.Component {
@@ -7,35 +8,28 @@ class DrugDisplay extends React.Component {
   state = {
     clicked: false,
     doseTaken: false,
-    currentDate: new Date().toUTCString()
-  }
-
-  handleClick = (e) => {
-    const now = new Date();
-    console.log(now);
-    this.setState({
-      clicked: true
-    })
+    currentDate: getDate()
   }
 
   render() {
-    // const medicineTaken = this.props.medicine.history[this.state.currentDate];
-    // console.log(medicineTaken) 
+    const {handleClick, setMedicineTaken, medicine, time }  = this.props;
+    const {name, dose, history} = medicine;
+
     return(
       <Grid columns="equal">
-        <Grid.Column>{this.props.time}</Grid.Column>
+        <Grid.Column>{time}</Grid.Column>
         <Grid.Column width={8}>
           <Segment 
-            onClick={() => this.props.handleClick(this.props.medicine, this.props.history)}
+            onClick={() => handleClick(medicine, this.props.history)}
             style={{cursor: 'pointer'}}
           >
-            <Icon name='pills' />{this.props.medicine.name} - {this.props.medicine.dose}mg
+            <Icon name='pills' />{name} - {dose}mg {history && history[this.state.currentDate].clicked[time] && ` - ${history[this.state.currentDate].status[time] ? 'Taken' : 'Missed'}`}
           </Segment>
         </Grid.Column>
         <Grid.Column>
           <Button.Group>
-            <Button disabled={this.state.clicked} onClick={(e) => this.props.setMedicineTaken(false, this.props.medicine)} value="missed">Missed</Button>
-            <Button disabled={this.state.clicked} positive onClick={(e) => this.handleClick(e)} value="taken">Taken</Button>
+            <Button disabled={history && history[this.state.currentDate].clicked[time]} onClick={(e) => setMedicineTaken(false, medicine, time)} value="missed">Missed</Button>
+            <Button disabled={history && history[this.state.currentDate].clicked[time]} positive onClick={(e) => setMedicineTaken(true, medicine, time)} value="taken">Taken</Button>
           </Button.Group>
         </Grid.Column>
         <Grid.Column></Grid.Column>
