@@ -23,7 +23,7 @@ class UserMedicinesController < ApplicationController
 
   private 
   def user_medicine_params 
-    params.require(:user_medicine).permit(:name, :dose, :morning, :evening, :url, :composite_id, :user_id)
+    params.require(:user_medicine).permit(:name, :dose, :morning, :evening, :url, :composite_id, :user_id, history: {})
   end
 
 end

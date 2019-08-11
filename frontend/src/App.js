@@ -111,36 +111,37 @@ class App extends React.Component {
     history.push('/medicine-details')
   }
 
+  
 
   setMedicineTaken = (taken, medicine, time) => {
-    const updatedUserMedicines = this.state.usersMedicines.map(med => {
-      if(med.id !== medicine.id) return med;
-      const currentDrugHistory = med.history ? med.history[getDate()] : {};
-      return {
-        ...med,
-        history: {
-          ...med.history,
-          [getDate()]: {
-            status: {
-              ...currentDrugHistory.status,
-              [time]: taken
-            },
-            clicked: {
-              ...currentDrugHistory.clicked,
-              [time]: true
-            }
+    const editingUserMedicine = this.state.usersMedicines.find(med => med.id === medicine.id)
+    if (!editingUserMedicine) return
+
+    const currentDrugHistory = editingUserMedicine.history[getDate()] || {} 
+    const updatedUserMedicine = {
+      ...editingUserMedicine,
+      history: {
+        ...editingUserMedicine.history,
+        [getDate()]: {
+          status: {
+            ...currentDrugHistory.status,
+            [time]: taken
+          },
+          clicked: {
+            ...currentDrugHistory.clicked,
+            [time]: true
           }
         }
       }
-    })
-
-    this.setState({
-      usersMedicines: updatedUserMedicines
-    })
+    }
+    API.patchNewMedicine(updatedUserMedicine)
+    .then(this.getUserMedicines)
+      
   }
   
 
   render() {
+    console.log(this.state.usersMedicines)
     return (
       <Router> 
         <div className="App">

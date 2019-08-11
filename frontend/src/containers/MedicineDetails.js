@@ -1,5 +1,4 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
 import { Button, Form, Checkbox } from 'semantic-ui-react'
 import API from '../adapters/API'
 

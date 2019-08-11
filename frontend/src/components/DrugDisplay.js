@@ -14,6 +14,7 @@ class DrugDisplay extends React.Component {
   render() {
     const {handleClick, setMedicineTaken, medicine, time }  = this.props;
     const {name, dose, history} = medicine;
+    const todaysHistory = history && history[this.state.currentDate]
 
     return(
       <Grid columns="equal">
@@ -23,13 +24,13 @@ class DrugDisplay extends React.Component {
             onClick={() => handleClick(medicine, this.props.history)}
             style={{cursor: 'pointer'}}
           >
-            <Icon name='pills' />{name} - {dose}mg {history && history[this.state.currentDate].clicked[time] && ` - ${history[this.state.currentDate].status[time] ? 'Taken' : 'Missed'}`}
+            <Icon name='pills' />{name} - {dose}mg {todaysHistory && todaysHistory.clicked[time] && ` - ${history[this.state.currentDate].status[time] ? 'Taken' : 'Missed'}`}
           </Segment>
         </Grid.Column>
         <Grid.Column>
           <Button.Group>
-            <Button disabled={history && history[this.state.currentDate].clicked[time]} onClick={(e) => setMedicineTaken(false, medicine, time)} value="missed">Missed</Button>
-            <Button disabled={history && history[this.state.currentDate].clicked[time]} positive onClick={(e) => setMedicineTaken(true, medicine, time)} value="taken">Taken</Button>
+            <Button disabled={todaysHistory && todaysHistory.clicked[time]} onClick={(e) => setMedicineTaken(false, medicine, time)} value="missed">Missed</Button>
+            <Button disabled={todaysHistory && todaysHistory.clicked[time]} positive onClick={(e) => setMedicineTaken(true, medicine, time)} value="taken">Taken</Button>
           </Button.Group>
         </Grid.Column>
         <Grid.Column></Grid.Column>
