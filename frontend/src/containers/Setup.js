@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Checkbox, Form, Dropdown } from 'semantic-ui-react'
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 class Setup extends React.Component {
   

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Form, Checkbox, Grid, Column, Segment } from 'semantic-ui-react'
+import { Redirect } from 'react-router-dom'
+import { Button, Form, Checkbox, Grid, Segment } from 'semantic-ui-react'
 import API from '../adapters/API'
 
 class MedicineDetails extends React.Component {
@@ -28,30 +29,45 @@ class MedicineDetails extends React.Component {
     }
   }
 
-  handleClick = () => {
+  showEditForm = () => {
     this.setState({
       showEditForm: !this.state.showEditForm
     })
   }
+
+  handleChange = (value, target, $selected) => {
+    const data = target.value
+    let key;
+    if (target.placeholder === "Dose") {
+      key = "dose"
+    }
+    this.props.handleChange(key, data)
+  }
+
   render() {
-    const {morning, evening} = this.props.medicine
+    if(!this.props.medicine.id) return <Redirect to="/" />
     
+    const {morning, evening, dose} = this.props.medicine
+    const doseOptions = [10,20,30,40].map(num => ({
+      key: num,
+      text: `${num}mg`,
+      value: num,
+    }))
     return (
       <Grid columns="equal">
         <Grid.Column width={1}></Grid.Column>
         <Grid.Column>
           <div>Medicine Details page
             <h3>{this.props.medicine.name}</h3>
-            <Button value="edit medicine" onClick={this.handleClick}>Edit how I take this medicine</Button>
+            <Button value="edit medicine" onClick={this.showEditForm}>Edit how I take this medicine</Button>
             {this.state.showEditForm ? 
               (<form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
-                <select onChange={(e) => this.props.handleChange("dose", e.target.value)} value={this.props.medicine.dose}>
-                  <option value="">Select a dose</option>
-                  <option value="10">10mg</option>
-                  <option value="20">20mg</option>
-                  <option value="30">30mg</option>
-                  <option value="40">40mg</option>
-                </select>
+                <Form.Dropdown 
+                  placeholder="Dose"
+                  defaultValue={parseInt(dose)}
+                  selection 
+                  options={doseOptions}
+                  onChange={this.handleChange} />
                 <p>Select when you take the medicine:</p>  
                 <Form.Field>
                   <Checkbox type="checkbox" id="morning" name="morning" checked={morning} onChange={(e) => this.props.handleChange("morning", !morning)} label="Morning"/>
