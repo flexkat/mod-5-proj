@@ -31,3 +31,19 @@
     transform: rotate(360deg);
   }
 }
+
+.App .side-effects {
+  text-align: left
+}
+
+.button.compliance {
+  background-color: orange;
+}
+
+.button.compliance.disabled {
+  background-color: rgb(196, 99, 39)
+}
+
+.buttons > .compliance.disabled.positive {
+  background-color: rgb(52, 145, 31)
+}
