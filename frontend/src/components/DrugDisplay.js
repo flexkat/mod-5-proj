@@ -13,6 +13,9 @@ class DrugDisplay extends React.Component {
     const {handleClick, setMedicineTaken, medicine, time }  = this.props;
     const {name, dose, history} = medicine;
     const todaysHistory = history && history[this.state.currentDate]
+    const doseClicked = todaysHistory && todaysHistory.clicked[time]
+    const doseTaken = doseClicked && todaysHistory.status[time]
+    
 
     return(
       <Grid columns="equal">
@@ -28,8 +31,8 @@ class DrugDisplay extends React.Component {
         </Grid.Column>
         <Grid.Column width={3}>
           <Button.Group >
-            <Button disabled={todaysHistory && todaysHistory.clicked[time]} onClick={(e) => setMedicineTaken(false, medicine, time)} className={todaysHistory && todaysHistory.status[time] === false ? "compliance missed" : "compliance"} value="missed">Missed</Button>
-            <Button disabled={todaysHistory && todaysHistory.clicked[time]} positive onClick={(e) => setMedicineTaken(true, medicine, time)} className={todaysHistory && todaysHistory.status[time] === true ? "compliance taken" : "compliance"} value="taken">Taken</Button>
+            <Button disabled={doseClicked} onClick={(e) => setMedicineTaken(false, medicine, time)} className={todaysHistory && todaysHistory.status[time] === false ? "compliance missed" : "compliance"} value="missed">{doseTaken ? "" : "Missed"}</Button>
+            <Button disabled={doseClicked} positive onClick={(e) => setMedicineTaken(true, medicine, time)} className={todaysHistory && todaysHistory.status[time] === true ? "compliance taken" : "compliance"} value="taken">{(doseClicked && doseTaken) || (!doseClicked) ? "Taken" : ""}</Button>
           </Button.Group>
         </Grid.Column >
         <Grid.Column></Grid.Column>
