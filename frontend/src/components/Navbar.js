@@ -13,8 +13,8 @@ class Navbar extends React.Component {
     const { activeItem } = this.state
     return (
       <Menu pointing>
-        <Menu.Item as={NavLink} to="/" exact name="home" active={activeItem === "home"} onClick={this.handleItemClick}>Home</Menu.Item>
-        <Menu.Item as={NavLink} to="/setup" exact>Add my medicine</Menu.Item>
+        <Menu.Item as={NavLink} to="/" exact strict name="home" active={activeItem === "home"} onClick={this.handleItemClick}>Home</Menu.Item>
+        <Menu.Item as={NavLink} to="/setup" exact name="setup" active={activeItem === "setup"} onClick={this.handleItemClick}>Add my medicine</Menu.Item>
       </Menu>
     );
   }

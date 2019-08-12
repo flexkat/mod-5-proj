@@ -10,7 +10,7 @@ import { getDrugId, getDate } from './utils/medicines';
 import { connect } from 'react-redux';
 import { saveFetchedMedicines } from './actions/medicinesActions';
 
-
+import ScrollToTop from './utils/ScrollToTop';
 
 class App extends React.Component {
 
@@ -39,8 +39,10 @@ class App extends React.Component {
     return API.getUserMedicines()
     .then(usersMedicines => 
       this.setState({
-        usersMedicines: usersMedicines,
-      }))
+        usersMedicines: usersMedicines.sort((a, b) => a.id - b.id),
+      })
+    )
+     
   }
 
   editNewMedForUser = (key, value) => {
@@ -141,31 +143,31 @@ class App extends React.Component {
   
 
   render() {
-    console.log(this.state.usersMedicines)
-    console.log(this.props)
     return (
       <Router> 
-        <div className="App">
-          <Navbar />
-          Pill Pal
-          <Route path="/" exact render={(props) => 
-            <Home 
+        <ScrollToTop>
+          <div className="App">
+            <Navbar />
+            Pill Pal
+            <Route path="/" exact render={(props) => 
+              <Home 
+                {...props} 
+                medicines={this.state.usersMedicines} 
+                setDrugToDisplay={this.setDrugToDisplay} 
+                user={this.state.user}
+                setMedicineTaken={this.setMedicineTaken}
+              />} 
+            />
+            <Route path="/medicine-details" render={(props) => <MedicineDetails 
               {...props} 
-              medicines={this.state.usersMedicines} 
-              setDrugToDisplay={this.setDrugToDisplay} 
-              user={this.state.user}
-              setMedicineTaken={this.setMedicineTaken}
-            />} 
-          />
-          <Route path="/medicine-details" render={(props) => <MedicineDetails 
-            {...props} 
-            medicine = {this.state.newDrug} 
-            handleChange={this.editNewMedForUser} 
-            handleSubmit={this.updateUserMed} 
-            deleteMed={this.deleteMed}/>} 
-          />
-          <Route path="/setup" render={(props) => <Setup {...props} resetNewDrugState={this.resetNewDrugState} newDrug={this.state.newDrug} medicines={this.props.medicines} handleChange={this.editNewMedForUser} handleSubmit={this.addNewMedToUserMed}/>} />
-        </div>
+              medicine = {this.state.newDrug} 
+              handleChange={this.editNewMedForUser} 
+              handleSubmit={this.updateUserMed} 
+              deleteMed={this.deleteMed}/>} 
+            />
+            <Route path="/setup" render={(props) => <Setup {...props} resetNewDrugState={this.resetNewDrugState} newDrug={this.state.newDrug} medicines={this.props.medicines} handleChange={this.editNewMedForUser} handleSubmit={this.addNewMedToUserMed}/>} />
+          </div>
+        </ScrollToTop>
       </Router>
     );
   }
