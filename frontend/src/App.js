@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './containers/Home'
 import MedicineDetails from './containers/MedicineDetails'
 import Setup from './containers/Setup'
+import Dashboard from './containers/Dashboard'
 import { getDrugId, getDate } from './utils/medicines';
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -167,6 +168,7 @@ class App extends React.Component {
               deleteMed={this.deleteMed}/>} 
             />
             <Route path="/setup" render={(props) => <Setup {...props} resetNewDrugState={this.resetNewDrugState} newDrug={this.state.newDrug} medicines={this.state.medicines} handleChange={this.editNewMedForUser} handleSubmit={this.addNewMedToUserMed}/>} />
+            <Route path="/dashboard" render={(props) => <Dashboard {...props} medicines={this.state.usersMedicines}/>} />
           </div>
         </ScrollToTop>
       </Router>

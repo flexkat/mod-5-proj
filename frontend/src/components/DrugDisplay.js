@@ -25,8 +25,8 @@ class DrugDisplay extends React.Component {
             onClick={() => handleClick(medicine, this.props.history)}
             style={{cursor: 'pointer'}}
           >
-            <Icon name='pills' />
-            {name} - {dose}mg {todaysHistory && todaysHistory.clicked[time] && ` - ${history[this.state.currentDate].status[time] ? 'Taken' : 'Missed'}`}
+            <Icon name='pills'/>
+            {name} - {dose}mg
           </Segment>
         </Grid.Column>
         <Grid.Column width={3}>
