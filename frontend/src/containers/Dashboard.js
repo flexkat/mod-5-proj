@@ -1,11 +1,15 @@
 import React from 'react'
-import { Icon, Table } from 'semantic-ui-react'
+import { Icon, Table, Container } from 'semantic-ui-react'
 import { getDate } from '../utils/medicines'
 
 
 class Dashboard extends React.Component {
 
   checkWhichIconToRender = (med, date, time) => {
+    if(date === getDate() && !med.history[date]) {
+      return ""
+    }
+
     return med.history[date] ? med.history[date] && med.history[date].status[time] ? <Icon color='green' name='checkmark' size='large'/> : <Icon color='red' name='circle' size='large'/> : <Icon color='orange' name='circle' size='large'/>
   }
 
@@ -15,15 +19,18 @@ class Dashboard extends React.Component {
     const allDatesArray = [].concat.apply([], allDateKeys);
     const dates = [...new Set(allDatesArray)]
     const currentDate = getDate();
+    const indexOfCurrentDate = dates.indexOf(currentDate)
+
+    const previousWeeksDates = dates.slice(Math.max(indexOfCurrentDate - 7))
 
     return(
-      <div>
+      <Container>
         <div>Stats</div>
         <Table celled structured>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell colSpan='2'>Medicines</Table.HeaderCell>
-              {dates.map(date => <Table.HeaderCell>{date}</Table.HeaderCell>)}
+              {previousWeeksDates.map(date => <Table.HeaderCell>{date}</Table.HeaderCell>)}
             </Table.Row>
           </Table.Header>
 
@@ -36,7 +43,7 @@ class Dashboard extends React.Component {
                   ? <Table.Cell>AM</Table.Cell> 
                   : <Table.Cell></Table.Cell>
                 }
-                {dates.map(date => 
+                {previousWeeksDates.map(date => 
                   <Table.Cell textAlign="center">
                     {this.checkWhichIconToRender(med, date, "AM")}
                   </Table.Cell>)
@@ -47,7 +54,7 @@ class Dashboard extends React.Component {
                   ? <Table.Cell>PM</Table.Cell> 
                   : <Table.Cell></Table.Cell>
                 }
-                {dates.map(date => 
+                {previousWeeksDates.map(date => 
                   <Table.Cell textAlign="center">
                     {this.checkWhichIconToRender(med, date, "PM")}
                   </Table.Cell>)
@@ -57,7 +64,7 @@ class Dashboard extends React.Component {
             ))}
           </Table.Body>
         </Table>
-      </div>
+      </Container>
     )
   }
 }
