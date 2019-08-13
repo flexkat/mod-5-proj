@@ -1,6 +1,6 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import { Button, Form, Checkbox, Grid, Segment, Header } from 'semantic-ui-react'
+import { Button, Form, Checkbox, Grid, Segment, Header, Confirm } from 'semantic-ui-react'
 import API from '../adapters/API'
 import { createDoseOptions } from '../utils/medicines'
 
@@ -8,7 +8,22 @@ class MedicineDetails extends React.Component {
 
   state = {
     showEditForm: false,
-    medicineData: null
+    medicineData: null,
+    open: false
+  }
+
+  show = () => this.setState({ open: true })
+  handleCancel = () => this.setState({ open: false })
+
+  confirmDelete = (props) => {
+    this.setState({
+      open: false,
+      toDelete: true
+    },() => {
+      if (!this.state.open && !!this.state.toDelete) {
+        props.deleteMed(props.history)
+      }  
+    })
   }
 
   componentDidMount() {
@@ -61,7 +76,7 @@ class MedicineDetails extends React.Component {
             <br/>
             <br/>
             {this.state.showEditForm && 
-              <form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
+              <>
                 <Form.Dropdown 
                   placeholder="Dose"
                   defaultValue={parseInt(dose)}
@@ -76,9 +91,11 @@ class MedicineDetails extends React.Component {
                   <Checkbox type="checkbox" id="evening" name="evening" checked={evening} onChange={(e) => this.props.handleChange("evening", !evening)} label="Evening"/>
                 </Form.Field>
                 <br/>
-                <Button basic color="teal" value='Update medicine'>Update Medicine</Button>
-                <Button basic color='red' value="Delete" onClick={() => this.props.deleteMed(this.props.history)}>Delete Medicine</Button>
-              </form>}
+                <Button basic color="teal" value='Update medicine' onClick={(e) => this.props.handleSubmit(e, this.props.history)}>Update Medicine</Button>
+              
+                <Button basic color='red' value="Delete" onClick={this.show}>Delete Medicine</Button>
+                <Confirm open={this.state.open} onCancel={this.handleCancel} onConfirm={() => this.confirmDelete(this.props)} content={`Are you sure you want to delete ${this.props.medicine.name}`}/>
+              </>}
             {this.sideEffects().map(obj => <Segment className="side-effects" key={obj.position} dangerouslySetInnerHTML={{ __html: obj.text}} />)}
           </Grid.Column>
         <Grid.Column width={1}></Grid.Column>
