@@ -38,28 +38,30 @@ class Dashboard extends React.Component {
             {medicines.map(med => (
               <>
               <Table.Row>
-                <Table.Cell rowSpan='2'>{med.name}</Table.Cell>
+                <Table.Cell rowSpan={med.morning && med.evening ? "2" : "1"}>
+                  {med.name}
+                </Table.Cell>
+                {med.morning ? <Table.Cell>AM</Table.Cell> : <Table.Cell>PM</Table.Cell>} 
+              
                 {med.morning 
-                  ? <Table.Cell>AM</Table.Cell> 
-                  : <Table.Cell></Table.Cell>
-                }
-                {previousWeeksDates.map(date => 
-                  <Table.Cell textAlign="center">
-                    {this.checkWhichIconToRender(med, date, "AM")}
-                  </Table.Cell>)
+                  ? (previousWeeksDates.map(date => 
+                    <Table.Cell textAlign="center">
+                      {this.checkWhichIconToRender(med, date, "AM")}
+                    </Table.Cell>)) 
+                  : (previousWeeksDates.map(date => 
+                    <Table.Cell textAlign="center">
+                      {this.checkWhichIconToRender(med, date, "PM")}
+                    </Table.Cell>))
                 }
               </Table.Row>
-              <Table.Row>
-                {med.evening 
-                  ? <Table.Cell>PM</Table.Cell> 
-                  : <Table.Cell></Table.Cell>
-                }
-                {previousWeeksDates.map(date => 
+              {!med.morning || med.evening && <Table.Row>
+                <Table.Cell>PM</Table.Cell>
+                {med.evening && previousWeeksDates.map(date => 
                   <Table.Cell textAlign="center">
                     {this.checkWhichIconToRender(med, date, "PM")}
                   </Table.Cell>)
                 }
-              </Table.Row>
+              </Table.Row>}
               </>
             ))}
           </Table.Body>
