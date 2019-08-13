@@ -1,8 +1,12 @@
 import React from 'react'
-import { Button, Checkbox, Form, Container, Header } from 'semantic-ui-react'
-import { createDoseOptions } from '../utils/medicines'
+import { Button, Checkbox, Form, Container, Header, Message } from 'semantic-ui-react'
+import { getDrugId, createDoseOptions } from '../utils/medicines'
 
 class Setup extends React.Component {
+
+  state = {
+    formError: ""
+  }
   
   componentDidMount() {
     this.props.resetNewDrugState();
@@ -17,6 +21,9 @@ class Setup extends React.Component {
   }
 
   handleChange = (value, target, $selected) => {
+    // this.setState({
+    //   formError: ''
+    // })
     const data = target.value
     let key;
     if (target.placeholder === "Select Medicine") {
@@ -27,13 +34,28 @@ class Setup extends React.Component {
     this.props.handleChange(key, data)
   }
 
+  handleSubmitValidation = (e, history) => {
+    e.preventDefault();
+    // const drugId = getDrugId(this.props.newDrug)
+    // const drugExists = this.props.usersMedicines.find(med => med.composite_id === drugId)
+    // if (drugExists) {
+    //   this.setState({
+    //     formError: "Drug already exists"
+    //   })
+    //   return;
+    // }
+
+
+    this.props.handleSubmit(history);
+  }
+
   render() {
     const {morning, evening} = this.props.newDrug
     const doseOptions = createDoseOptions();
     return (
       <Container>
         <Header as='h1'>Setup page</Header>
-        <Form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
+        <Form onSubmit={(e) => this.handleSubmitValidation(e, this.props.history)}>
           <Form.Dropdown
             placeholder='Select Medicine'
             onChange={this.handleChange}
@@ -59,6 +81,8 @@ class Setup extends React.Component {
           </Form.Field>
           <Button type="submit">Add new medicine</Button>
         </Form>
+
+        { this.state.formError ? <Message negative>{this.state.formError}</Message> : ''}
       </Container>
     )
   }

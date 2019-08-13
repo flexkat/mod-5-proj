@@ -67,15 +67,9 @@ class App extends React.Component {
     })
   }
 
-  addNewMedToUserMed = (e, history) => {
-    e.preventDefault();
+  addNewMedToUserMed = (history) => {
     const drugName = this.state.medicines.find(med => med.url === this.state.newDrug.url)
     const drugId = getDrugId(this.state.newDrug)
-    const drugExists = this.state.usersMedicines.find(med => med.id === drugId)
-    if (drugExists) {
-      console.log(`${drugId} exists`)
-      return
-    }
     API.postNewMedicine({...this.state.newDrug, name: drugName.name, composite_id: drugId, user_id: 1})
     .then(() => this.resetStateAndRedirect(history))
   }
@@ -88,9 +82,9 @@ class App extends React.Component {
     })
   }
 
-  updateUserMed = (e, history) => {
-    e.preventDefault();
-    API.patchNewMedicine(this.state.newDrug)
+  updateUserMed = (history) => {
+    const drugId = getDrugId(this.state.newDrug)
+    API.patchNewMedicine({ ...this.state.newDrug, composite_id: drugId})
     .then(() => this.resetStateAndRedirect(history))
   }
  
@@ -161,6 +155,7 @@ class App extends React.Component {
             <Route path="/medicine-details" render={(props) => <MedicineDetails 
               {...props} 
               medicine = {this.state.newDrug} 
+              usersMedicines={this.state.usersMedicines}
               handleChange={this.editNewMedForUser} 
               handleSubmit={this.updateUserMed} 
               deleteMed={this.deleteMed}/>} 
@@ -170,6 +165,7 @@ class App extends React.Component {
               resetNewDrugState={this.resetNewDrugState} 
               newDrug={this.state.newDrug} 
               medicines={this.state.medicines} 
+              usersMedicines={this.state.usersMedicines}
               handleChange={this.editNewMedForUser} 
               handleSubmit={this.addNewMedToUserMed}/>} 
             />

@@ -1,15 +1,16 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import { Button, Form, Checkbox, Grid, Segment, Header, Confirm } from 'semantic-ui-react'
+import { Button, Form, Checkbox, Grid, Segment, Header, Confirm, Message } from 'semantic-ui-react'
 import API from '../adapters/API'
-import { createDoseOptions } from '../utils/medicines'
+import { getDrugId, createDoseOptions } from '../utils/medicines'
 
 class MedicineDetails extends React.Component {
 
   state = {
     showEditForm: false,
     medicineData: null,
-    open: false
+    open: false,
+    formError: ""
   }
 
   show = () => this.setState({ open: true })
@@ -52,12 +53,32 @@ class MedicineDetails extends React.Component {
   }
 
   handleChange = (value, target, $selected) => {
+    // this.setState({
+    //   formError: ''
+    // })
     const data = target.value
     let key;
     if (target.placeholder === "Dose") {
       key = "dose"
     }
     this.props.handleChange(key, data)
+  }
+
+  handleSubmitValidation = (e, history) => {
+    e.preventDefault();
+
+    // const drugId = getDrugId(this.props.medicine)
+    // const drugExists = this.props.usersMedicines.find(med => med.composite_id === drugId)
+
+    // if (drugExists) {
+    //   this.setState({
+    //     formError: "Drug already exists"
+    //   })
+    //   return;
+    // }
+
+
+    this.props.handleSubmit(history);
   }
 
   render() {
@@ -91,10 +112,11 @@ class MedicineDetails extends React.Component {
                   <Checkbox type="checkbox" id="evening" name="evening" checked={evening} onChange={(e) => this.props.handleChange("evening", !evening)} label="Evening"/>
                 </Form.Field>
                 <br/>
-                <Button basic color="teal" value='Update medicine' onClick={(e) => this.props.handleSubmit(e, this.props.history)}>Update Medicine</Button>
+                <Button basic color="teal" value='Update medicine' onClick={(e) => this.handleSubmitValidation(e, this.props.history)}>Update Medicine</Button>
               
                 <Button basic color='red' value="Delete" onClick={this.show}>Delete Medicine</Button>
                 <Confirm open={this.state.open} onCancel={this.handleCancel} onConfirm={() => this.confirmDelete(this.props)} content={`Are you sure you want to delete ${this.props.medicine.name}`}/>
+                { this.state.formError ? <Message negative>{this.state.formError}</Message> : ''}
               </>}
             {this.sideEffects().map(obj => <Segment className="side-effects" key={obj.position} dangerouslySetInnerHTML={{ __html: obj.text}} />)}
           </Grid.Column>
