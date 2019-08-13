@@ -1,7 +1,8 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import { Button, Form, Checkbox, Grid, Segment } from 'semantic-ui-react'
+import { Button, Form, Checkbox, Grid, Segment, Header } from 'semantic-ui-react'
 import API from '../adapters/API'
+import { createDoseOptions } from '../utils/medicines'
 
 class MedicineDetails extends React.Component {
 
@@ -48,20 +49,19 @@ class MedicineDetails extends React.Component {
     if(!this.props.medicine.id) return <Redirect to="/" />
     
     const {morning, evening, dose} = this.props.medicine
-    const doseOptions = [10,20,30,40].map(num => ({
-      key: num,
-      text: `${num}mg`,
-      value: num,
-    }))
+    const doseOptions = createDoseOptions();
+
     return (
       <Grid columns="equal">
         <Grid.Column width={1}></Grid.Column>
         <Grid.Column>
-          <div>Medicine Details page
-            <h3>{this.props.medicine.name}</h3>
+          <Header as='h1'>Medicine Details page</Header>
+            <Header as='h2'>{this.props.medicine.name}</Header>
             <Button value="edit medicine" onClick={this.showEditForm}>Edit how I take this medicine</Button>
-            {this.state.showEditForm ? 
-              (<form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
+            <br/>
+            <br/>
+            {this.state.showEditForm && 
+              <form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
                 <Form.Dropdown 
                   placeholder="Dose"
                   defaultValue={parseInt(dose)}
@@ -75,11 +75,11 @@ class MedicineDetails extends React.Component {
                 <Form.Field>
                   <Checkbox type="checkbox" id="evening" name="evening" checked={evening} onChange={(e) => this.props.handleChange("evening", !evening)} label="Evening"/>
                 </Form.Field>
-                <Button value='Update medicine'>Update Medicine</Button>
+                <br/>
+                <Button basic color="teal" value='Update medicine'>Update Medicine</Button>
                 <Button basic color='red' value="Delete" onClick={() => this.props.deleteMed(this.props.history)}>Delete Medicine</Button>
-              </form>) : null }
+              </form>}
             {this.sideEffects().map(obj => <Segment className="side-effects" key={obj.position} dangerouslySetInnerHTML={{ __html: obj.text}} />)}
-          </div>
           </Grid.Column>
         <Grid.Column width={1}></Grid.Column>
       </Grid>

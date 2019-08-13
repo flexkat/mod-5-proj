@@ -47,3 +47,11 @@
 .buttons > .compliance.disabled.positive {
   background-color: rgb(52, 145, 31)
 }
+
+.buttons {
+  padding: 5px 14px
+}
+
+.vertical-align {
+  padding: 2% 14px
+}

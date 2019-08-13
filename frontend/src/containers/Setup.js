@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Container, Header } from 'semantic-ui-react'
+import { createDoseOptions } from '../utils/medicines'
 
 class Setup extends React.Component {
   
@@ -28,14 +29,10 @@ class Setup extends React.Component {
 
   render() {
     const {morning, evening} = this.props.newDrug
-    const doseOptions = [10,20,30,40].map(num => ({
-      key: num,
-      text: `${num}mg`,
-      value: num,
-    }))
+    const doseOptions = createDoseOptions();
     return (
-      <div>
-        <h3>Setup page</h3>
+      <Container>
+        <Header as='h1'>Setup page</Header>
         <Form onSubmit={(e) => this.props.handleSubmit(e, this.props.history)}>
           <Form.Dropdown
             placeholder='Select Medicine'
@@ -62,7 +59,7 @@ class Setup extends React.Component {
           </Form.Field>
           <Button type="submit">Add new medicine</Button>
         </Form>
-      </div>
+      </Container>
     )
   }
 }
