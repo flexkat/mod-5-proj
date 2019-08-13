@@ -15,28 +15,45 @@ class DrugDisplay extends React.Component {
     const todaysHistory = history && history[this.state.currentDate]
     const doseClicked = todaysHistory && todaysHistory.clicked[time]
     const doseTaken = doseClicked && todaysHistory.status[time]
+    const compliance = todaysHistory && todaysHistory.status[time]
     
 
     return(
-      <Grid columns="equal">
-        <Grid.Column >{time}</Grid.Column>
-        <Grid.Column width={7}>
-          <Segment 
+      <Grid.Row columns="equal">
+        <Grid.Column className="vertical-align" width={4}>{time}</Grid.Column>
+        <Grid.Column width={8}>
+          <Segment
             onClick={() => handleClick(medicine, this.props.history)}
             style={{cursor: 'pointer'}}
+            className={doseClicked ? "secondary" : "raised"}
+            textAlign='left'
           >
             <Icon name='pills'/>
             {name} - {dose}mg
           </Segment>
         </Grid.Column>
-        <Grid.Column width={3}>
+        <Grid.Column width={4}>
           <Button.Group >
-            <Button disabled={doseClicked} onClick={(e) => setMedicineTaken(false, medicine, time)} className={todaysHistory && todaysHistory.status[time] === false ? "compliance missed" : "compliance"} value="missed">{doseTaken ? "" : "Missed"}</Button>
-            <Button disabled={doseClicked} positive onClick={(e) => setMedicineTaken(true, medicine, time)} className={todaysHistory && todaysHistory.status[time] === true ? "compliance taken" : "compliance"} value="taken">{(doseClicked && doseTaken) || (!doseClicked) ? "Taken" : ""}</Button>
+            <Button 
+              disabled={doseClicked} 
+              onClick={(e) => setMedicineTaken(false, medicine, time)} 
+              className={!compliance ? "compliance missed" : "compliance"} 
+              value="missed"
+            >
+              {doseTaken ? "" : "Missed"}
+            </Button>
+            <Button 
+              disabled={doseClicked} 
+              positive 
+              onClick={(e) => setMedicineTaken(true, medicine, time)} 
+              className={compliance ? "compliance taken" : "compliance"} 
+              value="taken"
+            >
+              {(doseClicked && doseTaken) || (!doseClicked) ? "Taken" : ""}
+            </Button>
           </Button.Group>
         </Grid.Column >
-        <Grid.Column></Grid.Column>
-      </Grid>
+      </Grid.Row>
     )
   }
 }

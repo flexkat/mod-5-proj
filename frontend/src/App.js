@@ -150,15 +150,13 @@ class App extends React.Component {
         <ScrollToTop>
           <div className="App">
             <Navbar />
-            Pill Pal
-            <Route path="/" exact render={(props) => 
-              <Home 
-                {...props} 
-                medicines={this.state.usersMedicines} 
-                setDrugToDisplay={this.setDrugToDisplay} 
-                user={this.state.user}
-                setMedicineTaken={this.setMedicineTaken}
-              />} 
+            <Route path="/" exact render={(props) => <Home 
+              {...props} 
+              medicines={this.state.usersMedicines} 
+              setDrugToDisplay={this.setDrugToDisplay} 
+              user={this.state.user}
+              setMedicineTaken={this.setMedicineTaken}
+            />} 
             />
             <Route path="/medicine-details" render={(props) => <MedicineDetails 
               {...props} 
@@ -167,8 +165,18 @@ class App extends React.Component {
               handleSubmit={this.updateUserMed} 
               deleteMed={this.deleteMed}/>} 
             />
-            <Route path="/setup" render={(props) => <Setup {...props} resetNewDrugState={this.resetNewDrugState} newDrug={this.state.newDrug} medicines={this.state.medicines} handleChange={this.editNewMedForUser} handleSubmit={this.addNewMedToUserMed}/>} />
-            <Route path="/dashboard" render={(props) => <Dashboard {...props} medicines={this.state.usersMedicines}/>} />
+            <Route path="/setup" render={(props) => <Setup 
+              {...props} 
+              resetNewDrugState={this.resetNewDrugState} 
+              newDrug={this.state.newDrug} 
+              medicines={this.state.medicines} 
+              handleChange={this.editNewMedForUser} 
+              handleSubmit={this.addNewMedToUserMed}/>} 
+            />
+            <Route path="/dashboard" render={(props) => <Dashboard 
+              {...props} 
+              medicines={this.state.usersMedicines}/>} 
+            />
           </div>
         </ScrollToTop>
       </Router>
