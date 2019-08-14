@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './containers/Home'
 import MedicineDetails from './containers/MedicineDetails'
 import Setup from './containers/Setup'
-import Dashboard from './containers/Dashboard'
+import Statistics from './containers/Statistics'
 import { getDrugId, getDate } from './utils/medicines';
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -84,7 +84,7 @@ class App extends React.Component {
     this.getUserMedicines()
     .then(() => {
       this.resetNewDrugState();
-      setTimeout(()=> this.redirectToHome(history), 500)
+      setTimeout(()=> this.redirectToHome(history), 200)
     })
   }
 
@@ -173,7 +173,7 @@ class App extends React.Component {
               handleChange={this.editNewMedForUser} 
               handleSubmit={this.addNewMedToUserMed}/>} 
             />
-            <Route path="/dashboard" render={(props) => <Dashboard 
+            <Route path="/statistics" render={(props) => <Statistics 
               {...props} 
               medicines={this.state.usersMedicines}/>} 
             />

@@ -94,7 +94,7 @@ class MedicineDetails extends React.Component {
                 <Button basic color="teal" value='Update medicine' onClick={(e) => this.props.handleSubmit(e, this.props.history)}>Update Medicine</Button>
               
                 <Button basic color='red' value="Delete" onClick={this.show}>Delete Medicine</Button>
-                <Confirm open={this.state.open} onCancel={this.handleCancel} onConfirm={() => this.confirmDelete(this.props)} content={`Are you sure you want to delete ${this.props.medicine.name}`}/>
+                <Confirm open={this.state.open} onCancel={this.handleCancel} onConfirm={() => this.confirmDelete(this.props)} content={`Are you sure you want to delete ${this.props.medicine.name}?`}/>
               </>}
             {this.sideEffects().map(obj => <Segment className="side-effects" key={obj.position} dangerouslySetInnerHTML={{ __html: obj.text}} />)}
           </Grid.Column>

@@ -3,7 +3,7 @@ import { Icon, Table, Container } from 'semantic-ui-react'
 import { getDate } from '../utils/medicines'
 
 
-class Dashboard extends React.Component {
+class Statistics extends React.Component {
 
   checkWhichIconToRender = (med, date, time) => {
     if(date === getDate() && !med.history[date]) {
@@ -71,4 +71,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard
+export default Statistics
