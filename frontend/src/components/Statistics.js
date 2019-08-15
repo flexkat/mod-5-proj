@@ -1,16 +1,31 @@
 import React from 'react'
-import { Icon, Table, Container } from 'semantic-ui-react'
+import { Icon, Table, Container, Header } from 'semantic-ui-react'
 import { getDate } from '../utils/medicines'
 
 
 class Statistics extends React.Component {
 
   checkWhichIconToRender = (med, date, time) => {
-    if(date === getDate() && !med.history[date]) {
-      return ""
+    if(date === getDate() && !med.history[date]) return ""
+  
+    if(med.history[date]) {
+      if (med.history[date].status[time]) {
+        return <Icon color='green' name='checkmark' size='large'/>
+      }
+      else if (med.history[date].clicked[time] && med.history[date].status[time] === false){
+        return <Icon color='red' name='circle' size='large'/>
+      }
+      else if (date === getDate() && !med.history[date].clicked[time]) {
+        return ""
+      }
     }
+    return <Icon color='orange' name='circle' size='large'/>
+  }
 
-    return med.history[date] ? med.history[date] && med.history[date].status[time] ? <Icon color='green' name='checkmark' size='large'/> : <Icon color='red' name='circle' size='large'/> : <Icon color='orange' name='circle' size='large'/>
+  previousWeeksDatesFunction = (dates) => {
+    if (dates.length < 7) return dates
+
+    return dates.slice(Math.max(dates.length - 7))
   }
 
   render() {
@@ -18,14 +33,12 @@ class Statistics extends React.Component {
     const allDateKeys = this.props.medicines.map(med => Object.keys(med.history))
     const allDatesArray = [].concat.apply([], allDateKeys);
     const dates = [...new Set(allDatesArray)]
-    const currentDate = getDate();
-    const indexOfCurrentDate = dates.indexOf(currentDate)
 
-    const previousWeeksDates = dates.slice(Math.max(indexOfCurrentDate - 7))
+    const previousWeeksDates = this.previousWeeksDatesFunction(dates)
 
     return(
       <Container>
-        <div>Stats</div>
+        <Header as="h1">Stats</Header>
         <Table celled structured>
           <Table.Header>
             <Table.Row>
@@ -54,14 +67,16 @@ class Statistics extends React.Component {
                     </Table.Cell>))
                 }
               </Table.Row>
-              {!med.morning || med.evening && <Table.Row>
-                <Table.Cell>PM</Table.Cell>
-                {med.evening && previousWeeksDates.map(date => 
-                  <Table.Cell textAlign="center">
-                    {this.checkWhichIconToRender(med, date, "PM")}
-                  </Table.Cell>)
-                }
-              </Table.Row>}
+              {!med.morning || med.evening 
+                ?  <Table.Row>
+                  <Table.Cell>PM</Table.Cell>
+                  {med.evening && previousWeeksDates.map(date => 
+                    <Table.Cell textAlign="center">
+                      {this.checkWhichIconToRender(med, date, "PM")}
+                    </Table.Cell>)
+                  }
+                </Table.Row>
+                : null}
               </>
             ))}
           </Table.Body>

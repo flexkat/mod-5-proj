@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './containers/Home'
 import MedicineDetails from './containers/MedicineDetails'
 import Setup from './containers/Setup'
-import Statistics from './containers/Statistics'
+import StatisticsContainer from './containers/StatisticsContainer'
 import { getDrugId, getDate } from './utils/medicines';
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -171,11 +171,14 @@ class App extends React.Component {
               newDrug={this.state.newDrug} 
               medicines={this.state.medicines} 
               handleChange={this.editNewMedForUser} 
-              handleSubmit={this.addNewMedToUserMed}/>} 
+              handleSubmit={this.addNewMedToUserMed}
+              usersMedicines={this.state.usersMedicines}
+              />} 
+              
             />
-            <Route path="/statistics" render={(props) => <Statistics 
+            <Route path="/statistics" render={(props) => <StatisticsContainer
               {...props} 
-              medicines={this.state.usersMedicines}/>} 
+              medicines={this.state.usersMedicines}/>}
             />
           </div>
         </ScrollToTop>
