@@ -5,3 +5,9 @@ export const saveFetchedMedicines = (medicines) => dispatch => {
   })
  }
  
+ export const saveFetchedMedicineData = (data) => dispatch => {
+   dispatch({
+     type: "FETCH_MEDICINE_DATA",
+     payload: data
+   })
+ }
