@@ -9,7 +9,7 @@ import Setup from './containers/Setup'
 import { getDrugId, getDate } from './utils/medicines';
 import { connect } from 'react-redux';
 import { saveFetchedMedicines } from './actions/medicinesActions';
-
+import { saveUserMedicines } from './actions/userMedicinesAction'
 import ScrollToTop from './utils/ScrollToTop';
 
 class App extends React.Component {
@@ -37,12 +37,10 @@ class App extends React.Component {
 
   getUserMedicines = () => {
     return API.getUserMedicines()
-    .then(usersMedicines => 
-      this.setState({
-        usersMedicines: usersMedicines.sort((a, b) => a.id - b.id),
-      })
-    )
-     
+    .then(usersMedicines => {
+      const sortedMeds = usersMedicines.sort((a, b) => a.id - b.id)
+      return this.props.saveUserMedicines(sortedMeds)
+    })
   }
 
   editNewMedForUser = (key, value) => {
@@ -67,9 +65,9 @@ class App extends React.Component {
 
   addNewMedToUserMed = (e, history) => {
     e.preventDefault();
-    const drugName = this.state.medicines.find(med => med.url === this.state.newDrug.url)
+    const drugName = this.props.medicines.find(med => med.url === this.state.newDrug.url)
     const drugId = getDrugId(this.state.newDrug)
-    const drugExists = this.state.usersMedicines.find(med => med.id === drugId)
+    const drugExists = this.props.usersMedicines.find(med => med.id === drugId)
     if (drugExists) {
       console.log(`${drugId} exists`)
       return
@@ -116,7 +114,7 @@ class App extends React.Component {
   
 
   setMedicineTaken = (taken, medicine, time) => {
-    const editingUserMedicine = this.state.usersMedicines.find(med => med.id === medicine.id)
+    const editingUserMedicine = this.props.usersMedicines.find(med => med.id === medicine.id)
     if (!editingUserMedicine) return
 
     const currentDrugHistory = editingUserMedicine.history[getDate()] || {} 
@@ -152,7 +150,7 @@ class App extends React.Component {
             <Route path="/" exact render={(props) => 
               <Home 
                 {...props} 
-                medicines={this.state.usersMedicines} 
+                medicines={this.props.usersMedicines} 
                 setDrugToDisplay={this.setDrugToDisplay} 
                 user={this.state.user}
                 setMedicineTaken={this.setMedicineTaken}
@@ -174,11 +172,13 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  medicines: state.medicinesReducer.medicines
+  medicines: state.medicinesReducer.medicines,
+  usersMedicines: state.userMedicinesReducer.usersMedicines
  })
 
  const mapDispatchToProps = dispatch => ({
-  saveFetchedMedicines: (medicines) => dispatch(saveFetchedMedicines(medicines))
+  saveFetchedMedicines: (medicines) => dispatch(saveFetchedMedicines(medicines)),
+  saveUserMedicines: (usersMedicines) => dispatch(saveUserMedicines(usersMedicines))
  })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
