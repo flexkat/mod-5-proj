@@ -43,7 +43,7 @@ class Statistics extends React.Component {
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell colSpan='2'>Medicines</Table.HeaderCell>
-              {previousWeeksDates.map(date => <Table.HeaderCell>{date}</Table.HeaderCell>)}
+              {previousWeeksDates.map(date => <Table.HeaderCell key={date}>{date}</Table.HeaderCell>)}
             </Table.Row>
           </Table.Header>
 

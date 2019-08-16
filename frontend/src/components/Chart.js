@@ -1,35 +1,51 @@
 import React from 'react'
+import { Header } from 'semantic-ui-react'
 const Chart = require('chart.js')
 
 class ResultsChart extends React.Component {
 
   render() {
 
-  //   const eachDose = () => this.props.usersMedicines.map(med => {
-  //     for(const date in med.history) {
-  //       console.log(date)
-        
-  //     }
-  //   })
+    const drugHistory = this.props.usersMedicines.map(med => med.history)
+    
+    let taken = 0;
+    let missed = 0;
 
-  //   const result = this.props.usersMedicines.map(med => Object.keys(med.history).reduce((res,status) => {
-  //     var count = "";
-  //     Object.keys(med.history[status]).forEach((time) => {
-  //         count = med.history[status][time];
-  //         if (!res[time][count] || !med.history){ res[time][count] = 0; }
-  //         res[time][count] += 1;
+    const drugHistoryValues = drugHistory.map(obj => Object.values(obj))
+    const array = []
+    for (const arr of drugHistoryValues) {
+      for (const el of arr) {
+        array.push(el)
+      }
+    }
 
-  //     });
-  //     return res;
-  // }, {taken: {},missed: {}}));
+    const drugHistoryStatus = () => {
+      for (const el of array) {
+        for (const key in el) {
+          if (key === "status") {
+            for (const obj in el) {
+              for (const time in el[obj]) {
+                if(el[obj][time] === true) {
+                  taken = taken + 1
+                } else {
+                  missed = missed + 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    drugHistoryStatus()
+    
 
     var ctx = 'myChart'
-    const myChart = new Chart(ctx, {type: 'bar',
+    const myChart = new Chart(ctx, {type: 'pie',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Taken', 'Missed'],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [`${taken}`, `${missed}`],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -50,16 +66,18 @@ class ResultsChart extends React.Component {
         }]
     },
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
+        // scales: {
+        //     yAxes: [{
+        //         ticks: {
+        //             beginAtZero: true
+        //         }
+        //     }]
+        // }
     }})
+    // myChart.render()
     return(
-      <div>Chart
+      <div>
+        <Header as="h2">Chart</Header>
         <canvas id="myChart" width="300" height="150"></canvas>
       </div>
     )
