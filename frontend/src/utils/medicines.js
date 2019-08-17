@@ -10,3 +10,11 @@ export const getDate = () => {
 
   return mm + '/' + dd + '/' + yyyy;
 }
+
+export const createDoseOptions = () => {
+  return [10,20,30,40].map(num => ({
+    key: num,
+    text: `${num}mg`,
+    value: num,
+  }))
+}

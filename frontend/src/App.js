@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './containers/Home'
 import MedicineDetails from './containers/MedicineDetails'
 import Setup from './containers/Setup'
+import StatisticsContainer from './containers/StatisticsContainer'
 import { getDrugId, getDate } from './utils/medicines';
 import { connect } from 'react-redux';
 import { saveFetchedMedicines } from './actions/medicinesActions';
@@ -118,7 +119,18 @@ class App extends React.Component {
               handleSubmit={this.updateUserMed} 
               deleteMed={this.deleteMed}/>} 
             />
-            <Route path="/setup" render={(props) => <Setup {...props} resetNewDrugState={this.props.resetNewDrug} newDrug={this.props.newDrug} medicines={this.props.medicines} handleChange={this.props.saveNewDrugDetails} handleSubmit={this.addNewMedToUserMed}/>} />
+            <Route path="/setup" render={(props) => <Setup 
+              {...props} 
+              resetNewDrugState={this.props.resetNewDrug} 
+              newDrug={this.props.newDrug} 
+              medicines={this.props.medicines} 
+              handleChange={this.props.saveNewDrugDetails} 
+              handleSubmit={this.addNewMedToUserMed}/>} 
+            />
+            <Route path="/statistics" render={(props) => <StatisticsContainer
+              {...props} 
+              medicines={this.props.usersMedicines}/>}
+            />
           </div>
         </ScrollToTop>
       </Router>
