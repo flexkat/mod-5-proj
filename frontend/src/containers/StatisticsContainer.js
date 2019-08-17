@@ -2,9 +2,6 @@ import React from 'react'
 import { Tab, Header} from 'semantic-ui-react'
 import Statistics from '../components/Statistics'
 import ResultsChart from '../components/Chart';
-const Chart = require('chart.js')
-
-
 
 class StatisticsContainer extends React.Component {
 

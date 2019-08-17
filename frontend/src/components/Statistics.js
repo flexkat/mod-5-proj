@@ -58,11 +58,11 @@ class Statistics extends React.Component {
               
                 {med.morning 
                   ? (previousWeeksDates.map(date => 
-                    <Table.Cell textAlign="center">
+                    <Table.Cell key={`${med.id}-${date}-AM`} textAlign="center">
                       {this.checkWhichIconToRender(med, date, "AM")}
                     </Table.Cell>)) 
                   : (previousWeeksDates.map(date => 
-                    <Table.Cell textAlign="center">
+                    <Table.Cell key={`${med.id}-${date}-PM`} textAlign="center">
                       {this.checkWhichIconToRender(med, date, "PM")}
                     </Table.Cell>))
                 }
@@ -71,7 +71,7 @@ class Statistics extends React.Component {
                 ?  <Table.Row>
                   <Table.Cell>PM</Table.Cell>
                   {med.evening && previousWeeksDates.map(date => 
-                    <Table.Cell textAlign="center">
+                    <Table.Cell key={`${med.id}-${date}-PM`}  textAlign="center">
                       {this.checkWhichIconToRender(med, date, "PM")}
                     </Table.Cell>)
                   }

@@ -55,3 +55,34 @@
 .vertical-align {
   padding: 2% 14px
 }
+
+/* .ui.celled.structured.table {
+  display: block;
+  overflow-x: scroll;
+  overflow-y: visible;
+  
+} */
+
+/* div.scroll-container {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: visible;
+  padding: 0;
+  margin-left: 5em;
+}
+
+div > .static-col {
+  position: fixed;
+  width: 10em;
+  left: 0;
+}
+
+div > .static-col-2 {
+  position: fixed;
+  width: 5em;
+  left: 10em;
+}
+
+.headcol:before {
+  content: 'Row ';
+} */
