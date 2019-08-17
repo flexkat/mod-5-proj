@@ -2,6 +2,8 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { Button, Form, Checkbox, Grid, Segment, Header, Confirm } from 'semantic-ui-react'
 import API from '../adapters/API'
+import { connect } from 'react-redux';
+import { saveFetchedMedicineData } from '../actions/medicinesActions'
 import { createDoseOptions } from '../utils/medicines'
 
 class MedicineDetails extends React.Component {
@@ -31,14 +33,15 @@ class MedicineDetails extends React.Component {
       const splitUrl = this.props.medicine.url.split("www")
       const joinedApiUrl = splitUrl[0] + "api" + splitUrl[1]
       API.getMedicineDetails(joinedApiUrl)
-      .then(medicineData => this.setState({ medicineData }))
+      .then(medicineData => this.props.saveFetchedMedicineData(medicineData))
     }
   }
 
   sideEffects = () => {
-    if (this.state.medicineData === null) return []
+    if (this.props.medicineData === null) return []
     else {
-      const mainEntry = this.state.medicineData.mainEntityOfPage
+      const mainEntry = this.props.medicineData.mainEntityOfPage
+      console.log(mainEntry)
       const sideEffectsObject = mainEntry.find(obj => obj.text === "Side effects")
       const sideEffects = sideEffectsObject.mainEntityOfPage
       return sideEffects
@@ -61,7 +64,7 @@ class MedicineDetails extends React.Component {
   }
 
   render() {
-    if(!this.props.medicine.id) return <Redirect to="/" />
+    if(!this.props.medicine || !this.props.medicine.id) return <Redirect to="/" />
     
     const {morning, evening, dose} = this.props.medicine
     const doseOptions = createDoseOptions();
@@ -104,4 +107,12 @@ class MedicineDetails extends React.Component {
   }
 }
 
-export default MedicineDetails
+const mapStateToProps = state => ({
+  medicineData: state.selectedMedicineDataReducer.medicineData
+ })
+
+ const mapDispatchToProps = dispatch => ({
+  saveFetchedMedicineData: (data) => dispatch(saveFetchedMedicineData(data))
+ })
+
+export default connect(mapStateToProps, mapDispatchToProps)(MedicineDetails);

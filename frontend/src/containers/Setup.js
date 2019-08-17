@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button, Checkbox, Form, Container, Header } from 'semantic-ui-react'
 import { createDoseOptions } from '../utils/medicines'
-import ResultsChart from '../components/Chart'
 
 class Setup extends React.Component {
   
@@ -60,7 +59,6 @@ class Setup extends React.Component {
           </Form.Field>
           <Button type="submit">Add new medicine</Button>
         </Form>
-        <ResultsChart usersMedicines={this.props.usersMedicines}/>
       </Container>
     )
   }

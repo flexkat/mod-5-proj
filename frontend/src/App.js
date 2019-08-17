@@ -8,117 +8,70 @@ import MedicineDetails from './containers/MedicineDetails'
 import Setup from './containers/Setup'
 import StatisticsContainer from './containers/StatisticsContainer'
 import { getDrugId, getDate } from './utils/medicines';
+import { connect } from 'react-redux';
+import { saveFetchedMedicines } from './actions/medicinesActions';
+import { saveUserMedicines } from './actions/userMedicinesAction';
+import { saveNewDrugDetails, resetNewDrug, setSelectedDrug } from './actions/newDrugAction'
 import ScrollToTop from './utils/ScrollToTop';
 
 class App extends React.Component {
 
   state = {
-    user: {
-      name: 'Jane',
-      id: 1
-    },
-    medicines: [],
-    usersMedicines: [],
-    newDrug: {
-      id: '',
-      dose: '',
-      morning: false,
-      evening: false
-
-    }
+    user: { name: 'Jane', id: 1 },
   }
 
   componentDidMount() {
     this.getUserMedicines()
-    API.getMedicines().then(medicines => 
-      this.setState({
-        medicines: medicines
-      })
-    )
+    API.getMedicines().then(medicines => this.props.saveFetchedMedicines(medicines))
   }
 
   getUserMedicines = () => {
     return API.getUserMedicines()
-    .then(usersMedicines => 
-      this.setState({
-        usersMedicines: usersMedicines.sort((a, b) => a.id - b.id),
-      })
-    )
-     
-  }
-
-  editNewMedForUser = (key, value) => {
-    this.setState({
-      newDrug: {
-        ...this.state.newDrug,
-        [key]: value
-      }
-    })
-  }
-
-  resetNewDrugState = () => {
-    this.setState({
-      newDrug: {
-        url: '',
-        dose: '',
-        morning: false,
-        evening: false
-      }
+    .then(usersMedicines => {
+      const sortedMeds = usersMedicines.sort((a, b) => a.id - b.id)
+      return this.props.saveUserMedicines(sortedMeds)
     })
   }
 
   addNewMedToUserMed = (e, history) => {
     e.preventDefault();
-    const drugName = this.state.medicines.find(med => med.url === this.state.newDrug.url)
-    const drugId = getDrugId(this.state.newDrug)
-    const drugExists = this.state.usersMedicines.find(med => med.id === drugId)
+    const drugName = this.props.medicines.find(med => med.url === this.props.newDrug.url)
+    const drugId = getDrugId(this.props.newDrug)
+    const drugExists = this.props.usersMedicines.find(med => med.id === drugId)
     if (drugExists) {
       console.log(`${drugId} exists`)
       return
     }
-    API.postNewMedicine({...this.state.newDrug, name: drugName.name, composite_id: drugId, user_id: 1})
+    API.postNewMedicine({...this.props.newDrug, name: drugName.name, composite_id: drugId, user_id: 1})
     .then(() => this.resetStateAndRedirect(history))
   }
 
   resetStateAndRedirect = (history) => {
     this.getUserMedicines()
     .then(() => {
-      this.resetNewDrugState();
-      setTimeout(()=> this.redirectToHome(history), 200)
+      this.props.resetNewDrug();
+      setTimeout(()=> history.push(`/`), 500)
     })
   }
 
   updateUserMed = (e, history) => {
     e.preventDefault();
-    API.patchNewMedicine(this.state.newDrug)
+    API.patchNewMedicine(this.props.newDrug)
     .then(() => this.resetStateAndRedirect(history))
   }
  
   deleteMed = (history) => {
-    API.deleteUserMedicine(this.state.newDrug)
+    API.deleteUserMedicine(this.props.newDrug)
     .then(() => this.resetStateAndRedirect(history))
   }
 
   setDrugToDisplay = (drug, history) => {
-    this.setState({
-      newDrug: { 
-        ...drug
-      }
-    }, () => this.redirectToMedicineDetails(history))
-  }
-
-  redirectToHome = (history) => {
-    history.push(`/`)
-  }
-
-  redirectToMedicineDetails = (history) => {
+    this.props.setSelectedDrug(drug)
     history.push('/medicine-details')
   }
 
-  
-
   setMedicineTaken = (taken, medicine, time) => {
-    const editingUserMedicine = this.state.usersMedicines.find(med => med.id === medicine.id)
+    const editingUserMedicine = this.props.usersMedicines.find(med => med.id === medicine.id)
     if (!editingUserMedicine) return
 
     const currentDrugHistory = editingUserMedicine.history[getDate()] || {} 
@@ -140,7 +93,6 @@ class App extends React.Component {
     }
     API.patchNewMedicine(updatedUserMedicine)
     .then(this.getUserMedicines)
-      
   }
   
 
@@ -150,35 +102,34 @@ class App extends React.Component {
         <ScrollToTop>
           <div className="App">
             <Navbar />
-            <Route path="/" exact render={(props) => <Home 
-              {...props} 
-              medicines={this.state.usersMedicines} 
-              setDrugToDisplay={this.setDrugToDisplay} 
-              user={this.state.user}
-              setMedicineTaken={this.setMedicineTaken}
-            />} 
+            Pill Pal
+            <Route path="/" exact render={(props) => 
+              <Home 
+                {...props} 
+                medicines={this.props.usersMedicines} 
+                setDrugToDisplay={this.setDrugToDisplay} 
+                user={this.state.user}
+                setMedicineTaken={this.setMedicineTaken}
+              />} 
             />
             <Route path="/medicine-details" render={(props) => <MedicineDetails 
               {...props} 
-              medicine = {this.state.newDrug} 
-              handleChange={this.editNewMedForUser} 
+              medicine = {this.props.newDrug} 
+              handleChange={this.props.saveNewDrugDetails} 
               handleSubmit={this.updateUserMed} 
               deleteMed={this.deleteMed}/>} 
             />
             <Route path="/setup" render={(props) => <Setup 
               {...props} 
-              resetNewDrugState={this.resetNewDrugState} 
-              newDrug={this.state.newDrug} 
-              medicines={this.state.medicines} 
-              handleChange={this.editNewMedForUser} 
-              handleSubmit={this.addNewMedToUserMed}
-              usersMedicines={this.state.usersMedicines}
-              />} 
-              
+              resetNewDrugState={this.props.resetNewDrug} 
+              newDrug={this.props.newDrug} 
+              medicines={this.props.medicines} 
+              handleChange={this.props.saveNewDrugDetails} 
+              handleSubmit={this.addNewMedToUserMed}/>} 
             />
             <Route path="/statistics" render={(props) => <StatisticsContainer
               {...props} 
-              medicines={this.state.usersMedicines}/>}
+              medicines={this.props.usersMedicines}/>}
             />
           </div>
         </ScrollToTop>
@@ -187,4 +138,18 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  medicines: state.medicinesReducer.medicines,
+  usersMedicines: state.userMedicinesReducer.usersMedicines,
+  newDrug: state.newDrugReducer
+ })
+
+ const mapDispatchToProps = dispatch => ({
+  saveFetchedMedicines: (medicines) => dispatch(saveFetchedMedicines(medicines)),
+  saveUserMedicines: (usersMedicines) => dispatch(saveUserMedicines(usersMedicines)),
+  saveNewDrugDetails: (key, value) => dispatch(saveNewDrugDetails(key, value)),
+  resetNewDrug: () => dispatch(resetNewDrug()),
+  setSelectedDrug: (drug) => dispatch(setSelectedDrug(drug))
+ })
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
