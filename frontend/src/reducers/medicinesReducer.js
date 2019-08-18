@@ -1,5 +1,5 @@
 const initialState = {medicines: []}
-export default (state = initialState, action) => {
+export default (state = initialState, action={}) => {
   switch (action.type) {
    case 'FETCH_MEDICINES':
     return {

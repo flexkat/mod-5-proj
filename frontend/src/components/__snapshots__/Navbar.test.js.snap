@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`nav bar component should render the menu when no props are passed through 1`] = `
+<Menu
+  pointing={true}
+>
+  <MenuItem
+    active={false}
+    as={[Function]}
+    exact={true}
+    name="home"
+    onClick={[Function]}
+    strict={true}
+    to="/"
+  >
+    Home
+  </MenuItem>
+  <MenuItem
+    active={false}
+    as={[Function]}
+    exact={true}
+    name="setup"
+    onClick={[Function]}
+    to="/setup"
+  >
+    Add my medicine
+  </MenuItem>
+  <MenuItem
+    active={false}
+    as={[Function]}
+    exact={true}
+    name="stats"
+    onClick={[Function]}
+    to="/statistics"
+  >
+    Statistics
+  </MenuItem>
+  <MenuItem
+    position="right"
+  >
+    Pill Pal
+  </MenuItem>
+</Menu>
+`;
