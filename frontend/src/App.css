@@ -86,3 +86,11 @@ div > .static-col-2 {
 .headcol:before {
   content: 'Row ';
 } */
+
+.ui.form .field>label {
+  text-align: left;
+}
+
+.ui.checkbox.add-all+label {
+  text-align: left;
+}

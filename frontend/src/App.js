@@ -7,6 +7,7 @@ import Home from './containers/Home'
 import MedicineDetails from './containers/MedicineDetails'
 import Setup from './containers/Setup'
 import StatisticsContainer from './containers/StatisticsContainer'
+import Contact from './containers/Contact'
 import { getDrugId, getDate } from './utils/medicines';
 import { connect } from 'react-redux';
 import { saveFetchedMedicines } from './actions/medicinesActions';
@@ -127,6 +128,10 @@ class App extends React.Component {
               handleSubmit={this.addNewMedToUserMed}/>} 
             />
             <Route path="/statistics" render={(props) => <StatisticsContainer
+              {...props} 
+              medicines={this.props.usersMedicines}/>}
+            />
+            <Route path="/contact" render={(props) => <Contact
               {...props} 
               medicines={this.props.usersMedicines}/>}
             />
