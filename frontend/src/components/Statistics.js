@@ -39,7 +39,7 @@ class Statistics extends React.Component {
     return(
       <Container>
         <Header as="h1">Stats</Header>
-        <Table celled structured>
+        <Table celled structured unstackable>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell colSpan='2'>Medicines</Table.HeaderCell>

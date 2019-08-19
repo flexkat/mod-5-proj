@@ -1,6 +1,6 @@
 import React from 'react'
 import { Header, Container } from 'semantic-ui-react'
-import { VictoryPie } from 'victory';
+import { VictoryPie, VictoryChart } from 'victory';
 
 
 class ResultsChart extends React.Component {
@@ -68,15 +68,17 @@ class ResultsChart extends React.Component {
     return(
       <Container>
         <Header as="h2">Chart</Header>
-        <VictoryPie
-          width={200}
-          height={200}
-          colorScale={["tomato", "orange"]}
-          data={[
-            { x: "Taken", y: counts.taken },
-            { x: "Missed", y: counts.missed },
-          ]}
-        />
+        <div>
+          <VictoryPie
+            width={200}
+            height={200}
+            colorScale={["tomato", "orange"]}
+            data={[
+              { x: "Taken", y: counts.taken },
+              { x: "Missed", y: counts.missed },
+            ]}
+          />
+        </div>
       </Container>
     )
   }

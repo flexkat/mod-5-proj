@@ -102,7 +102,6 @@ class App extends React.Component {
         <ScrollToTop>
           <div className="App">
             <Navbar />
-            Pill Pal
             <Route path="/" exact render={(props) => 
               <Home 
                 {...props} 
