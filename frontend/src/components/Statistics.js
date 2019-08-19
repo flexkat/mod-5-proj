@@ -67,8 +67,8 @@ class Statistics extends React.Component {
                     </Table.Cell>))
                 }
               </Table.Row>
-              {!med.morning || med.evening 
-                ?  <Table.Row>
+              {med.morning && med.evening 
+                ? <Table.Row>
                   <Table.Cell>PM</Table.Cell>
                   {med.evening && previousWeeksDates.map(date => 
                     <Table.Cell key={`${med.id}-${date}-PM`}  textAlign="center">

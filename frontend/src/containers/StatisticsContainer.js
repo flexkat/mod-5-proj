@@ -7,8 +7,9 @@ class StatisticsContainer extends React.Component {
 
   render() {
     const panes = [
-      {menuItem: "Month Overview", render: () => <Tab.Pane key="month"><ResultsChart usersMedicines={this.props.medicines}/></Tab.Pane>},
-      {menuItem: "Week Overview", render: () => <Tab.Pane key="week"><Statistics {...this.props} usersMedicines={this.props.medicines}/></Tab.Pane>}
+      {menuItem: "Week Overview", render: () => <Tab.Pane key="week"><Statistics {...this.props} medicines={this.props.medicines}/></Tab.Pane>},
+      {menuItem: "Month Overview", render: () => <Tab.Pane key="month"><ResultsChart usersMedicines={this.props.medicines}/></Tab.Pane>}
+      
     ]
     return(
       <div>

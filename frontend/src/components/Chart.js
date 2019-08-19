@@ -68,17 +68,17 @@ class ResultsChart extends React.Component {
     return(
       <Container>
         <Header as="h2">Chart</Header>
-        <div>
+        <svg viewBox="0 100 400 400" >
           <VictoryPie
-            width={200}
-            height={200}
+            standalone={false}
+            radius={75}
             colorScale={["tomato", "orange"]}
             data={[
               { x: "Taken", y: counts.taken },
               { x: "Missed", y: counts.missed },
             ]}
           />
-        </div>
+        </svg>
       </Container>
     )
   }
