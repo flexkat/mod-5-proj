@@ -48,7 +48,10 @@ class Contact extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.setState({
-      submitted: true
+      submitted: true,
+      medsForRefill: [],
+      message: "",
+      selectAll: false
     })
     console.log('=======================');
     console.log('this.state.medsForRefill', this.state.medsForRefill);
@@ -56,11 +59,7 @@ class Contact extends React.Component {
     console.log('=======================');
     console.log('this.state.message', this.state.message);
     console.log('=======================');
-    this.setState({
-      medsForRefill: [],
-      message: "",
-      selectAll: false
-    })
+    
   }
 
 
@@ -93,7 +92,7 @@ class Contact extends React.Component {
               options={medOptions}
               onChange={this.handleChange}
             />
-            <Checkbox label="Add all my medications" className="toggle add-all" onClick={this.handleSelectAllState}/> 
+            <Checkbox label="Add all my medications" checked={this.state.selectAll} className="toggle add-all" onClick={this.handleSelectAllState}/> 
            </Form.Field>
            <Form.Field>  
             <Form.Field control={TextArea} label="Your message" placeholder="Your message" value={this.state.message} onChange={this.handleChange}/>

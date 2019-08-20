@@ -2722,3 +2722,2316 @@ Processing by UserMedicinesController#index as */*
 Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/user_medicines" for ::1 at 2019-08-18 19:33:26 +0100
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kat/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (5.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 58ms (Views: 27.2ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:27:48 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (3.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 110ms (Views: 101.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:29:11 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/user_medicines/1" for ::1 at 2019-08-19 10:30:53 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"1", "name"=>"Amlodipine", "dose"=>"20", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/amlodipine/-20-A", "url"=>"https://www.nhs.uk/medicines/amlodipine/", "user_id"=>1, "created_at"=>"2019-08-11T11:16:12.858Z", "updated_at"=>"2019-08-16T15:03:01.920Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"1", "name"=>"Amlodipine", "dose"=>"20", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/amlodipine/-20-A", "url"=>"https://www.nhs.uk/medicines/amlodipine/", "user_id"=>1, "created_at"=>"2019-08-11T11:16:12.858Z", "updated_at"=>"2019-08-16T15:03:01.920Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (1.4ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (18.4ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/11/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/14/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 09:30:53.537179"], ["id", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 152ms (Views: 0.2ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:30:53 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:41:39 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:45:23 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:47:46 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:47:54 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:48:58 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:49:02 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:50:40 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:51:09 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:55:33 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:55:43 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:56:12 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:56:30 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/user_medicines/11" for ::1 at 2019-08-19 10:57:02 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"11", "name"=>"Bisacodyl", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "url"=>"https://www.nhs.uk/medicines/bisacodyl/", "user_id"=>1, "created_at"=>"2019-08-11T14:00:41.515Z", "updated_at"=>"2019-08-16T15:03:02.927Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>false, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"11", "name"=>"Bisacodyl", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "url"=>"https://www.nhs.uk/medicines/bisacodyl/", "user_id"=>1, "created_at"=>"2019-08-11T14:00:41.515Z", "updated_at"=>"2019-08-16T15:03:02.927Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>false, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (3.5ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/11/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n    PM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/14/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 09:57:02.668071"], ["id", 11]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:57:02 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/user_medicines/12" for ::1 at 2019-08-19 10:57:47 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"12", "name"=>"Bendroflumethiazide", "dose"=>"10", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/bendroflumethiazide/-10-A", "url"=>"https://www.nhs.uk/medicines/bendroflumethiazide/", "user_id"=>1, "created_at"=>"2019-08-11T15:49:22.849Z", "updated_at"=>"2019-08-16T15:02:46.299Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"12", "name"=>"Bendroflumethiazide", "dose"=>"10", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/bendroflumethiazide/-10-A", "url"=>"https://www.nhs.uk/medicines/bendroflumethiazide/", "user_id"=>1, "created_at"=>"2019-08-11T15:49:22.849Z", "updated_at"=>"2019-08-16T15:02:46.299Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (13.4ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/11/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/14/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 09:57:47.039316"], ["id", 12]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 47ms (Views: 0.4ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 10:57:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.1ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:03:20 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:03:31 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:04:01 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:04:46 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:06:57 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:10:58 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:12:58 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:32:06 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/user_medicines/13" for ::1 at 2019-08-19 11:34:09 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"13", "name"=>"Candesartan", "dose"=>"10", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/candesartan/-10-A", "url"=>"https://www.nhs.uk/medicines/candesartan/", "user_id"=>1, "created_at"=>"2019-08-12T10:37:26.528Z", "updated_at"=>"2019-08-17T11:23:44.592Z", "history"=>{"08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"13", "name"=>"Candesartan", "dose"=>"10", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/candesartan/-10-A", "url"=>"https://www.nhs.uk/medicines/candesartan/", "user_id"=>1, "created_at"=>"2019-08-12T10:37:26.528Z", "updated_at"=>"2019-08-17T11:23:44.592Z", "history"=>{"08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (1.6ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (2.3ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 10:34:09.912398"], ["id", 13]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:34:09 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/user_medicines/1" for ::1 at 2019-08-19 11:34:45 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"1", "name"=>"Amlodipine", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/amlodipine/-20-A", "url"=>"https://www.nhs.uk/medicines/amlodipine/", "user_id"=>1, "created_at"=>"2019-08-11T11:16:12.858Z", "updated_at"=>"2019-08-19T09:30:53.537Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"1", "name"=>"Amlodipine", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/amlodipine/-20-A", "url"=>"https://www.nhs.uk/medicines/amlodipine/", "user_id"=>1, "created_at"=>"2019-08-11T11:16:12.858Z", "updated_at"=>"2019-08-19T09:30:53.537Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (1.1ms)[0m  [1m[33mUPDATE "user_medicines" SET "evening" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["evening", false], ["updated_at", "2019-08-19 10:34:45.041437"], ["id", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:34:45 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/user_medicines" for ::1 at 2019-08-19 11:35:02 +0100
+Processing by UserMedicinesController#create as */*
+  Parameters: {"state"=>{"state"=>{"id"=>1, "name"=>"Amlodipine", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/amlodipine/-20-A", "url"=>"https://www.nhs.uk/medicines/amlodipine/", "user_id"=>1, "created_at"=>"2019-08-11T11:16:12.858Z", "updated_at"=>"2019-08-19T09:30:53.537Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}, "url"=>"https://www.nhs.uk/medicines/cetirizine/", "dose"=>40, "evening"=>true, "name"=>"Cetirizine", "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-40-P", "user_id"=>1, "user_medicine"=>{"name"=>"Cetirizine", "dose"=>40, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-40-P", "url"=>"https://www.nhs.uk/medicines/cetirizine/", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:8
+  [1m[36mUserMedicine Create (7.6ms)[0m  [1m[32mINSERT INTO "user_medicines" ("name", "dose", "evening", "composite_id", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Cetirizine"], ["dose", "40"], ["evening", true], ["composite_id", "https://www.nhs.uk/medicines/cetirizine/-40-P"], ["url", "https://www.nhs.uk/medicines/cetirizine/"], ["user_id", 1], ["created_at", "2019-08-19 10:35:02.285239"], ["updated_at", "2019-08-19 10:35:02.285239"]]
+  ↳ app/controllers/user_medicines_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:8
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:35:02 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/user_medicines/42" for ::1 at 2019-08-19 11:35:07 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"42", "name"=>"Cetirizine", "dose"=>"40", "morning"=>nil, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-40-P", "url"=>"https://www.nhs.uk/medicines/cetirizine/", "user_id"=>1, "created_at"=>"2019-08-19T10:35:02.285Z", "updated_at"=>"2019-08-19T10:35:02.285Z", "history"=>{"08/19/2019"=>{"status"=>{"PM"=>true}, "clicked"=>{"PM"=>true}}}, "user_medicine"=>{"id"=>"42", "name"=>"Cetirizine", "dose"=>"40", "morning"=>nil, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-40-P", "url"=>"https://www.nhs.uk/medicines/cetirizine/", "user_id"=>1, "created_at"=>"2019-08-19T10:35:02.285Z", "updated_at"=>"2019-08-19T10:35:02.285Z", "history"=>{"08/19/2019"=>{"status"=>{"PM"=>true}, "clicked"=>{"PM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (3.2ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n"], ["updated_at", "2019-08-19 10:35:07.595908"], ["id", 42]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:35:07 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:51:12 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 11:54:11 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:00:00 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:00:07 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:02:12 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:03:18 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:04:09 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:08:29 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:08:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:08:58 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.2ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:09:06 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:10:51 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 12:11:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 13:10:32 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:02:51 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/user_medicines/15" for ::1 at 2019-08-19 14:03:07 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"15", "name"=>"Citalopram", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/citalopram/-20-A", "url"=>"https://www.nhs.uk/medicines/citalopram/", "user_id"=>1, "created_at"=>"2019-08-12T15:21:00.775Z", "updated_at"=>"2019-08-16T15:02:51.034Z", "history"=>{"08/12/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"15", "name"=>"Citalopram", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/citalopram/-20-A", "url"=>"https://www.nhs.uk/medicines/citalopram/", "user_id"=>1, "created_at"=>"2019-08-12T15:21:00.775Z", "updated_at"=>"2019-08-16T15:02:51.034Z", "history"=>{"08/12/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (0.5ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 13:03:07.573120"], ["id", 15]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:03:07 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:04:08 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/user_medicines/22" for ::1 at 2019-08-19 14:04:56 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"22", "name"=>"Cetirizine", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-30-P", "url"=>"https://www.nhs.uk/medicines/cetirizine/", "user_id"=>1, "created_at"=>"2019-08-13T19:28:14.035Z", "updated_at"=>"2019-08-16T15:03:05.459Z", "history"=>{"08/13/2019"=>{"status"=>{"PM"=>false}, "clicked"=>{"PM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"PM"=>true}, "clicked"=>{"PM"=>true}}}, "user_medicine"=>{"id"=>"22", "name"=>"Cetirizine", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-30-P", "url"=>"https://www.nhs.uk/medicines/cetirizine/", "user_id"=>1, "created_at"=>"2019-08-13T19:28:14.035Z", "updated_at"=>"2019-08-16T15:03:05.459Z", "history"=>{"08/13/2019"=>{"status"=>{"PM"=>false}, "clicked"=>{"PM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"PM"=>true}, "clicked"=>{"PM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (1.4ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n"], ["updated_at", "2019-08-19 13:04:56.853183"], ["id", 22]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:04:56 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/user_medicines/11" for ::1 at 2019-08-19 14:06:47 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"11", "name"=>"Bisacodyl", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "url"=>"https://www.nhs.uk/medicines/bisacodyl/", "user_id"=>1, "created_at"=>"2019-08-11T14:00:41.515Z", "updated_at"=>"2019-08-19T09:57:02.668Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>false, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}}, "user_medicine"=>{"id"=>"11", "name"=>"Bisacodyl", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "url"=>"https://www.nhs.uk/medicines/bisacodyl/", "user_id"=>1, "created_at"=>"2019-08-11T14:00:41.515Z", "updated_at"=>"2019-08-19T09:57:02.668Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>false, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}}}}
+  [1m[36mUserMedicine Load (1.5ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (0.5ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/11/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n    PM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/14/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n"], ["updated_at", "2019-08-19 13:06:47.468412"], ["id", 11]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:06:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:08:02 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:08:10 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/user_medicines/42" for ::1 at 2019-08-19 14:11:43 +0100
+Processing by UserMedicinesController#destroy as */*
+  Parameters: {"id"=>"42"}
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[36mUserMedicine Destroy (0.9ms)[0m  [1m[31mDELETE FROM "user_medicines" WHERE "user_medicines"."id" = $1[0m  [["id", 42]]
+  ↳ app/controllers/user_medicines_controller.rb:20
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:20
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:11:43 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (2.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:13:01 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:13:15 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/user_medicines" for ::1 at 2019-08-19 14:13:31 +0100
+Processing by UserMedicinesController#create as */*
+  Parameters: {"state"=>{"id"=>"", "dose"=>"", "morning"=>false, "evening"=>false}, "url"=>"https://www.nhs.uk/medicines/doxycycline/", "dose"=>30, "evening"=>true, "name"=>"Doxycycline", "composite_id"=>"https://www.nhs.uk/medicines/doxycycline/-30-P", "user_id"=>1, "user_medicine"=>{"name"=>"Doxycycline", "dose"=>30, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/doxycycline/-30-P", "url"=>"https://www.nhs.uk/medicines/doxycycline/", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:8
+  [1m[36mUserMedicine Create (0.7ms)[0m  [1m[32mINSERT INTO "user_medicines" ("name", "dose", "evening", "composite_id", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Doxycycline"], ["dose", "30"], ["evening", true], ["composite_id", "https://www.nhs.uk/medicines/doxycycline/-30-P"], ["url", "https://www.nhs.uk/medicines/doxycycline/"], ["user_id", 1], ["created_at", "2019-08-19 13:13:31.053183"], ["updated_at", "2019-08-19 13:13:31.053183"]]
+  ↳ app/controllers/user_medicines_controller.rb:8
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:8
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:13:31 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (4.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:15:06 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_medicines" for ::1 at 2019-08-19 14:15:27 +0100
+Processing by UserMedicinesController#create as */*
+  Parameters: {"state"=>{"id"=>"", "dose"=>"", "morning"=>false, "evening"=>false}, "url"=>"https://www.nhs.uk/medicines/felodipine/", "dose"=>20, "morning"=>false, "evening"=>true, "name"=>"Felodipine", "composite_id"=>"https://www.nhs.uk/medicines/felodipine/-20-P", "user_id"=>1, "user_medicine"=>{"name"=>"Felodipine", "dose"=>20, "morning"=>false, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/felodipine/-20-P", "url"=>"https://www.nhs.uk/medicines/felodipine/", "user_id"=>1}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:8
+  [1m[36mUserMedicine Create (1.2ms)[0m  [1m[32mINSERT INTO "user_medicines" ("name", "dose", "morning", "evening", "composite_id", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Felodipine"], ["dose", "20"], ["morning", false], ["evening", true], ["composite_id", "https://www.nhs.uk/medicines/felodipine/-20-P"], ["url", "https://www.nhs.uk/medicines/felodipine/"], ["user_id", 1], ["created_at", "2019-08-19 13:15:27.161448"], ["updated_at", "2019-08-19 13:15:27.161448"]]
+  ↳ app/controllers/user_medicines_controller.rb:8
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:8
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:15:27 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/user_medicines/44" for ::1 at 2019-08-19 14:15:37 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"44", "name"=>"Felodipine", "dose"=>"20", "morning"=>false, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/felodipine/-20-P", "url"=>"https://www.nhs.uk/medicines/felodipine/", "user_id"=>1, "created_at"=>"2019-08-19T13:15:27.161Z", "updated_at"=>"2019-08-19T13:15:27.161Z", "history"=>{"08/19/2019"=>{"status"=>{"PM"=>true}, "clicked"=>{"PM"=>true}}}, "user_medicine"=>{"id"=>"44", "name"=>"Felodipine", "dose"=>"20", "morning"=>false, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/felodipine/-20-P", "url"=>"https://www.nhs.uk/medicines/felodipine/", "user_id"=>1, "created_at"=>"2019-08-19T13:15:27.161Z", "updated_at"=>"2019-08-19T13:15:27.161Z", "history"=>{"08/19/2019"=>{"status"=>{"PM"=>true}, "clicked"=>{"PM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (0.4ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n"], ["updated_at", "2019-08-19 13:15:37.705493"], ["id", 44]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:15:37 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:15:55 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:16:26 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:16:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:17:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:18:01 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:20:24 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:20:38 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (3.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:21:00 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:21:19 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:21:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:21:58 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:22:10 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:22:26 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:22:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:23:06 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:24:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:24:49 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:25:02 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:48:37 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (2.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 14:59:13 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:02:34 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:22:51 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:23:51 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.1ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:27:07 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:32:16 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:39:59 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.2ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:44:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.2ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:44:46 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:45:17 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:46:34 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:48:11 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:48:49 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:50:44 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:51:06 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:51:13 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:52:35 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:52:46 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:53:00 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:53:14 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:54:33 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:54:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:55:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:55:49 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:56:30 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:57:12 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:57:24 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:58:00 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 15:58:19 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:01:07 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:01:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:02:25 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:23:54 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:24:15 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:24:48 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:25:11 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:26:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:27:15 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:27:54 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 25ms (Views: 24.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:28:00 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:28:07 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:28:57 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:29:13 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:34:51 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:35:10 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:35:37 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:36:05 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:36:36 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:38:15 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:38:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.1ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:51:13 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:52:14 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:52:56 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:53:38 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:56:15 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:56:55 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:57:00 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:57:07 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 16:58:44 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 17:00:05 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 17:04:23 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 17:05:37 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 17:33:37 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 20:42:52 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 20:49:58 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 20:50:53 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:08:24 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (3.2ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:09:38 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:10:06 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:12:12 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:12:28 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:14:22 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:23:42 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/user_medicines/17" for ::1 at 2019-08-19 21:46:31 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"17", "name"=>"Aciclovir (including Zovirax)", "dose"=>"40", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/aciclovir/-40-A", "url"=>"https://www.nhs.uk/medicines/aciclovir/", "user_id"=>1, "created_at"=>"2019-08-12T16:18:18.448Z", "updated_at"=>"2019-08-16T15:02:52.083Z", "history"=>{"08/12/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"17", "name"=>"Aciclovir (including Zovirax)", "dose"=>"40", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/aciclovir/-40-A", "url"=>"https://www.nhs.uk/medicines/aciclovir/", "user_id"=>1, "created_at"=>"2019-08-12T16:18:18.448Z", "updated_at"=>"2019-08-16T15:02:52.083Z", "history"=>{"08/12/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (2.0ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 20:46:31.625317"], ["id", 17]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:46:31 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/user_medicines/19" for ::1 at 2019-08-19 21:46:32 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"19", "name"=>"Aspirin for pain relief", "dose"=>"40", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/aspirin-for-pain-relief/-40-A-P", "url"=>"https://www.nhs.uk/medicines/aspirin-for-pain-relief/", "user_id"=>1, "created_at"=>"2019-08-12T18:21:42.407Z", "updated_at"=>"2019-08-16T15:02:53.620Z", "history"=>{"08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"19", "name"=>"Aspirin for pain relief", "dose"=>"40", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/aspirin-for-pain-relief/-40-A-P", "url"=>"https://www.nhs.uk/medicines/aspirin-for-pain-relief/", "user_id"=>1, "created_at"=>"2019-08-12T18:21:42.407Z", "updated_at"=>"2019-08-16T15:02:53.620Z", "history"=>{"08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (0.4ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 20:46:32.508473"], ["id", 19]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:46:32 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/user_medicines/20" for ::1 at 2019-08-19 21:46:33 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"20", "name"=>"Adalimumab", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/adalimumab/-20-A", "url"=>"https://www.nhs.uk/medicines/adalimumab/", "user_id"=>1, "created_at"=>"2019-08-12T18:28:56.923Z", "updated_at"=>"2019-08-16T15:02:54.898Z", "history"=>{"08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"20", "name"=>"Adalimumab", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/adalimumab/-20-A", "url"=>"https://www.nhs.uk/medicines/adalimumab/", "user_id"=>1, "created_at"=>"2019-08-12T18:28:56.923Z", "updated_at"=>"2019-08-16T15:02:54.898Z", "history"=>{"08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (0.5ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 20:46:33.651042"], ["id", 20]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:46:33 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/user_medicines/22" for ::1 at 2019-08-19 21:46:34 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"22", "name"=>"Cetirizine", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-30-P", "url"=>"https://www.nhs.uk/medicines/cetirizine/", "user_id"=>1, "created_at"=>"2019-08-13T19:28:14.035Z", "updated_at"=>"2019-08-19T13:04:56.853Z", "history"=>{"08/13/2019"=>{"status"=>{"PM"=>false}, "clicked"=>{"PM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"PM"=>true, "AM"=>true}, "clicked"=>{"PM"=>true, "AM"=>true}}}, "user_medicine"=>{"id"=>"22", "name"=>"Cetirizine", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-30-P", "url"=>"https://www.nhs.uk/medicines/cetirizine/", "user_id"=>1, "created_at"=>"2019-08-13T19:28:14.035Z", "updated_at"=>"2019-08-19T13:04:56.853Z", "history"=>{"08/13/2019"=>{"status"=>{"PM"=>false}, "clicked"=>{"PM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"PM"=>true, "AM"=>true}, "clicked"=>{"PM"=>true, "AM"=>true}}}}}
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (3.0ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n    AM: true\n"], ["updated_at", "2019-08-19 20:46:34.513539"], ["id", 22]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:46:34 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/user_medicines/34" for ::1 at 2019-08-19 21:46:35 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"34", "name"=>"Alendronic acid", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/alendronic-acid/-20-A", "url"=>"https://www.nhs.uk/medicines/alendronic-acid/", "user_id"=>1, "created_at"=>"2019-08-13T20:34:11.556Z", "updated_at"=>"2019-08-16T15:02:58.609Z", "history"=>{"08/16/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"34", "name"=>"Alendronic acid", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/alendronic-acid/-20-A", "url"=>"https://www.nhs.uk/medicines/alendronic-acid/", "user_id"=>1, "created_at"=>"2019-08-13T20:34:11.556Z", "updated_at"=>"2019-08-16T15:02:58.609Z", "history"=>{"08/16/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (0.5ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 20:46:35.590930"], ["id", 34]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:46:35 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/user_medicines/37" for ::1 at 2019-08-19 21:46:36 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"37", "name"=>"Cetirizine", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-20-A", "url"=>"https://www.nhs.uk/medicines/cetirizine/", "user_id"=>1, "created_at"=>"2019-08-14T09:08:22.895Z", "updated_at"=>"2019-08-16T15:02:59.919Z", "history"=>{"08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"37", "name"=>"Cetirizine", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/cetirizine/-20-A", "url"=>"https://www.nhs.uk/medicines/cetirizine/", "user_id"=>1, "created_at"=>"2019-08-14T09:08:22.895Z", "updated_at"=>"2019-08-16T15:02:59.919Z", "history"=>{"08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (3.0ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 20:46:36.429646"], ["id", 37]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:46:36 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/user_medicines/39" for ::1 at 2019-08-19 21:46:37 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"39", "name"=>"Acrivastine", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/acrivastine/-20-A", "url"=>"https://www.nhs.uk/medicines/acrivastine/", "user_id"=>1, "created_at"=>"2019-08-17T10:15:56.294Z", "updated_at"=>"2019-08-17T10:15:56.294Z", "history"=>{"08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"39", "name"=>"Acrivastine", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/acrivastine/-20-A", "url"=>"https://www.nhs.uk/medicines/acrivastine/", "user_id"=>1, "created_at"=>"2019-08-17T10:15:56.294Z", "updated_at"=>"2019-08-17T10:15:56.294Z", "history"=>{"08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (0.4ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-19 20:46:37.303218"], ["id", 39]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:46:37 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/user_medicines/13" for ::1 at 2019-08-19 21:46:39 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"13", "name"=>"Candesartan", "dose"=>"10", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/candesartan/-10-A", "url"=>"https://www.nhs.uk/medicines/candesartan/", "user_id"=>1, "created_at"=>"2019-08-12T10:37:26.528Z", "updated_at"=>"2019-08-19T10:34:09.912Z", "history"=>{"08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}}, "user_medicine"=>{"id"=>"13", "name"=>"Candesartan", "dose"=>"10", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/candesartan/-10-A", "url"=>"https://www.nhs.uk/medicines/candesartan/", "user_id"=>1, "created_at"=>"2019-08-12T10:37:26.528Z", "updated_at"=>"2019-08-19T10:34:09.912Z", "history"=>{"08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (0.6ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n"], ["updated_at", "2019-08-19 20:46:39.095874"], ["id", 13]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:46:39 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/user_medicines/43" for ::1 at 2019-08-19 21:46:40 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"43", "name"=>"Doxycycline", "dose"=>"30", "morning"=>nil, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/doxycycline/-30-P", "url"=>"https://www.nhs.uk/medicines/doxycycline/", "user_id"=>1, "created_at"=>"2019-08-19T13:13:31.053Z", "updated_at"=>"2019-08-19T13:13:31.053Z", "history"=>{"08/19/2019"=>{"status"=>{"PM"=>true}, "clicked"=>{"PM"=>true}}}, "user_medicine"=>{"id"=>"43", "name"=>"Doxycycline", "dose"=>"30", "morning"=>nil, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/doxycycline/-30-P", "url"=>"https://www.nhs.uk/medicines/doxycycline/", "user_id"=>1, "created_at"=>"2019-08-19T13:13:31.053Z", "updated_at"=>"2019-08-19T13:13:31.053Z", "history"=>{"08/19/2019"=>{"status"=>{"PM"=>true}, "clicked"=>{"PM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (0.3ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    PM: true\n"], ["updated_at", "2019-08-19 20:46:40.155856"], ["id", 43]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-19 21:46:40 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:11:37 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (10.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 55ms (Views: 40.7ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:11:56 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:12:28 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:13:42 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:13:45 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:14:25 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:15:14 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.1ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:27:24 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:35:49 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:38:14 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:38:34 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 09:38:56 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:18:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:19:54 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:20:24 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:20:33 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:20:59 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:21:43 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:21:53 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:23:27 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:23:51 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:33:26 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:44:57 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:48:36 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:57:40 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 10:58:26 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (2.1ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 12:02:08 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:15:59 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:16:58 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:17:39 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:18:08 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:18:28 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:27:14 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:28:22 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:29:03 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:31:11 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:32:03 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:32:10 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:33:19 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:33:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:35:56 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:38:24 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:40:43 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:42:50 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:54:14 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:55:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:58:08 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:58:28 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:58:50 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 14:59:36 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:00:19 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:02:06 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:03:15 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:04:38 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:06:37 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (2.2ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:07:19 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:07:34 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:08:13 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:09:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:10:13 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:10:43 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:12:59 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:13:01 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:16:02 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:54:02 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:55:25 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:55:34 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 15:57:58 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:01:36 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:01:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:01:51 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:02:13 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:03:01 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.3ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:03:44 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:04:38 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:14:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:15:40 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:17:44 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:21:46 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:25:10 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:25:53 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:25:59 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:38:24 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:39:45 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:47:31 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:47:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 72ms (Views: 71.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:47:59 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:48:44 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 53ms (Views: 52.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:50:24 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:50:44 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:56:18 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:57:03 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 16:57:50 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:01:46 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:02:42 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:03:19 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:03:41 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:04:10 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:04:56 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:06:34 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.6ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:06:49 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:07:48 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.0ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:08:05 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:09:02 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:09:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/user_medicines/1" for ::1 at 2019-08-20 17:23:56 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"1", "name"=>"Amlodipine", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/amlodipine/-20-A", "url"=>"https://www.nhs.uk/medicines/amlodipine/", "user_id"=>1, "created_at"=>"2019-08-11T11:16:12.858Z", "updated_at"=>"2019-08-19T10:34:45.041Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/20/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"1", "name"=>"Amlodipine", "dose"=>"20", "morning"=>true, "evening"=>false, "composite_id"=>"https://www.nhs.uk/medicines/amlodipine/-20-A", "url"=>"https://www.nhs.uk/medicines/amlodipine/", "user_id"=>1, "created_at"=>"2019-08-11T11:16:12.858Z", "updated_at"=>"2019-08-19T10:34:45.041Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>false, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/20/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (12.5ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (7.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (58.8ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/11/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/14/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/20/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-20 16:23:56.136365"], ["id", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 123ms (Views: 0.2ms | ActiveRecord: 92.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:23:56 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.9ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/user_medicines/11" for ::1 at 2019-08-20 17:24:01 +0100
+Processing by UserMedicinesController#update as */*
+  Parameters: {"id"=>"11", "name"=>"Bisacodyl", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "url"=>"https://www.nhs.uk/medicines/bisacodyl/", "user_id"=>1, "created_at"=>"2019-08-11T14:00:41.515Z", "updated_at"=>"2019-08-19T13:06:47.468Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>false, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/20/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}, "user_medicine"=>{"id"=>"11", "name"=>"Bisacodyl", "dose"=>"30", "morning"=>true, "evening"=>true, "composite_id"=>"https://www.nhs.uk/medicines/bisacodyl/-10-A", "url"=>"https://www.nhs.uk/medicines/bisacodyl/", "user_id"=>1, "created_at"=>"2019-08-11T14:00:41.515Z", "updated_at"=>"2019-08-19T13:06:47.468Z", "history"=>{"08/11/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/12/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/13/2019"=>{"status"=>{"AM"=>false, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/14/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}, "08/15/2019"=>{"status"=>{"AM"=>true}, "clicked"=>{"AM"=>true}}, "08/16/2019"=>{"status"=>{"AM"=>true, "PM"=>true}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/19/2019"=>{"status"=>{"AM"=>true, "PM"=>false}, "clicked"=>{"AM"=>true, "PM"=>true}}, "08/20/2019"=>{"status"=>{"AM"=>false}, "clicked"=>{"AM"=>true}}}}}
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT  "user_medicines".* FROM "user_medicines" WHERE "user_medicines"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/user_medicines_controller.rb:13
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[36mUserMedicine Update (1.0ms)[0m  [1m[33mUPDATE "user_medicines" SET "history" = $1, "updated_at" = $2 WHERE "user_medicines"."id" = $3[0m  [["history", "--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n'08/11/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/12/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/13/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n    PM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/14/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/15/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n'08/16/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/19/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n    PM: true\n'08/20/2019': !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n  status: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: false\n  clicked: !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n    AM: true\n"], ["updated_at", "2019-08-20 16:24:01.906788"], ["id", 11]]
+  ↳ app/controllers/user_medicines_controller.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_medicines_controller.rb:14
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:24:01 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:24:40 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:24:51 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:27:21 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:27:37 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (1.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:28:47 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:30:13 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 17:30:36 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 20:53:26 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.8ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 20:54:32 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 20:54:42 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.5ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 20:54:49 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.4ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user_medicines" for ::1 at 2019-08-20 20:55:33 +0100
+Processing by UserMedicinesController#index as */*
+  [1m[36mUserMedicine Load (0.7ms)[0m  [1m[34mSELECT "user_medicines".* FROM "user_medicines"[0m
+  ↳ app/controllers/user_medicines_controller.rb:4
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.7ms)
+
+
