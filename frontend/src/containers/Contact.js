@@ -6,25 +6,43 @@ class Contact extends React.Component {
   state = {
     selectAll: false,
     submitted: false,
-    medsForRefill: []
+    medsForRefill: [],
+    message: ''
   }
 
   handleSelectAllState = () => {
     this.setState({
       selectAll: !this.state.selectAll
-    }, () => this.selectAllMeds)
+    }, this.selectAllMeds)
   }
 
   selectAllMeds = () => {
-    
+    if(this.state.selectAll) {
+      console.log("setting all meds")
+      this.setState({
+        medsForRefill: this.props.medicines.map(med=> med.id)
+      })
+    } else {
+      this.setState({
+        medsForRefill: []
+      })
+    }
   }
 
   handleChange = (value, target, $selected) => {
     console.log(target.value)
+    const data = target.value
+    let key;
+    if (target.placeholder === "Select medications for refill") {
+      this.setState({
+        medsForRefill: [...data]
+      })
+    } else if (target.placeholder === "Your message") {
+      this.setState({
+        message: data
+      })
+    }
     
-    this.setState({
-      medsForRefill: [...target.value]
-    })
   }
 
   handleSubmit = (e) => {
@@ -35,6 +53,13 @@ class Contact extends React.Component {
     console.log('=======================');
     console.log('this.state.medsForRefill', this.state.medsForRefill);
     console.log('=======================');
+    console.log('=======================');
+    console.log('this.state.message', this.state.message);
+    console.log('=======================');
+    this.setState({
+      medsForRefill: [],
+      message: ""
+    })
   }
 
 
@@ -63,13 +88,14 @@ class Contact extends React.Component {
               multiple
               search
               selection
+              value={this.state.medsForRefill}
               options={medOptions}
               onChange={this.handleChange}
             />
-            <Checkbox label="Add all my medications" className="toggle add-all" onChange={this.handleSelectAllState}/> 
+            <Checkbox label="Add all my medications" className="toggle add-all" onClick={this.handleSelectAllState}/> 
            </Form.Field>
            <Form.Field>  
-            <Form.Field control={TextArea} label="Your message"/>
+            <Form.Field control={TextArea} label="Your message" placeholder="Your message" value={this.state.message} onChange={this.handleChange}/>
           </Form.Field>
           <Message success header='Form Completed' content="Your refill request has been sent" />
           <Button value="submit">Request Refill</Button>
