@@ -5,7 +5,7 @@ import { Header, Container } from 'semantic-ui-react';
 class Home extends React.Component {
   render() {
     return (
-      <Container>Home page
+      <Container className="home-page">Home page
         <Header as='h2'>Welcome back {this.props.user.name}</Header>
         <DrugHomeContainer 
           {...this.props} 

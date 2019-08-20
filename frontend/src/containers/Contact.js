@@ -58,7 +58,8 @@ class Contact extends React.Component {
     console.log('=======================');
     this.setState({
       medsForRefill: [],
-      message: ""
+      message: "",
+      selectAll: false
     })
   }
 

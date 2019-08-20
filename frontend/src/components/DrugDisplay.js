@@ -33,7 +33,7 @@ class DrugDisplay extends React.Component {
           </Segment>
         </Grid.Column>
         <Grid.Column width={6}>
-          <Button.Group >
+          <Button.Group className="desktop">
             <Button 
               disabled={doseClicked} 
               onClick={(e) => setMedicineTaken(false, medicine, time)} 
@@ -50,6 +50,25 @@ class DrugDisplay extends React.Component {
               value="taken"
             >
               {(doseClicked && doseTaken) || (!doseClicked) ? "Taken" : ""}
+            </Button>
+            </Button.Group>
+            <Button.Group className="mobile">
+            <Button 
+              disabled={doseClicked} 
+              onClick={(e) => setMedicineTaken(false, medicine, time)} 
+              className={!compliance ? "compliance missed" : "compliance"} 
+              value="missed"
+            >
+              {doseTaken ? "" : "X"}
+            </Button>
+            <Button 
+              disabled={doseClicked} 
+              positive 
+              onClick={(e) => setMedicineTaken(true, medicine, time)} 
+              className={compliance ? "compliance taken" : "compliance"} 
+              value="taken"
+            >
+              {(doseClicked && doseTaken) || (!doseClicked) ? "✓" : ""}
             </Button>
           </Button.Group>
         </Grid.Column >
