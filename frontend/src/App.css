@@ -39,6 +39,9 @@ div.App {
   text-align: left;
 }
 
+.static.col-2 { 
+  border-right: 3px solid gray;
+}
 
 .table-wrap {
   width: 100%;
@@ -102,10 +105,17 @@ td.static.col-1.invisible {
 }
 .clone thead, .clone tfoot{background:transparent;}
 
+.am-grid {
+  background-color: paleturquoise;
+}
+.pm-grid {
+  background-color: navy;
+}
 
 @media (max-width: 480px) {
   .buttons.mobile {
       display: auto;
+      padding: 5px;
   }
   .buttons.desktop {
       display: none;

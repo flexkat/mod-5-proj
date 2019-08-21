@@ -1,6 +1,6 @@
 import React from 'react'
 import DrugDisplay from '../components/DrugDisplay'
-import { Grid, Header, Container } from 'semantic-ui-react';
+import { Grid, Header, Container, Divider } from 'semantic-ui-react';
 
 class DrugHomeContainer extends React.Component {
   render(){
@@ -13,6 +13,7 @@ class DrugHomeContainer extends React.Component {
           this.props.medicines.map(medicine => (
           medicine.morning ? <DrugDisplay setMedicineTaken={this.props.setMedicineTaken} key={`${medicine.id}-AM`} {...this.props} time="AM" medicine={medicine} handleClick={this.props.handleClick}/> : null))
         }
+        <Divider/>
         {
           this.props.medicines.map(medicine => (
           medicine.evening ? <DrugDisplay setMedicineTaken={this.props.setMedicineTaken} key={`${medicine.id}-PM`} {...this.props} time="PM" medicine={medicine} handleClick={this.props.handleClick}/> : null))

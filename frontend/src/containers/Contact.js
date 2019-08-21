@@ -53,6 +53,7 @@ class Contact extends React.Component {
       message: "",
       selectAll: false
     })
+    
     console.log('=======================');
     console.log('this.state.medsForRefill', this.state.medsForRefill);
     console.log('=======================');

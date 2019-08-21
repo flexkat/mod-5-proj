@@ -20,7 +20,7 @@ class DrugDisplay extends React.Component {
 
     return(
       <Grid.Row columns="equal">
-        <Grid.Column className="vertical-align">{time}</Grid.Column>
+        <Grid.Column className="vertical-align">{time === "AM" ? "☀️" : "🌒"}</Grid.Column>
         <Grid.Column width={8}>
           <Segment
             onClick={() => handleClick(medicine, this.props.history)}
