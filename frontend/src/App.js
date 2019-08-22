@@ -71,6 +71,27 @@ class App extends React.Component {
     history.push('/medicine-details')
   }
 
+  resetDay = () => {
+    const updatedUserMedicines = this.props.usersMedicines.map(med => {
+      let drugHistory = med.history;
+      for(const date in drugHistory) {
+        if(date === getDate()) {
+          for(const time in drugHistory[date].clicked) {
+            drugHistory[date].clicked[time] = false 
+            drugHistory[date].status[time] = null 
+          }
+        }
+      } 
+      const updatedMed = {
+        ...med,
+        history: drugHistory
+      }
+
+      API.patchNewMedicine(updatedMed)
+      .then(this.getUserMedicines)
+    })
+  }
+
   setMedicineTaken = (taken, medicine, time) => {
     const editingUserMedicine = this.props.usersMedicines.find(med => med.id === medicine.id)
     if (!editingUserMedicine) return
@@ -102,7 +123,7 @@ class App extends React.Component {
       <Router> 
         <ScrollToTop>
           <div className="App">
-            <Navbar />
+            <Navbar resetNewDrugState={this.props.resetNewDrug}/>
             <Route path="/" exact render={(props) => 
               <Home 
                 {...props} 
@@ -110,6 +131,7 @@ class App extends React.Component {
                 setDrugToDisplay={this.setDrugToDisplay} 
                 user={this.state.user}
                 setMedicineTaken={this.setMedicineTaken}
+                resetDay={this.resetDay}
               />} 
             />
             <Route path="/medicine-details" render={(props) => <MedicineDetails 

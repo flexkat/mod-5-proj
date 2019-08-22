@@ -3,10 +3,6 @@ import { Button, Checkbox, Form, Container, Header } from 'semantic-ui-react'
 import { createDoseOptions } from '../utils/medicines'
 
 class Setup extends React.Component {
-  
-  componentDidMount() {
-    this.props.resetNewDrugState();
-  }
 
   createOptionsFromProps = (medicine) => {
     return {

@@ -1,6 +1,6 @@
 import React from 'react'
 import DrugHomeContainer from './DrugHomeContainer';
-import { Header, Container } from 'semantic-ui-react';
+import { Header, Container, Button } from 'semantic-ui-react';
 
 class Home extends React.Component {
   render() {
@@ -13,6 +13,8 @@ class Home extends React.Component {
           handleClick={this.props.setDrugToDisplay}
           setMedicineTaken={this.props.setMedicineTaken}
           />
+        <br></br>  
+        <Button onClick={this.props.resetDay}>Reset</Button>  
       </Container>
     )
   }

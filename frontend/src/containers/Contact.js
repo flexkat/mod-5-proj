@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import { Container, Header, Form, TextArea, Button, Dropdown, Checkbox, Message } from 'semantic-ui-react';
 
 class Contact extends React.Component {
@@ -37,7 +38,7 @@ class Contact extends React.Component {
       this.setState({
         medsForRefill: [...data]
       })
-    } else if (target.placeholder === "Your message") {
+    } else if (target.placeholder === "My message") {
       this.setState({
         message: data
       })
@@ -47,20 +48,21 @@ class Contact extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    
+    const fullMedsForRefill = this.state.medsForRefill.map(id => {return this.props.medicines.find(med => med.id === id)})
+
+    const fullMedName = fullMedsForRefill.map(med => `${med.name} - ${med.dose}mg`)
+   
+    axios.post('http://localhost:3002/contact', {
+      message: this.state.message,
+      medsForRefill: fullMedName,
+    })
     this.setState({
       submitted: true,
       medsForRefill: [],
       message: "",
       selectAll: false
     })
-    
-    console.log('=======================');
-    console.log('this.state.medsForRefill', this.state.medsForRefill);
-    console.log('=======================');
-    console.log('=======================');
-    console.log('this.state.message', this.state.message);
-    console.log('=======================');
-    
   }
 
 
@@ -78,8 +80,7 @@ class Contact extends React.Component {
         <Header as="h2">Contact your Doctor</Header>
         <Form className={this.state.submitted ? "success" : null} onSubmit={this.handleSubmit} >
           <Form.Field>
-            <label>To</label>
-            <input placeholder="Your Doctors Email" />
+            <label>To: doctor@flatiron-drs.com</label>
           </Form.Field>
           <Form.Field>
             <label>Medications for refill</label>
@@ -96,7 +97,7 @@ class Contact extends React.Component {
             <Checkbox label="Add all my medications" checked={this.state.selectAll} className="toggle add-all" onClick={this.handleSelectAllState}/> 
            </Form.Field>
            <Form.Field>  
-            <Form.Field control={TextArea} label="Your message" placeholder="Your message" value={this.state.message} onChange={this.handleChange}/>
+            <Form.Field control={TextArea} label="My message" placeholder="My message" value={this.state.message} onChange={this.handleChange}/>
           </Form.Field>
           <Message success header='Form Completed' content="Your refill request has been sent" />
           <Button value="submit">Request Refill</Button>
