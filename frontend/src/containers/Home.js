@@ -1,11 +1,11 @@
 import React from 'react'
 import DrugHomeContainer from './DrugHomeContainer';
-import { Header, Container } from 'semantic-ui-react';
+import { Header, Container, Button } from 'semantic-ui-react';
 
 class Home extends React.Component {
   render() {
     return (
-      <Container>Home page
+      <Container className="home-page">Home page
         <Header as='h2'>Welcome back {this.props.user.name}</Header>
         <DrugHomeContainer 
           {...this.props} 
@@ -13,6 +13,8 @@ class Home extends React.Component {
           handleClick={this.props.setDrugToDisplay}
           setMedicineTaken={this.props.setMedicineTaken}
           />
+        <br></br>  
+        <Button onClick={this.props.resetDay}>Reset</Button>  
       </Container>
     )
   }

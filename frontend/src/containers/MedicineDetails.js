@@ -44,7 +44,26 @@ class MedicineDetails extends React.Component {
       console.log(mainEntry)
       const sideEffectsObject = mainEntry.find(obj => obj.text === "Side effects")
       const sideEffects = sideEffectsObject.mainEntityOfPage
-      return sideEffects
+      for(const obj in sideEffects) {
+        sideEffects[obj].text = sideEffects[obj].text.split('/">').join('/" target="_blank">')
+        sideEffects[obj].text = sideEffects[obj].text.split('/conditions/').join("https://www.nhs.uk/conditions/")
+      }
+      
+      return sideEffects;
+    }
+  }
+
+  indication = () => {
+    if (this.props.medicineData === null) return []
+    else {
+      const mainEntry = this.props.medicineData.mainEntityOfPage
+      const indicationObj = mainEntry.find(obj => obj.text.includes("About "))
+      const indication = indicationObj.mainEntityOfPage
+      for(const obj in indication) {
+        indication[obj].text = indication[obj].text.split('/">').join('/" target="_blank">')
+        indication[obj].text = indication[obj].text.split('/conditions/').join("https://www.nhs.uk/conditions/")
+      }
+      return indication
     }
   }
 
@@ -99,6 +118,7 @@ class MedicineDetails extends React.Component {
                 <Button basic color='red' value="Delete" onClick={this.show}>Delete Medicine</Button>
                 <Confirm open={this.state.open} onCancel={this.handleCancel} onConfirm={() => this.confirmDelete(this.props)} content={`Are you sure you want to delete ${this.props.medicine.name}?`}/>
               </>}
+             {this.indication().map(obj => <Segment className="side-effects" key={"about"} dangerouslySetInnerHTML={{ __html: obj.text}} />)} 
             {this.sideEffects().map(obj => <Segment className="side-effects" key={obj.position} dangerouslySetInnerHTML={{ __html: obj.text}} />)}
           </Grid.Column>
         <Grid.Column width={1}></Grid.Column>

@@ -43,14 +43,7 @@ UserMedicine.create(
   #       AM: true
   #     }
   #   },
-  #  "08/13/2019": {
-  #     clicked: {
-  #       AM: true
-  #     }
-  #     status: {
-  #       AM: false
-  #     }
-  #   }
+  #  {"08/20/2019": { clicked: { PM: true }, status: { PM: false }}}
   # }
 # )
 
