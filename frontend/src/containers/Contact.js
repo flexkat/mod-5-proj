@@ -54,8 +54,9 @@ class Contact extends React.Component {
     const fullMedName = fullMedsForRefill.map(med => `${med.name} - ${med.dose}mg`)
    
     axios.post('http://localhost:3002/contact', {
+      user: this.props.user.name,
       message: this.state.message,
-      medsForRefill: fullMedName,
+      medsForRefill: fullMedName
     })
     this.setState({
       submitted: true,

@@ -155,7 +155,8 @@ class App extends React.Component {
             />
             <Route path="/contact" render={(props) => <Contact
               {...props} 
-              medicines={this.props.usersMedicines}/>}
+              medicines={this.props.usersMedicines}
+              user={this.state.user}/>}
             />
           </div>
         </ScrollToTop>
