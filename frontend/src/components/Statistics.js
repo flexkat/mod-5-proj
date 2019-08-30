@@ -6,6 +6,7 @@ import { getDate } from '../utils/medicines'
 class Statistics extends React.Component {
 
   checkWhichIconToRender = (med, date, time) => {
+
     if (date === getDate() && !med.history[date]) return ""
 
     if (med.history[date]) {
@@ -23,10 +24,30 @@ class Statistics extends React.Component {
   }
 
   previousWeeksDatesFunction = (dates) => {
-    if (dates.length < 7) return dates
+    let weekOfDates
+    if (dates.length < 7) {
+      weekOfDates = dates
+    } 
+    else {
+      weekOfDates = dates.slice(Math.max(dates.length - 7))
+    }
+    let sortedDates = weekOfDates
+      .map(date => this.dateRepresentation(date))
+      .sort()
+      .map(date => this.reverseDateRepresentation(date))
+    
+    return sortedDates
+  };
 
-    return dates.slice(Math.max(dates.length - 7))
-  }
+  dateRepresentation = date => {
+    let parts = date.split('/');
+    return `${parts[2]}/${parts[0]}/${parts[1]}`;
+  };
+
+  reverseDateRepresentation = date => {
+    let parts = date.split('/');
+    return `${parts[1]}/${parts[2]}/${parts[0]}`;
+  };
 
   render() {
     const medicines = this.props.medicines
@@ -35,7 +56,6 @@ class Statistics extends React.Component {
     const dates = [...new Set(allDatesArray)]
 
     const previousWeeksDates = this.previousWeeksDatesFunction(dates)
-
     return (
       <Container>
         <Header as="h3">My week in review</Header>
