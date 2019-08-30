@@ -6,8 +6,6 @@ const cors = require('cors');
 var AWS = require('aws-sdk');
 
 AWS.config.update({
-  accessKeyId: 'AKIAJ5XX7J5E6QNVKWJA',
-  secretAccessKey: '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',
   region: 'us-east-2'});
 
 app.use(bodyParser.json());
